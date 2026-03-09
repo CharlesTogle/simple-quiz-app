@@ -9,6 +9,23 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
+      --bg: #0a0c10;
+      --surface: #111318;
+      --border: #1e2230;
+      --accent: #4fffb0;
+      --accent2: #ff4f6e;
+      --accent3: #4fb8ff;
+      --text: #e8eaf0;
+      --muted: #5a6070;
+      --correct: #4fffb0;
+      --wrong: #ff4f6e;
+      --radius: 12px;
+      --glow: rgba(79,255,176,0.06);
+      --grid: rgba(79,255,176,0.03);
+      --shadow: rgba(0,0,0,0.2);
+    }
+
+    :root.theme-pink {
       --bg: #fff5f7;
       --surface: #ffffff;
       --border: #ffd6e0;
@@ -19,7 +36,9 @@
       --muted: #b08b9a;
       --correct: #10b981;
       --wrong: #ef4444;
-      --radius: 12px;
+      --glow: rgba(255,77,141,0.08);
+      --grid: rgba(255,77,141,0.03);
+      --shadow: rgba(255,77,141,0.1);
     }
 
     html { font-size: 16px; }
@@ -31,6 +50,7 @@
       min-height: 100vh;
       padding: 0;
       overflow-x: hidden;
+      transition: background 0.3s, color 0.3s;
     }
 
     body::before {
@@ -38,8 +58,8 @@
       position: fixed;
       inset: 0;
       background-image:
-        linear-gradient(rgba(255,77,141,0.03) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,77,141,0.03) 1px, transparent 1px);
+        linear-gradient(var(--grid) 1px, transparent 1px),
+        linear-gradient(90deg, var(--grid) 1px, transparent 1px);
       background-size: 40px 40px;
       pointer-events: none;
       z-index: 0;
@@ -50,7 +70,7 @@
       width: 500px;
       height: 500px;
       border-radius: 50%;
-      background: radial-gradient(circle, rgba(255,77,141,0.08) 0%, transparent 70%);
+      background: radial-gradient(circle, var(--glow) 0%, transparent 70%);
       top: -150px;
       right: -150px;
       pointer-events: none;
@@ -90,13 +110,37 @@
       flex-wrap: wrap;
     }
 
+    .theme-toggle-btn {
+      width: 36px;
+      height: 20px;
+      background: var(--border);
+      border-radius: 10px;
+      cursor: pointer;
+      position: relative;
+      transition: all 0.2s ease;
+      border: none;
+    }
+    .theme-toggle-btn::after {
+      content: '';
+      position: absolute;
+      top: 2px;
+      left: 2px;
+      width: 16px;
+      height: 16px;
+      background: var(--text);
+      border-radius: 50%;
+      transition: all 0.2s ease;
+    }
+    .theme-toggle-btn.active { background: var(--accent); }
+    .theme-toggle-btn.active::after { left: 18px; background: white; }
+
     .btn {
       display: inline-flex;
       align-items: center;
       gap: 6px;
       padding: 9px 16px;
       border-radius: 8px;
-      border: 2px solid var(--border);
+      border: 1px solid var(--border);
       background: var(--surface);
       color: var(--text);
       font-family: 'Space Mono', monospace;
@@ -108,14 +152,17 @@
     .btn:hover { border-color: var(--accent); color: var(--accent); }
     .btn.primary {
       background: var(--accent);
-      color: white;
+      color: #0a0c10;
       border-color: var(--accent);
       font-weight: 700;
     }
-    .btn.primary:hover { background: var(--accent3); border-color: var(--accent3); }
+    .theme-pink .btn.primary { color: white; }
+    .btn.primary:hover { filter: brightness(1.1); }
     .btn.danger { border-color: var(--wrong); color: var(--wrong); }
-    .btn.danger:hover { background: rgba(239,68,68,0.1); }
+    .btn.danger:hover { background: rgba(255,79,110,0.1); }
+    .theme-pink .btn.danger:hover { background: rgba(239,68,68,0.1); }
     .btn:disabled { opacity: 0.4; cursor: not-allowed; }
+    .theme-pink .btn { border-width: 2px; }
 
     .file-label {
       display: inline-flex;
@@ -123,15 +170,22 @@
       gap: 6px;
       padding: 9px 16px;
       border-radius: 8px;
-      border: 2px dashed var(--accent2);
-      background: rgba(255,77,141,0.05);
-      color: var(--accent);
+      border: 1px dashed var(--accent3);
+      background: rgba(79,184,255,0.05);
+      color: var(--accent3);
       font-family: 'Space Mono', monospace;
       font-size: 0.78rem;
       cursor: pointer;
       transition: all 0.15s ease;
     }
-    .file-label:hover { background: rgba(255,77,141,0.12); }
+    .theme-pink .file-label {
+      border-color: var(--accent2);
+      background: rgba(255,77,141,0.05);
+      color: var(--accent);
+      border-width: 2px;
+    }
+    .file-label:hover { background: rgba(79,184,255,0.12); }
+    .theme-pink .file-label:hover { background: rgba(255,77,141,0.12); }
     #fileInput { display: none; }
 
     .home-link {
@@ -140,11 +194,13 @@
       font-family: 'Space Mono', monospace;
       font-size: 0.78rem;
       padding: 9px 16px;
-      border: 2px solid var(--border);
+      border: 1px solid var(--border);
       border-radius: 8px;
       transition: all 0.15s ease;
     }
-    .home-link:hover { border-color: var(--accent); background: rgba(255,77,141,0.05); }
+    .theme-pink .home-link { border-width: 2px; }
+    .home-link:hover { border-color: var(--accent); background: rgba(79,255,176,0.05); }
+    .theme-pink .home-link:hover { background: rgba(255,77,141,0.05); }
 
     .progress-wrap { margin-bottom: 28px; }
     .progress-meta {
@@ -156,11 +212,12 @@
       margin-bottom: 8px;
     }
     .progress-bar {
-      height: 4px;
+      height: 3px;
       background: var(--border);
       border-radius: 2px;
       overflow: hidden;
     }
+    .theme-pink .progress-bar { height: 4px; }
     .progress-fill {
       height: 100%;
       background: linear-gradient(90deg, var(--accent), var(--accent3));
@@ -170,15 +227,16 @@
 
     .question-card {
       background: var(--surface);
-      border: 2px solid var(--border);
+      border: 1px solid var(--border);
       border-radius: var(--radius);
       padding: 28px;
       margin-bottom: 16px;
       position: relative;
       overflow: hidden;
       animation: slideIn 0.3s ease;
-      box-shadow: 0 2px 12px rgba(255,77,141,0.06);
+      box-shadow: 0 2px 12px var(--shadow);
     }
+    .theme-pink .question-card { border-width: 2px; }
     @keyframes slideIn {
       from { opacity: 0; transform: translateY(12px); }
       to   { opacity: 1; transform: translateY(0); }
@@ -187,9 +245,10 @@
       content: '';
       position: absolute;
       top: 0; left: 0; right: 0;
-      height: 3px;
+      height: 2px;
       background: linear-gradient(90deg, var(--accent), var(--accent3));
     }
+    .theme-pink .question-card::before { height: 3px; }
 
     .q-number {
       font-family: 'Space Mono', monospace;
@@ -219,41 +278,42 @@
       width: 100%;
       padding: 14px 16px;
       border-radius: 8px;
-      border: 2px solid var(--border);
+      border: 1px solid var(--border);
       background: var(--bg);
       color: var(--text);
       font-family: 'Syne', sans-serif;
       font-size: 1rem;
       transition: all 0.15s ease;
     }
+    .theme-pink .answer-input { border-width: 2px; }
     .answer-input:focus {
       outline: none;
       border-color: var(--accent);
-      background: white;
+      background: var(--surface);
     }
-    .answer-input:disabled {
-      opacity: 0.7;
-      cursor: not-allowed;
-    }
+    .answer-input:disabled { opacity: 0.7; cursor: not-allowed; }
     .answer-input.correct {
       border-color: var(--correct);
-      background: rgba(16,185,129,0.08);
+      background: rgba(79,255,176,0.08);
     }
+    .theme-pink .answer-input.correct { background: rgba(16,185,129,0.08); }
     .answer-input.wrong {
       border-color: var(--wrong);
-      background: rgba(239,68,68,0.08);
+      background: rgba(255,79,110,0.08);
     }
+    .theme-pink .answer-input.wrong { background: rgba(239,68,68,0.08); }
 
     .correct-answer {
       margin-top: 12px;
       padding: 10px 14px;
-      background: rgba(16,185,129,0.1);
+      background: rgba(79,255,176,0.1);
       border-radius: 6px;
       font-size: 0.85rem;
       color: var(--correct);
       font-family: 'Space Mono', monospace;
       display: none;
     }
+    .theme-pink .correct-answer { background: rgba(16,185,129,0.1); }
     .correct-answer.show { display: block; }
 
     .q-status {
@@ -267,8 +327,10 @@
       padding: 4px 10px;
       border-radius: 4px;
     }
-    .q-status.correct { background: rgba(16,185,129,0.15); color: var(--correct); }
-    .q-status.wrong   { background: rgba(239,68,68,0.15); color: var(--wrong); }
+    .q-status.correct { background: rgba(79,255,176,0.15); color: var(--correct); }
+    .theme-pink .q-status.correct { background: rgba(16,185,129,0.15); }
+    .q-status.wrong { background: rgba(255,79,110,0.15); color: var(--wrong); }
+    .theme-pink .q-status.wrong { background: rgba(239,68,68,0.15); }
 
     .bottom-bar {
       display: flex;
@@ -278,14 +340,15 @@
 
     .results-panel {
       background: var(--surface);
-      border: 2px solid var(--border);
+      border: 1px solid var(--border);
       border-radius: var(--radius);
       padding: 32px;
       margin-bottom: 28px;
       text-align: center;
       animation: slideIn 0.3s ease;
-      box-shadow: 0 4px 20px rgba(255,77,141,0.1);
+      box-shadow: 0 4px 20px var(--shadow);
     }
+    .theme-pink .results-panel { border-width: 2px; }
     .results-score {
       font-family: 'Space Mono', monospace;
       font-size: 3.5rem;
@@ -353,12 +416,12 @@
       left: 3px;
       width: 18px;
       height: 18px;
-      background: white;
+      background: var(--text);
       border-radius: 50%;
       transition: all 0.2s ease;
       box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     }
-    .toggle.active::after { left: 23px; }
+    .toggle.active::after { left: 23px; background: white; }
 
     .toast {
       position: fixed;
@@ -366,7 +429,7 @@
       right: 24px;
       padding: 12px 20px;
       background: var(--surface);
-      border: 2px solid var(--accent);
+      border: 1px solid var(--accent);
       border-radius: 8px;
       font-family: 'Space Mono', monospace;
       font-size: 0.8rem;
@@ -374,8 +437,9 @@
       z-index: 999;
       animation: fadeUp 0.3s ease;
       max-width: 300px;
-      box-shadow: 0 4px 20px rgba(255,77,141,0.2);
+      box-shadow: 0 4px 20px var(--shadow);
     }
+    .theme-pink .toast { border-width: 2px; }
     .toast.error { border-color: var(--wrong); color: var(--wrong); }
     @keyframes fadeUp {
       from { opacity:0; transform: translateY(12px); }
@@ -404,6 +468,7 @@
   <div class="header">
     <div class="logo">NETCOM<span>/abbrev</span></div>
     <div class="header-controls">
+      <button class="theme-toggle-btn" id="themeToggle" onclick="toggleTheme()" title="Toggle Pink Mode"></button>
       <a href="index.html" class="home-link">Home</a>
       <label class="file-label" for="fileInput">Load JSON</label>
       <input type="file" id="fileInput" accept=".json" />
@@ -421,6 +486,20 @@ let originalItems = [];
 let userAnswers = {};
 let submitted = false;
 let autoDownload = true;
+
+function getTheme() { return localStorage.getItem('quizTheme') || 'dark'; }
+function setTheme(theme) {
+  localStorage.setItem('quizTheme', theme);
+  if (theme === 'pink') {
+    document.documentElement.classList.add('theme-pink');
+    document.getElementById('themeToggle').classList.add('active');
+  } else {
+    document.documentElement.classList.remove('theme-pink');
+    document.getElementById('themeToggle').classList.remove('active');
+  }
+}
+function toggleTheme() { setTheme(getTheme() === 'pink' ? 'dark' : 'pink'); }
+setTheme(getTheme());
 
 function getUrlParam(name) {
   const params = new URLSearchParams(window.location.search);
@@ -507,8 +586,7 @@ function shuffleAndRestart() {
   allItems = shuffleArray(allItems);
   userAnswers = {};
   submitted = false;
-  const panel = document.getElementById('resultsPanel');
-  if (panel) panel.remove();
+  document.getElementById('resultsPanel')?.remove();
   renderQuiz();
   showToast('Questions shuffled!');
 }
@@ -553,11 +631,8 @@ function renderQuiz() {
 function handleInput(i, event) {
   if (submitted) return;
   const val = event.target.value.trim();
-  if (val) {
-    userAnswers[i] = val;
-  } else {
-    delete userAnswers[i];
-  }
+  if (val) userAnswers[i] = val;
+  else delete userAnswers[i];
   updateProgress();
 }
 
@@ -565,27 +640,19 @@ function updateProgress() {
   const answered = Object.keys(userAnswers).length;
   const total = allItems.length;
   const pct = Math.round((answered / total) * 100);
-  const fill = document.getElementById('progressFill');
-  const pctEl = document.getElementById('progressPct');
-  if (fill) fill.style.width = pct + '%';
-  if (pctEl) pctEl.textContent = pct + '%';
-  const metaSpans = document.querySelectorAll('.progress-meta span');
-  if (metaSpans[0]) metaSpans[0].textContent = `${answered} / ${total} answered`;
+  document.getElementById('progressFill').style.width = pct + '%';
+  document.getElementById('progressPct').textContent = pct + '%';
+  document.querySelectorAll('.progress-meta span')[0].textContent = `${answered} / ${total} answered`;
 }
 
 function normalize(str) {
-  return str.toLowerCase()
-    .replace(/[^a-z0-9\s]/g, '')
-    .replace(/\s+/g, ' ')
-    .trim();
+  return str.toLowerCase().replace(/[^a-z0-9\s]/g, '').replace(/\s+/g, ' ').trim();
 }
 
 function submitQuiz() {
   if (!allItems.length) return;
   const unanswered = allItems.length - Object.keys(userAnswers).length;
-  if (unanswered > 0) {
-    if (!confirm(`You have ${unanswered} unanswered item(s). Submit anyway?`)) return;
-  }
+  if (unanswered > 0 && !confirm(`You have ${unanswered} unanswered item(s). Submit anyway?`)) return;
   submitted = true;
 
   let correct = 0, wrong = 0;
@@ -598,12 +665,9 @@ function submitQuiz() {
     const userAns = userAnswers[i] || '';
 
     input.disabled = true;
-
     const isCorrect = normalize(userAns) === normalize(item.full);
 
-    const oldStatus = card.querySelector('.q-status');
-    if (oldStatus) oldStatus.remove();
-
+    card.querySelector('.q-status')?.remove();
     const badge = document.createElement('div');
     badge.className = 'q-status';
 
@@ -665,8 +729,7 @@ function toggleAutoDownload(el) {
 function retakeQuiz() {
   userAnswers = {};
   submitted = false;
-  const panel = document.getElementById('resultsPanel');
-  if (panel) panel.remove();
+  document.getElementById('resultsPanel')?.remove();
   allItems = shuffleArray(allItems);
   renderQuiz();
   window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -674,19 +737,12 @@ function retakeQuiz() {
 }
 
 function retryWrong() {
-  if (!window._wrongItems || !window._wrongItems.length) {
-    showToast('No wrong items to retry!', true);
-    return;
-  }
-
+  if (!window._wrongItems?.length) { showToast('No wrong items to retry!', true); return; }
   if (autoDownload) {
     const wrongObj = {};
-    window._wrongItems.forEach(item => {
-      wrongObj[item.abbr] = item.full;
-    });
+    window._wrongItems.forEach(item => { wrongObj[item.abbr] = item.full; });
     downloadJSON({ abbreviations: wrongObj }, 'wrong-abbreviations.json');
   }
-
   setTimeout(() => {
     originalItems = allItems.length ? [...allItems] : originalItems;
     allItems = shuffleArray(window._wrongItems);
@@ -719,11 +775,7 @@ function downloadJSON(obj, filename) {
 }
 
 function escHtml(str) {
-  return String(str)
-    .replace(/&/g, '&amp;')
-    .replace(/</g, '&lt;')
-    .replace(/>/g, '&gt;')
-    .replace(/"/g, '&quot;');
+  return String(str).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 }
 
 function renderEmpty() {
@@ -738,8 +790,7 @@ function renderEmpty() {
 
 let toastTimer;
 function showToast(msg, isError) {
-  const existing = document.querySelector('.toast');
-  if (existing) existing.remove();
+  document.querySelector('.toast')?.remove();
   clearTimeout(toastTimer);
   const t = document.createElement('div');
   t.className = 'toast' + (isError ? ' error' : '');
