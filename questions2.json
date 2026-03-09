@@ -1,707 +1,37 @@
 {
   "questions": [
     {
-      "question": "Define ARP.",
-      "answer": "A",
-      "choices": {
-        "A": "Address Resolution Protocol",
-        "B": "Advanced Routing Protocol",
-        "C": "Application Resource Protocol",
-        "D": "Automated Response Protocol"
-      }
-    },
-    {
-      "question": "Which IEEE standard defines Token Ring topology?",
+      "question": "Which IEEE standard defines wireless networking?",
       "answer": "C",
       "choices": {
-        "A": "802.3",
-        "B": "802.4",
-        "C": "802.5",
-        "D": "802.6"
+        "A": "IEEE 802.3",
+        "B": "IEEE 802.5",
+        "C": "IEEE 802.11",
+        "D": "IEEE 802.8"
       }
     },
     {
-      "question": "What is the primary function of the Physical Layer?",
-      "answer": "B",
-      "choices": {
-        "A": "Logical addressing",
-        "B": "Transmitting raw bits over a medium",
-        "C": "Error detection",
-        "D": "Routing packets"
-      }
-    },
-    {
-      "question": "Define ICMP.",
+      "question": "What coaxial cable type has an impedance of 75 Ω?",
       "answer": "D",
       "choices": {
-        "A": "Internet Control Message Process",
-        "B": "Internal Communication Management Protocol",
-        "C": "Internet Connection Monitoring Protocol",
-        "D": "Internet Control Message Protocol"
+        "A": "RG58",
+        "B": "RG8",
+        "C": "RG62",
+        "D": "RG59"
       }
     },
     {
-      "question": "Which network type spans hundreds or thousands of kilometers?",
-      "answer": "A",
-      "choices": {
-        "A": "WAN",
-        "B": "LAN",
-        "C": "MAN",
-        "D": "PAN"
-      }
-    },
-    {
-      "question": "Define RIP.",
-      "answer": "B",
-      "choices": {
-        "A": "Remote Internet Process",
-        "B": "Routing Information Protocol",
-        "C": "Router Interface Protocol",
-        "D": "Reliable Internet Protocol"
-      }
-    },
-    {
-      "question": "What does EMI stand for in networking?",
+      "question": "Which cable category supports speeds of 25–40 Gbps?",
       "answer": "C",
       "choices": {
-        "A": "Electronic Media Interface",
-        "B": "External Module Integration",
-        "C": "Electromagnetic Interference",
-        "D": "Ethernet Media Interconnect"
+        "A": "CAT 6a",
+        "B": "CAT 7",
+        "C": "CAT 8",
+        "D": "CAT 5e"
       }
     },
     {
-      "question": "Which OSI layer handles message delineation and error control?",
-      "answer": "A",
-      "choices": {
-        "A": "Data Link",
-        "B": "Network",
-        "C": "Transport",
-        "D": "Physical"
-      }
-    },
-    {
-      "question": "Define OSPF.",
-      "answer": "C",
-      "choices": {
-        "A": "Open System Path Finder",
-        "B": "Optimal Shortest Path Format",
-        "C": "Open Shortest Path First",
-        "D": "Operating System Protocol Function"
-      }
-    },
-    {
-      "question": "What is the typical maximum length of UTP cable in Ethernet?",
-      "answer": "B",
-      "choices": {
-        "A": "50 meters",
-        "B": "100 meters",
-        "C": "200 meters",
-        "D": "500 meters"
-      }
-    },
-    {
-      "question": "Define BGP.",
-      "answer": "A",
-      "choices": {
-        "A": "Border Gateway Protocol",
-        "B": "Basic Gateway Process",
-        "C": "Broadband Gateway Protocol",
-        "D": "Bridge Gateway Protocol"
-      }
-    },
-    {
-      "question": "Which IEEE standard defines Wireless Networks?",
-      "answer": "D",
-      "choices": {
-        "A": "802.3",
-        "B": "802.5",
-        "C": "802.8",
-        "D": "802.11"
-      }
-    },
-    {
-      "question": "What are the three elements required for communication?",
-      "answer": "B",
-      "choices": {
-        "A": "Router, Switch, Hub",
-        "B": "Source, Destination, Channel",
-        "C": "Client, Server, Protocol",
-        "D": "Sender, Medium, Encoder"
-      }
-    },
-    {
-      "question": "Define IGMP.",
-      "answer": "C",
-      "choices": {
-        "A": "Internet Gateway Management Protocol",
-        "B": "Internal Group Messaging Protocol",
-        "C": "Internet Group Management Protocol",
-        "D": "Integrated Gateway Module Protocol"
-      }
-    },
-    {
-      "question": "Which transmission mode sends multiple bits simultaneously?",
-      "answer": "A",
-      "choices": {
-        "A": "Parallel Transmission",
-        "B": "Serial Transmission",
-        "C": "Simplex Transmission",
-        "D": "Duplex Transmission"
-      }
-    },
-    {
-      "question": "Define IPX.",
-      "answer": "B",
-      "choices": {
-        "A": "Internet Protocol Exchange",
-        "B": "Internetwork Packet Exchange",
-        "C": "Internal Packet Extension",
-        "D": "Internet Proxy Exchange"
-      }
-    },
-    {
-      "question": "What does the Presentation Layer handle?",
-      "answer": "D",
-      "choices": {
-        "A": "Physical connections",
-        "B": "Routing decisions",
-        "C": "Session management",
-        "D": "Data formatting, compression, and translation"
-      }
-    },
-    {
-      "question": "Define SPX.",
-      "answer": "A",
-      "choices": {
-        "A": "Sequenced Packet Exchange",
-        "B": "System Protocol Exchange",
-        "C": "Secure Packet Extension",
-        "D": "Serial Protocol Exchange"
-      }
-    },
-    {
-      "question": "Which fiber optic type uses a laser source and has a tiny core?",
-      "answer": "C",
-      "choices": {
-        "A": "Multi-Mode Fiber",
-        "B": "Coaxial Fiber",
-        "C": "Single-Mode Fiber",
-        "D": "Hybrid Fiber"
-      }
-    },
-    {
-      "question": "Define NCP.",
-      "answer": "B",
-      "choices": {
-        "A": "Network Channel Protocol",
-        "B": "Network Core Protocol",
-        "C": "Node Control Process",
-        "D": "Network Connection Protocol"
-      }
-    },
-    {
-      "question": "Which IEEE standard defines Bus Topology with CSMA/CD?",
-      "answer": "A",
-      "choices": {
-        "A": "802.3",
-        "B": "802.4",
-        "C": "802.5",
-        "D": "802.11"
-      }
-    },
-    {
-      "question": "Define RARP.",
-      "answer": "D",
-      "choices": {
-        "A": "Remote Address Routing Protocol",
-        "B": "Rapid Address Resolution Process",
-        "C": "Reliable Address Relay Protocol",
-        "D": "Reverse Address Resolution Protocol"
-      }
-    },
-    {
-      "question": "What is the term for signal degradation over distance?",
-      "answer": "C",
-      "choices": {
-        "A": "Bandwidth",
-        "B": "Throughput",
-        "C": "Attenuation",
-        "D": "Latency"
-      }
-    },
-    {
-      "question": "Define NetBIOS.",
-      "answer": "A",
-      "choices": {
-        "A": "Network Basic Input/Output System",
-        "B": "Network Binary Interface Operating System",
-        "C": "Node Based Input/Output Service",
-        "D": "Network Bridge Interface System"
-      }
-    },
-    {
-      "question": "Which layer of TCP/IP combines OSI layers 5, 6, and 7?",
-      "answer": "B",
-      "choices": {
-        "A": "Transport",
-        "B": "Application",
-        "C": "Internet",
-        "D": "Network Access"
-      }
-    },
-    {
-      "question": "Define PPP.",
-      "answer": "C",
-      "choices": {
-        "A": "Packet Processing Protocol",
-        "B": "Primary Point Protocol",
-        "C": "Point to Point Protocol",
-        "D": "Peer to Peer Protocol"
-      }
-    },
-    {
-      "question": "What is the PDU at the Transport Layer?",
-      "answer": "A",
-      "choices": {
-        "A": "Segment",
-        "B": "Packet",
-        "C": "Frame",
-        "D": "Bits"
-      }
-    },
-    {
-      "question": "Define SLIP.",
-      "answer": "D",
-      "choices": {
-        "A": "System Line Interface Protocol",
-        "B": "Secure Link Internet Protocol",
-        "C": "Standard Line Input Protocol",
-        "D": "Serial Line Internet Protocol"
-      }
-    },
-    {
-      "question": "Which wireless frequency band has the most interference but longest range?",
-      "answer": "B",
-      "choices": {
-        "A": "5 GHz",
-        "B": "2.4 GHz",
-        "C": "6 GHz",
-        "D": "60 GHz"
-      }
-    },
-    {
-      "question": "Define VIP.",
-      "answer": "A",
-      "choices": {
-        "A": "VINES Internet Protocol",
-        "B": "Virtual Internet Process",
-        "C": "Variable Interface Protocol",
-        "D": "Virtual IP Protocol"
-      }
-    },
-    {
-      "question": "Which IEEE standard defines MAN (Metropolitan Area Network)?",
-      "answer": "C",
-      "choices": {
-        "A": "802.3",
-        "B": "802.5",
-        "C": "802.6",
-        "D": "802.11"
-      }
-    },
-    {
-      "question": "Define MIME.",
-      "answer": "B",
-      "choices": {
-        "A": "Mail Internet Message Exchange",
-        "B": "Multipurpose Internet Mail Extension",
-        "C": "Multiple Internet Mail Encoding",
-        "D": "Message Interface Mail Extension"
-      }
-    },
-    {
-      "question": "What addressing changes at every hop during packet transmission?",
-      "answer": "D",
-      "choices": {
-        "A": "IP Address",
-        "B": "Port Address",
-        "C": "Session ID",
-        "D": "MAC Address"
-      }
-    },
-    {
-      "question": "Define NFS.",
-      "answer": "A",
-      "choices": {
-        "A": "Network File System",
-        "B": "Node File Service",
-        "C": "Network Folder System",
-        "D": "Native File Structure"
-      }
-    },
-    {
-      "question": "Which UTP category supports 10 Gbps for the full 100m reach?",
-      "answer": "C",
-      "choices": {
-        "A": "Cat5e",
-        "B": "Cat6",
-        "C": "Cat6a",
-        "D": "Cat8"
-      }
-    },
-    {
-      "question": "Define NNTP.",
-      "answer": "B",
-      "choices": {
-        "A": "Network Node Transfer Protocol",
-        "B": "Network News Transfer Protocol",
-        "C": "Node to Node Transfer Process",
-        "D": "Network Notification Transfer Protocol"
-      }
-    },
-    {
-      "question": "What is a private network using web technologies called?",
-      "answer": "A",
-      "choices": {
-        "A": "Intranet",
-        "B": "Extranet",
-        "C": "Internet",
-        "D": "VPN"
-      }
-    },
-    {
-      "question": "Define BOOTP.",
-      "answer": "D",
-      "choices": {
-        "A": "Boot Optimization Protocol",
-        "B": "Basic Operation Protocol",
-        "C": "Boot Object Transfer Protocol",
-        "D": "Bootstrap Protocol"
-      }
-    },
-    {
-      "question": "Which PoE standard supplies up to 30W?",
-      "answer": "B",
-      "choices": {
-        "A": "802.3af",
-        "B": "802.3at",
-        "C": "802.3bt",
-        "D": "802.3ax"
-      }
-    },
-    {
-      "question": "Define WINS.",
-      "answer": "C",
-      "choices": {
-        "A": "Wide Internet Naming System",
-        "B": "Wireless Internet Name Server",
-        "C": "Windows Internet Name Service",
-        "D": "Web Interface Naming Service"
-      }
-    },
-    {
-      "question": "What is the process of adding headers as data moves down the OSI stack?",
-      "answer": "A",
-      "choices": {
-        "A": "Encapsulation",
-        "B": "De-encapsulation",
-        "C": "Segmentation",
-        "D": "Fragmentation"
-      }
-    },
-    {
-      "question": "Define TELNET.",
-      "answer": "B",
-      "choices": {
-        "A": "Terminal Network Protocol",
-        "B": "Remote Terminal Service",
-        "C": "Telecommunication Network",
-        "D": "Terminal Emulation Link"
-      }
-    },
-    {
-      "question": "Which connector type has an 8-degree angled polish to reduce back-reflection?",
-      "answer": "D",
-      "choices": {
-        "A": "LC",
-        "B": "SC",
-        "C": "UPC",
-        "D": "APC"
-      }
-    },
-    {
-      "question": "Define SMB.",
-      "answer": "A",
-      "choices": {
-        "A": "Server Message Block",
-        "B": "System Message Buffer",
-        "C": "Secure Message Block",
-        "D": "Standard Message Bridge"
-      }
-    },
-    {
-      "question": "Which OSI layer is responsible for routing decisions?",
-      "answer": "C",
-      "choices": {
-        "A": "Data Link",
-        "B": "Transport",
-        "C": "Network",
-        "D": "Session"
-      }
-    },
-    {
-      "question": "Define RPC.",
-      "answer": "B",
-      "choices": {
-        "A": "Remote Protocol Connection",
-        "B": "Remote Procedure Call",
-        "C": "Routing Protocol Control",
-        "D": "Remote Process Communication"
-      }
-    },
-    {
-      "question": "What communication mode allows two-way transmission but only one direction at a time?",
-      "answer": "A",
-      "choices": {
-        "A": "Half-Duplex",
-        "B": "Full-Duplex",
-        "C": "Simplex",
-        "D": "Multiplex"
-      }
-    },
-    {
-      "question": "Define AFP.",
-      "answer": "D",
-      "choices": {
-        "A": "Advanced File Process",
-        "B": "Application Folder Protocol",
-        "C": "Automated File Protocol",
-        "D": "AppleTalk Filing Protocol"
-      }
-    },
-    {
-      "question": "Which network architecture has no central server and every PC acts as both client and server?",
-      "answer": "B",
-      "choices": {
-        "A": "Server-Based",
-        "B": "Peer-to-Peer",
-        "C": "Client/Server",
-        "D": "Terminal-to-Host"
-      }
-    },
-    {
-      "question": "Define ATP.",
-      "answer": "C",
-      "choices": {
-        "A": "Advanced Transfer Protocol",
-        "B": "Automated Transaction Process",
-        "C": "AppleTalk Transaction Protocol",
-        "D": "Application Transport Protocol"
-      }
-    },
-    {
-      "question": "What is the fourth strategic economic factor in the Information Age?",
-      "answer": "A",
-      "choices": {
-        "A": "Information",
-        "B": "Technology",
-        "C": "Energy",
-        "D": "Services"
-      }
-    },
-    {
-      "question": "Define DDP.",
-      "answer": "B",
-      "choices": {
-        "A": "Direct Data Process",
-        "B": "Datagram Delivery Protocol",
-        "C": "Dynamic Data Protocol",
-        "D": "Distributed Delivery Process"
-      }
-    },
-    {
-      "question": "Which IEEE standard defines Fiber Optic technology?",
-      "answer": "D",
-      "choices": {
-        "A": "802.5",
-        "B": "802.6",
-        "C": "802.7",
-        "D": "802.8"
-      }
-    },
-    {
-      "question": "Define RTMP.",
-      "answer": "A",
-      "choices": {
-        "A": "Routing Table Maintenance Protocol",
-        "B": "Real Time Message Protocol",
-        "C": "Remote Transfer Management Protocol",
-        "D": "Routing Transport Module Protocol"
-      }
-    },
-    {
-      "question": "What does CSMA/CD stand for?",
-      "answer": "C",
-      "choices": {
-        "A": "Central System Multiple Access with Collision Detection",
-        "B": "Carrier Signal Multiple Access with Collision Distribution",
-        "C": "Carrier Sense Multiple Access with Collision Detection",
-        "D": "Central Sense Multiple Access with Collision Distribution"
-      }
-    },
-    {
-      "question": "Define NBP.",
-      "answer": "B",
-      "choices": {
-        "A": "Network Broadcast Protocol",
-        "B": "Name Binding Protocol",
-        "C": "Node Based Protocol",
-        "D": "Network Bridge Protocol"
-      }
-    },
-    {
-      "question": "Which organization developed LAN standards like 802.3 Ethernet?",
-      "answer": "A",
-      "choices": {
-        "A": "IEEE",
-        "B": "ISO",
-        "C": "ANSI",
-        "D": "ITU"
-      }
-    },
-    {
-      "question": "Define ZIP.",
-      "answer": "D",
-      "choices": {
-        "A": "Zero Integration Protocol",
-        "B": "Zone Interface Process",
-        "C": "Zonal Internet Protocol",
-        "D": "Zone Information Protocol"
-      }
-    },
-    {
-      "question": "What is the delivery option for one-to-all communication?",
-      "answer": "C",
-      "choices": {
-        "A": "Unicast",
-        "B": "Multicast",
-        "C": "Broadcast",
-        "D": "Anycast"
-      }
-    },
-    {
-      "question": "Define AEP.",
-      "answer": "A",
-      "choices": {
-        "A": "AppleTalk Echo Protocol",
-        "B": "Application Exchange Protocol",
-        "C": "Address Extension Protocol",
-        "D": "Automated Echo Process"
-      }
-    },
-    {
-      "question": "Which layer combines OSI layers 1 and 2 in TCP/IP model?",
-      "answer": "B",
-      "choices": {
-        "A": "Transport",
-        "B": "Network Access",
-        "C": "Internet",
-        "D": "Application"
-      }
-    },
-    {
-      "question": "Define AURP.",
-      "answer": "C",
-      "choices": {
-        "A": "Advanced User Routing Protocol",
-        "B": "Automated Update Relay Protocol",
-        "C": "AppleTalk Update-based Routing Protocol",
-        "D": "Application User Resource Protocol"
-      }
-    },
-    {
-      "question": "Which wireless security protocol uses SAE to prevent offline dictionary attacks?",
-      "answer": "D",
-      "choices": {
-        "A": "WEP",
-        "B": "WPA",
-        "C": "WPA2",
-        "D": "WPA3"
-      }
-    },
-    {
-      "question": "Define CLNP.",
-      "answer": "A",
-      "choices": {
-        "A": "Connection-Less Network Protocol",
-        "B": "Central Link Network Protocol",
-        "C": "Carrier Line Network Process",
-        "D": "Connection Layer Network Protocol"
-      }
-    },
-    {
-      "question": "What is the actual data transfer rate called?",
-      "answer": "B",
-      "choices": {
-        "A": "Bandwidth",
-        "B": "Throughput",
-        "C": "Latency",
-        "D": "Attenuation"
-      }
-    },
-    {
-      "question": "Define ADSP.",
-      "answer": "C",
-      "choices": {
-        "A": "Advanced Data System Protocol",
-        "B": "Application Data Service Protocol",
-        "C": "AppleTalk Data Stream Protocol",
-        "D": "Automated Data Stream Process"
-      }
-    },
-    {
-      "question": "Which standard defines Network Security?",
-      "answer": "A",
-      "choices": {
-        "A": "802.10",
-        "B": "802.8",
-        "C": "802.6",
-        "D": "802.12"
-      }
-    },
-    {
-      "question": "Define PAP.",
-      "answer": "D",
-      "choices": {
-        "A": "Protocol Access Point",
-        "B": "Packet Application Protocol",
-        "C": "Primary Access Protocol",
-        "D": "Printer Access Protocol"
-      }
-    },
-    {
-      "question": "What type of addressing is physically embedded in the NIC?",
-      "answer": "B",
-      "choices": {
-        "A": "IP Address",
-        "B": "MAC Address",
-        "C": "Port Address",
-        "D": "Domain Name"
-      }
-    },
-    {
-      "question": "Define ASP.",
-      "answer": "A",
-      "choices": {
-        "A": "AppleTalk Session Protocol",
-        "B": "Application Service Protocol",
-        "C": "Advanced Session Process",
-        "D": "Automated Session Protocol"
-      }
-    },
-    {
-      "question": "Which device moves information between networks?",
+      "question": "Which device operates at the Network layer of the OSI model?",
       "answer": "C",
       "choices": {
         "A": "Hub",
@@ -711,33 +41,263 @@
       }
     },
     {
-      "question": "Define MTU.",
-      "answer": "B",
+      "question": "What is the maximum distance for 10BASE5 (Thicknet)?",
+      "answer": "C",
       "choices": {
-        "A": "Maximum Transfer Unit",
-        "B": "Maximum Transmission Unit",
-        "C": "Media Transfer Unit",
-        "D": "Message Transport Unit"
+        "A": "100 m",
+        "B": "185 m",
+        "C": "500 m",
+        "D": "2 km"
       }
     },
     {
-      "question": "How many non-overlapping channels exist in the 2.4 GHz band?",
-      "answer": "A",
-      "choices": {
-        "A": "3",
-        "B": "6",
-        "C": "11",
-        "D": "14"
-      }
-    },
-    {
-      "question": "Define AARP.",
+      "question": "Which topology provides the highest redundancy?",
       "answer": "D",
       "choices": {
-        "A": "Advanced Address Routing Protocol",
-        "B": "Automated Address Resolution Process",
-        "C": "Application Address Resource Protocol",
-        "D": "AppleTalk Address Resolution Protocol"
+        "A": "Bus",
+        "B": "Star",
+        "C": "Ring",
+        "D": "Mesh"
+      }
+    },
+    {
+      "question": "In the 5-4-3 rule, how many repeaters are allowed?",
+      "answer": "B",
+      "choices": {
+        "A": "3",
+        "B": "4",
+        "C": "5",
+        "D": "2"
+      }
+    },
+    {
+      "question": "Which protocol is used to automatically assign IP addresses?",
+      "answer": "C",
+      "choices": {
+        "A": "DNS",
+        "B": "FTP",
+        "C": "DHCP",
+        "D": "SMTP"
+      }
+    },
+    {
+      "question": "What does NETBEUI stand for?",
+      "answer": "B",
+      "choices": {
+        "A": "Network Basic Extended User Interface",
+        "B": "NetBIOS Extended User Interface",
+        "C": "Network Binary Extended Unit Interface",
+        "D": "NetBIOS Encrypted User Input"
+      }
+    },
+    {
+      "question": "Which Novel NetWare protocol ensures data exchange with no errors?",
+      "answer": "C",
+      "choices": {
+        "A": "NCP",
+        "B": "IPX",
+        "C": "SPX",
+        "D": "DDP"
+      }
+    },
+    {
+      "question": "Which OSI layer is responsible for encryption?",
+      "answer": "D",
+      "choices": {
+        "A": "Session",
+        "B": "Transport",
+        "C": "Network",
+        "D": "Presentation"
+      }
+    },
+    {
+      "question": "What does SLIP stand for?",
+      "answer": "B",
+      "choices": {
+        "A": "Simple Line Internet Protocol",
+        "B": "Serial Line Internet Protocol",
+        "C": "Secured Line IP Protocol",
+        "D": "Standard Line Interface Protocol"
+      }
+    },
+    {
+      "question": "Which AppleTalk protocol is used for PING?",
+      "answer": "C",
+      "choices": {
+        "A": "ATP",
+        "B": "NBP",
+        "C": "AEP",
+        "D": "RTMP"
+      }
+    },
+    {
+      "question": "Which IEEE standard covers Bus Topology using CSMA/CD?",
+      "answer": "C",
+      "choices": {
+        "A": "IEEE 802.1",
+        "B": "IEEE 802.2",
+        "C": "IEEE 802.3",
+        "D": "IEEE 802.4"
+      }
+    },
+    {
+      "question": "What type of cable is used to connect a PC to a Switch?",
+      "answer": "C",
+      "choices": {
+        "A": "Crossover cable",
+        "B": "Rollover cable",
+        "C": "Straight-through cable",
+        "D": "Coaxial cable"
+      }
+    },
+    {
+      "question": "Which encoding scheme uses ½ -5V transitioning to ½ +5V to represent a 0?",
+      "answer": "C",
+      "choices": {
+        "A": "NRZ",
+        "B": "RZ",
+        "C": "Manchester",
+        "D": "Bipolar AMI"
+      }
+    },
+    {
+      "question": "What does SNA stand for in IBM networking?",
+      "answer": "B",
+      "choices": {
+        "A": "Secure Network Access",
+        "B": "System Network Architecture",
+        "C": "Standard Networking Application",
+        "D": "Serial Network Access"
+      }
+    },
+    {
+      "question": "Which Banyan VINES protocol handles inter-process communication?",
+      "answer": "D",
+      "choices": {
+        "A": "VIP",
+        "B": "RPC",
+        "C": "VINES",
+        "D": "VIPC"
+      }
+    },
+    {
+      "question": "What is the maximum number of nodes per network for 10BASE2?",
+      "answer": "C",
+      "choices": {
+        "A": "300",
+        "B": "1,024",
+        "C": "90",
+        "D": "512"
+      }
+    },
+    {
+      "question": "Which protocol translates domain names into IP addresses?",
+      "answer": "C",
+      "choices": {
+        "A": "DHCP",
+        "B": "ARP",
+        "C": "DNS",
+        "D": "SNMP"
+      }
+    },
+    {
+      "question": "Which layer of the OSI model handles framing?",
+      "answer": "B",
+      "choices": {
+        "A": "Physical",
+        "B": "Data Link",
+        "C": "Network",
+        "D": "Transport"
+      }
+    },
+    {
+      "question": "Which DECnet component refers to an end node device?",
+      "answer": "C",
+      "choices": {
+        "A": "IS",
+        "B": "CLNP",
+        "C": "ES",
+        "D": "PLP"
+      }
+    },
+    {
+      "question": "Which IEEE standard is associated with Token Ring?",
+      "answer": "C",
+      "choices": {
+        "A": "IEEE 802.3",
+        "B": "IEEE 802.4",
+        "C": "IEEE 802.5",
+        "D": "IEEE 802.6"
+      }
+    },
+    {
+      "question": "What does MTU stand for?",
+      "answer": "C",
+      "choices": {
+        "A": "Maximum Transfer Unit",
+        "B": "Minimum Transmission Unit",
+        "C": "Maximum Transmission Unit",
+        "D": "Minimum Transfer Utility"
+      }
+    },
+    {
+      "question": "Which AppleTalk protocol manages full-duplex data streams?",
+      "answer": "B",
+      "choices": {
+        "A": "ATP",
+        "B": "ADSP",
+        "C": "ASP",
+        "D": "AFP"
+      }
+    },
+    {
+      "question": "Which protocol is a non-routable Microsoft networking protocol?",
+      "answer": "B",
+      "choices": {
+        "A": "NETBIOS",
+        "B": "NETBEUI",
+        "C": "IPX",
+        "D": "SPX"
+      }
+    },
+    {
+      "question": "What is the speed of Fiber Optic cable?",
+      "answer": "B",
+      "choices": {
+        "A": "10 Mbps – 100 Mbps",
+        "B": "100 Mbps – 2 Gbps",
+        "C": "10 Gbps – 25 Gbps",
+        "D": "1 Gbps – 10 Gbps"
+      }
+    },
+    {
+      "question": "Which TCP/IP layer corresponds roughly to the OSI Network layer?",
+      "answer": "C",
+      "choices": {
+        "A": "Application",
+        "B": "Transport",
+        "C": "Internet",
+        "D": "Network Access"
+      }
+    },
+    {
+      "question": "What is the main advantage of PPP over SLIP?",
+      "answer": "C",
+      "choices": {
+        "A": "Higher speed",
+        "B": "Longer distance",
+        "C": "Corrects SLIP's drawbacks with better performance",
+        "D": "Uses less bandwidth"
+      }
+    },
+    {
+      "question": "Which Novel NetWare protocol transfers data but does NOT monitor the transmission?",
+      "answer": "C",
+      "choices": {
+        "A": "SPX",
+        "B": "NCP",
+        "C": "IPX",
+        "D": "CLNS"
       }
     }
   ]
