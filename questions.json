@@ -1,0 +1,744 @@
+{
+  "questions": [
+    {
+      "question": "Which IEEE standard defines wireless networking?",
+      "answer": "C",
+      "choices": {
+        "A": "IEEE 802.3",
+        "B": "IEEE 802.5",
+        "C": "IEEE 802.11",
+        "D": "IEEE 802.8"
+      }
+    },
+    {
+      "question": "What coaxial cable type has an impedance of 75 ohms?",
+      "answer": "D",
+      "choices": {
+        "A": "RG58",
+        "B": "RG8",
+        "C": "RG62",
+        "D": "RG59"
+      }
+    },
+    {
+      "question": "Which cable category supports speeds of 25-40 Gbps?",
+      "answer": "C",
+      "choices": {
+        "A": "CAT 6a",
+        "B": "CAT 7",
+        "C": "CAT 8",
+        "D": "CAT 5e"
+      }
+    },
+    {
+      "question": "Which device operates at the Network layer of the OSI model?",
+      "answer": "C",
+      "choices": {
+        "A": "Hub",
+        "B": "Switch",
+        "C": "Router",
+        "D": "Repeater"
+      }
+    },
+    {
+      "question": "What is the maximum distance for 10BASE5 (Thicknet)?",
+      "answer": "C",
+      "choices": {
+        "A": "100 m",
+        "B": "185 m",
+        "C": "500 m",
+        "D": "2 km"
+      }
+    },
+    {
+      "question": "Which topology provides the highest redundancy?",
+      "answer": "D",
+      "choices": {
+        "A": "Bus",
+        "B": "Star",
+        "C": "Ring",
+        "D": "Mesh"
+      }
+    },
+    {
+      "question": "In the 5-4-3 rule, how many repeaters are allowed?",
+      "answer": "B",
+      "choices": {
+        "A": "3",
+        "B": "4",
+        "C": "5",
+        "D": "2"
+      }
+    },
+    {
+      "question": "Which protocol is used to automatically assign IP addresses?",
+      "answer": "C",
+      "choices": {
+        "A": "DNS",
+        "B": "FTP",
+        "C": "DHCP",
+        "D": "SMTP"
+      }
+    },
+    {
+      "question": "What does NetBEUI stand for?",
+      "answer": "B",
+      "choices": {
+        "A": "Network Basic Extended User Interface",
+        "B": "NetBIOS Extended User Interface",
+        "C": "Network Binary Extended Unit Interface",
+        "D": "NetBIOS Encrypted User Input"
+      }
+    },
+    {
+      "question": "Which Novell NetWare protocol ensures data exchange with no errors?",
+      "answer": "C",
+      "choices": {
+        "A": "NCP",
+        "B": "IPX",
+        "C": "SPX",
+        "D": "DDP"
+      }
+    },
+    {
+      "question": "Which OSI layer is responsible for encryption?",
+      "answer": "D",
+      "choices": {
+        "A": "Session",
+        "B": "Transport",
+        "C": "Network",
+        "D": "Presentation"
+      }
+    },
+    {
+      "question": "What does SLIP stand for?",
+      "answer": "B",
+      "choices": {
+        "A": "Simple Line Internet Protocol",
+        "B": "Serial Line Internet Protocol",
+        "C": "Secured Line IP Protocol",
+        "D": "Standard Line Interface Protocol"
+      }
+    },
+    {
+      "question": "Which AppleTalk protocol is used for PING?",
+      "answer": "C",
+      "choices": {
+        "A": "ATP",
+        "B": "NBP",
+        "C": "AEP",
+        "D": "RTMP"
+      }
+    },
+    {
+      "question": "Which IEEE standard covers Bus Topology using CSMA/CD?",
+      "answer": "C",
+      "choices": {
+        "A": "IEEE 802.1",
+        "B": "IEEE 802.2",
+        "C": "IEEE 802.3",
+        "D": "IEEE 802.4"
+      }
+    },
+    {
+      "question": "What type of cable is used to connect a PC to a Switch?",
+      "answer": "C",
+      "choices": {
+        "A": "Crossover cable",
+        "B": "Rollover cable",
+        "C": "Straight-through cable",
+        "D": "Coaxial cable"
+      }
+    },
+    {
+      "question": "Which encoding scheme uses half -5V transitioning to half +5V to represent a 0?",
+      "answer": "C",
+      "choices": {
+        "A": "NRZ",
+        "B": "RZ",
+        "C": "Manchester",
+        "D": "Bipolar AMI"
+      }
+    },
+    {
+      "question": "What does SNA stand for in IBM networking?",
+      "answer": "B",
+      "choices": {
+        "A": "Secure Network Access",
+        "B": "System Network Architecture",
+        "C": "Standard Networking Application",
+        "D": "Serial Network Access"
+      }
+    },
+    {
+      "question": "Which Banyan VINES protocol handles inter-process communication?",
+      "answer": "D",
+      "choices": {
+        "A": "VIP",
+        "B": "RPC",
+        "C": "VINES",
+        "D": "VIPC"
+      }
+    },
+    {
+      "question": "What is the maximum number of nodes per network for 10BASE2?",
+      "answer": "C",
+      "choices": {
+        "A": "300",
+        "B": "1024",
+        "C": "90",
+        "D": "512"
+      }
+    },
+    {
+      "question": "Which protocol translates domain names into IP addresses?",
+      "answer": "C",
+      "choices": {
+        "A": "DHCP",
+        "B": "ARP",
+        "C": "DNS",
+        "D": "SNMP"
+      }
+    },
+    {
+      "question": "Which layer of the OSI model handles framing?",
+      "answer": "B",
+      "choices": {
+        "A": "Physical",
+        "B": "Data Link",
+        "C": "Network",
+        "D": "Transport"
+      }
+    },
+    {
+      "question": "Which DECnet component refers to an end node device?",
+      "answer": "C",
+      "choices": {
+        "A": "IS",
+        "B": "CLNP",
+        "C": "ES",
+        "D": "PLP"
+      }
+    },
+    {
+      "question": "Which IEEE standard is associated with Token Ring?",
+      "answer": "C",
+      "choices": {
+        "A": "IEEE 802.3",
+        "B": "IEEE 802.4",
+        "C": "IEEE 802.5",
+        "D": "IEEE 802.6"
+      }
+    },
+    {
+      "question": "What does MTU stand for?",
+      "answer": "C",
+      "choices": {
+        "A": "Maximum Transfer Unit",
+        "B": "Minimum Transmission Unit",
+        "C": "Maximum Transmission Unit",
+        "D": "Minimum Transfer Utility"
+      }
+    },
+    {
+      "question": "Which AppleTalk protocol manages full-duplex data streams?",
+      "answer": "B",
+      "choices": {
+        "A": "ATP",
+        "B": "ADSP",
+        "C": "ASP",
+        "D": "AFP"
+      }
+    },
+    {
+      "question": "Which protocol is a non-routable Microsoft networking protocol?",
+      "answer": "B",
+      "choices": {
+        "A": "NetBIOS",
+        "B": "NetBEUI",
+        "C": "IPX",
+        "D": "SPX"
+      }
+    },
+    {
+      "question": "What is the speed range of Fiber Optic cable?",
+      "answer": "B",
+      "choices": {
+        "A": "10 Mbps - 100 Mbps",
+        "B": "100 Mbps - 2 Gbps",
+        "C": "10 Gbps - 25 Gbps",
+        "D": "1 Gbps - 10 Gbps"
+      }
+    },
+    {
+      "question": "Which TCP/IP layer corresponds roughly to the OSI Network layer?",
+      "answer": "C",
+      "choices": {
+        "A": "Application",
+        "B": "Transport",
+        "C": "Internet",
+        "D": "Network Access"
+      }
+    },
+    {
+      "question": "What is the main advantage of PPP over SLIP?",
+      "answer": "C",
+      "choices": {
+        "A": "Higher speed",
+        "B": "Longer distance",
+        "C": "Corrects SLIP drawbacks with better performance",
+        "D": "Uses less bandwidth"
+      }
+    },
+    {
+      "question": "Which Novell NetWare protocol transfers data but does NOT monitor the transmission?",
+      "answer": "C",
+      "choices": {
+        "A": "SPX",
+        "B": "NCP",
+        "C": "IPX",
+        "D": "CLNS"
+      }
+    },
+    {
+      "question": "What does HSRP stand for?",
+      "answer": "A",
+      "choices": {
+        "A": "Hot Standby Router Protocol",
+        "B": "High Speed Routing Protocol",
+        "C": "Host Server Relay Protocol",
+        "D": "Hybrid Switching Router Protocol"
+      }
+    },
+    {
+      "question": "Which IEEE standard defines Internetworking?",
+      "answer": "A",
+      "choices": {
+        "A": "IEEE 802.1",
+        "B": "IEEE 802.2",
+        "C": "IEEE 802.3",
+        "D": "IEEE 802.4"
+      }
+    },
+    {
+      "question": "What is the impedance of RG58 (Thinnet) coaxial cable?",
+      "answer": "B",
+      "choices": {
+        "A": "75 ohms",
+        "B": "50 ohms",
+        "C": "93 ohms",
+        "D": "100 ohms"
+      }
+    },
+    {
+      "question": "Which IEEE standard defines Fiber Optic?",
+      "answer": "D",
+      "choices": {
+        "A": "IEEE 802.5",
+        "B": "IEEE 802.6",
+        "C": "IEEE 802.7",
+        "D": "IEEE 802.8"
+      }
+    },
+    {
+      "question": "What does VRRP stand for?",
+      "answer": "B",
+      "choices": {
+        "A": "Virtual Routing Relay Protocol",
+        "B": "Virtual Router Redundancy Protocol",
+        "C": "VLAN Router Recovery Protocol",
+        "D": "Variable Rate Routing Protocol"
+      }
+    },
+    {
+      "question": "Which coaxial cable type is used for ARCnet?",
+      "answer": "C",
+      "choices": {
+        "A": "RG58",
+        "B": "RG59",
+        "C": "RG62",
+        "D": "RG8"
+      }
+    },
+    {
+      "question": "In the 5-4-3 rule, how many segments can have active devices?",
+      "answer": "A",
+      "choices": {
+        "A": "3",
+        "B": "4",
+        "C": "5",
+        "D": "2"
+      }
+    },
+    {
+      "question": "What does GLBP stand for?",
+      "answer": "C",
+      "choices": {
+        "A": "General Load Balance Protocol",
+        "B": "Global Link Bridging Protocol",
+        "C": "Gateway Load Balancing Protocol",
+        "D": "Group Layer Binding Protocol"
+      }
+    },
+    {
+      "question": "Which device operates at the Physical layer?",
+      "answer": "D",
+      "choices": {
+        "A": "Router",
+        "B": "Switch",
+        "C": "Bridge",
+        "D": "Hub"
+      }
+    },
+    {
+      "question": "What is the maximum distance for 10BASE2 (Thinnet)?",
+      "answer": "B",
+      "choices": {
+        "A": "100 m",
+        "B": "185 m",
+        "C": "500 m",
+        "D": "1000 m"
+      }
+    },
+    {
+      "question": "Which protocol is connection-oriented?",
+      "answer": "A",
+      "choices": {
+        "A": "TCP",
+        "B": "UDP",
+        "C": "ICMP",
+        "D": "ARP"
+      }
+    },
+    {
+      "question": "What does EIGRP stand for?",
+      "answer": "B",
+      "choices": {
+        "A": "Extended Interior Gateway Router Protocol",
+        "B": "Enhanced Interior Gateway Routing Protocol",
+        "C": "Exterior Internet Gateway Routing Protocol",
+        "D": "Extended Internet Gateway Relay Protocol"
+      }
+    },
+    {
+      "question": "Which IEEE standard defines MAN (Metropolitan Area Network)?",
+      "answer": "C",
+      "choices": {
+        "A": "IEEE 802.4",
+        "B": "IEEE 802.5",
+        "C": "IEEE 802.6",
+        "D": "IEEE 802.7"
+      }
+    },
+    {
+      "question": "What does LDAP stand for?",
+      "answer": "D",
+      "choices": {
+        "A": "Local Directory Access Protocol",
+        "B": "Link Data Access Protocol",
+        "C": "Layered Directory Application Protocol",
+        "D": "Lightweight Directory Access Protocol"
+      }
+    },
+    {
+      "question": "Which cable type is highly susceptible to EMI?",
+      "answer": "A",
+      "choices": {
+        "A": "UTP",
+        "B": "STP",
+        "C": "Fiber Optic",
+        "D": "Coaxial"
+      }
+    },
+    {
+      "question": "What does DTP stand for?",
+      "answer": "B",
+      "choices": {
+        "A": "Data Transfer Protocol",
+        "B": "Dynamic Trunking Protocol",
+        "C": "Direct Transmission Protocol",
+        "D": "Distributed Transport Protocol"
+      }
+    },
+    {
+      "question": "Which IEEE standard defines Broadband?",
+      "answer": "C",
+      "choices": {
+        "A": "IEEE 802.5",
+        "B": "IEEE 802.6",
+        "C": "IEEE 802.7",
+        "D": "IEEE 802.8"
+      }
+    },
+    {
+      "question": "What is the main disadvantage of Bus topology?",
+      "answer": "B",
+      "choices": {
+        "A": "High cost",
+        "B": "Backbone failure affects entire network",
+        "C": "Complex installation",
+        "D": "Limited speed"
+      }
+    },
+    {
+      "question": "What does VTP stand for?",
+      "answer": "A",
+      "choices": {
+        "A": "VLAN Trunking Protocol",
+        "B": "Virtual Transport Protocol",
+        "C": "Variable Transmission Protocol",
+        "D": "VLAN Transfer Protocol"
+      }
+    },
+    {
+      "question": "Which CAT cable is used for WiFi routing?",
+      "answer": "B",
+      "choices": {
+        "A": "CAT 5",
+        "B": "CAT 5e",
+        "C": "CAT 6",
+        "D": "CAT 7"
+      }
+    },
+    {
+      "question": "What does CAPWAP stand for?",
+      "answer": "C",
+      "choices": {
+        "A": "Central Access Point Wireless Application Protocol",
+        "B": "Control Access Point Wireless Access Protocol",
+        "C": "Control And Provisioning of Wireless Access Points",
+        "D": "Central Application Protocol for Wireless Access Points"
+      }
+    },
+    {
+      "question": "Which device operates at the Data Link layer?",
+      "answer": "B",
+      "choices": {
+        "A": "Router",
+        "B": "Switch",
+        "C": "Hub",
+        "D": "Repeater"
+      }
+    },
+    {
+      "question": "What does PPTP stand for?",
+      "answer": "A",
+      "choices": {
+        "A": "Point to Point Tunneling Protocol",
+        "B": "Peer to Peer Transfer Protocol",
+        "C": "Private Point Transmission Protocol",
+        "D": "Public Point Transfer Protocol"
+      }
+    },
+    {
+      "question": "Which encoding uses +5V for 0 and -5V for 1?",
+      "answer": "A",
+      "choices": {
+        "A": "NRZ",
+        "B": "RZ",
+        "C": "Manchester",
+        "D": "CMI"
+      }
+    },
+    {
+      "question": "What does GRE stand for?",
+      "answer": "B",
+      "choices": {
+        "A": "General Route Encryption",
+        "B": "Generic Routing Encapsulation",
+        "C": "Gateway Routing Extension",
+        "D": "Global Routing Exchange"
+      }
+    },
+    {
+      "question": "Which IEEE standard defines Network Security?",
+      "answer": "D",
+      "choices": {
+        "A": "IEEE 802.7",
+        "B": "IEEE 802.8",
+        "C": "IEEE 802.9",
+        "D": "IEEE 802.10"
+      }
+    },
+    {
+      "question": "What does SCTP stand for?",
+      "answer": "C",
+      "choices": {
+        "A": "Secure Control Transfer Protocol",
+        "B": "Simple Control Transmission Protocol",
+        "C": "Stream Control Transmission Protocol",
+        "D": "Standard Control Transport Protocol"
+      }
+    },
+    {
+      "question": "What is the frequency of CAT 6a cable?",
+      "answer": "B",
+      "choices": {
+        "A": "100 MHz",
+        "B": "250 MHz",
+        "C": "500 MHz",
+        "D": "1000 MHz"
+      }
+    },
+    {
+      "question": "What does BFD stand for?",
+      "answer": "A",
+      "choices": {
+        "A": "Bidirectional Forwarding Detection",
+        "B": "Binary Flow Distribution",
+        "C": "Broadcast Frame Detection",
+        "D": "Balanced Forwarding Distribution"
+      }
+    },
+    {
+      "question": "Which AppleTalk protocol provides routing tables for routers?",
+      "answer": "D",
+      "choices": {
+        "A": "AEP",
+        "B": "NBP",
+        "C": "ATP",
+        "D": "RTMP"
+      }
+    },
+    {
+      "question": "What does RSVP stand for?",
+      "answer": "B",
+      "choices": {
+        "A": "Remote Server Verification Protocol",
+        "B": "Resource Reservation Protocol",
+        "C": "Routing Service Validation Protocol",
+        "D": "Reliable Stream Verification Protocol"
+      }
+    },
+    {
+      "question": "Which coaxial cable is used for Cable TV (CTV)?",
+      "answer": "C",
+      "choices": {
+        "A": "RG8",
+        "B": "RG58",
+        "C": "RG59",
+        "D": "RG62"
+      }
+    },
+    {
+      "question": "What does MGCP stand for?",
+      "answer": "D",
+      "choices": {
+        "A": "Multicast Gateway Control Protocol",
+        "B": "Media Group Communication Protocol",
+        "C": "Multiple Gateway Connection Protocol",
+        "D": "Media Gateway Control Protocol"
+      }
+    },
+    {
+      "question": "How many nodes per segment are allowed in 10BASE5?",
+      "answer": "C",
+      "choices": {
+        "A": "30",
+        "B": "50",
+        "C": "100",
+        "D": "150"
+      }
+    },
+    {
+      "question": "What does LDP stand for?",
+      "answer": "A",
+      "choices": {
+        "A": "Label Distribution Protocol",
+        "B": "Link Data Protocol",
+        "C": "Local Directory Protocol",
+        "D": "Layer Distribution Protocol"
+      }
+    },
+    {
+      "question": "Which AppleTalk protocol is a name-to-address relating protocol?",
+      "answer": "B",
+      "choices": {
+        "A": "ATP",
+        "B": "NBP",
+        "C": "ASP",
+        "D": "ZIP"
+      }
+    },
+    {
+      "question": "What does MSDP stand for?",
+      "answer": "C",
+      "choices": {
+        "A": "Multicast Service Distribution Protocol",
+        "B": "Multiple Source Data Protocol",
+        "C": "Multicast Source Discovery Protocol",
+        "D": "Media Stream Distribution Protocol"
+      }
+    },
+    {
+      "question": "Which IEEE standard defines LLC (Logical Link Control)?",
+      "answer": "B",
+      "choices": {
+        "A": "IEEE 802.1",
+        "B": "IEEE 802.2",
+        "C": "IEEE 802.3",
+        "D": "IEEE 802.4"
+      }
+    },
+    {
+      "question": "What does PIM stand for?",
+      "answer": "D",
+      "choices": {
+        "A": "Private Internet Multicast",
+        "B": "Protocol Interface Module",
+        "C": "Packet Internet Multiplexing",
+        "D": "Protocol Independent Multicast"
+      }
+    },
+    {
+      "question": "What is the speed of CAT 7 cable?",
+      "answer": "B",
+      "choices": {
+        "A": "1 Gbps",
+        "B": "10 Gbps",
+        "C": "25 Gbps",
+        "D": "40 Gbps"
+      }
+    },
+    {
+      "question": "What does GTP stand for?",
+      "answer": "A",
+      "choices": {
+        "A": "GPRS Tunneling Protocol",
+        "B": "General Transfer Protocol",
+        "C": "Gateway Transport Protocol",
+        "D": "Global Transmission Protocol"
+      }
+    },
+    {
+      "question": "Which IEEE standard defines IVDN (Integrated Voice Data Network)?",
+      "answer": "D",
+      "choices": {
+        "A": "IEEE 802.6",
+        "B": "IEEE 802.7",
+        "C": "IEEE 802.8",
+        "D": "IEEE 802.9"
+      }
+    },
+    {
+      "question": "What does IPFIX stand for?",
+      "answer": "B",
+      "choices": {
+        "A": "Internet Protocol Flow Information",
+        "B": "IP Flow Information Export",
+        "C": "Internet Packet Flow Index",
+        "D": "IP Frame Information Exchange"
+      }
+    },
+    {
+      "question": "Which Banyan VINES protocol is the core routing protocol?",
+      "answer": "A",
+      "choices": {
+        "A": "VIP",
+        "B": "VIPC",
+        "C": "VINES",
+        "D": "RPC"
+      }
+    }
+  ]
+}

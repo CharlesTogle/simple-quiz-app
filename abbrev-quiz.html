@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>NETCOM Abbreviation Quiz</title>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #fff5f7;
+      --surface: #ffffff;
+      --border: #ffd6e0;
+      --accent: #ff4d8d;
+      --accent2: #ff85a8;
+      --accent3: #d63384;
+      --text: #4a2c4a;
+      --muted: #b08b9a;
+      --correct: #10b981;
+      --wrong: #ef4444;
+      --radius: 12px;
+    }
+
+    html { font-size: 16px; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Syne', sans-serif;
+      min-height: 100vh;
+      padding: 0;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(255,77,141,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,77,141,0.03) 1px, transparent 1px);
+      background-size: 40px 40px;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .glow-orb {
+      position: fixed;
+      width: 500px;
+      height: 500px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(255,77,141,0.08) 0%, transparent 70%);
+      top: -150px;
+      right: -150px;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    #app {
+      position: relative;
+      z-index: 1;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 24px 20px 60px;
+    }
+
+    .header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 32px;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .logo {
+      font-size: 1.1rem;
+      font-weight: 800;
+      color: var(--accent);
+      letter-spacing: -0.02em;
+      font-family: 'Space Mono', monospace;
+    }
+    .logo span { color: var(--muted); font-weight: 400; }
+
+    .header-controls {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 9px 16px;
+      border-radius: 8px;
+      border: 2px solid var(--border);
+      background: var(--surface);
+      color: var(--text);
+      font-family: 'Space Mono', monospace;
+      font-size: 0.78rem;
+      cursor: pointer;
+      transition: all 0.15s ease;
+      white-space: nowrap;
+    }
+    .btn:hover { border-color: var(--accent); color: var(--accent); }
+    .btn.primary {
+      background: var(--accent);
+      color: white;
+      border-color: var(--accent);
+      font-weight: 700;
+    }
+    .btn.primary:hover { background: var(--accent3); border-color: var(--accent3); }
+    .btn.danger { border-color: var(--wrong); color: var(--wrong); }
+    .btn.danger:hover { background: rgba(239,68,68,0.1); }
+    .btn:disabled { opacity: 0.4; cursor: not-allowed; }
+
+    .file-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 9px 16px;
+      border-radius: 8px;
+      border: 2px dashed var(--accent2);
+      background: rgba(255,77,141,0.05);
+      color: var(--accent);
+      font-family: 'Space Mono', monospace;
+      font-size: 0.78rem;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+    .file-label:hover { background: rgba(255,77,141,0.12); }
+    #fileInput { display: none; }
+
+    .home-link {
+      color: var(--accent);
+      text-decoration: none;
+      font-family: 'Space Mono', monospace;
+      font-size: 0.78rem;
+      padding: 9px 16px;
+      border: 2px solid var(--border);
+      border-radius: 8px;
+      transition: all 0.15s ease;
+    }
+    .home-link:hover { border-color: var(--accent); background: rgba(255,77,141,0.05); }
+
+    .progress-wrap { margin-bottom: 28px; }
+    .progress-meta {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.75rem;
+      font-family: 'Space Mono', monospace;
+      color: var(--muted);
+      margin-bottom: 8px;
+    }
+    .progress-bar {
+      height: 4px;
+      background: var(--border);
+      border-radius: 2px;
+      overflow: hidden;
+    }
+    .progress-fill {
+      height: 100%;
+      background: linear-gradient(90deg, var(--accent), var(--accent3));
+      border-radius: 2px;
+      transition: width 0.4s ease;
+    }
+
+    .question-card {
+      background: var(--surface);
+      border: 2px solid var(--border);
+      border-radius: var(--radius);
+      padding: 28px;
+      margin-bottom: 16px;
+      position: relative;
+      overflow: hidden;
+      animation: slideIn 0.3s ease;
+      box-shadow: 0 2px 12px rgba(255,77,141,0.06);
+    }
+    @keyframes slideIn {
+      from { opacity: 0; transform: translateY(12px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .question-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--accent), var(--accent3));
+    }
+
+    .q-number {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.7rem;
+      color: var(--accent);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    .q-abbrev {
+      font-size: 2rem;
+      font-weight: 800;
+      line-height: 1.2;
+      color: var(--accent3);
+      margin-bottom: 8px;
+      font-family: 'Space Mono', monospace;
+    }
+
+    .q-prompt {
+      font-size: 0.9rem;
+      color: var(--muted);
+      margin-bottom: 20px;
+    }
+
+    .answer-input {
+      width: 100%;
+      padding: 14px 16px;
+      border-radius: 8px;
+      border: 2px solid var(--border);
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Syne', sans-serif;
+      font-size: 1rem;
+      transition: all 0.15s ease;
+    }
+    .answer-input:focus {
+      outline: none;
+      border-color: var(--accent);
+      background: white;
+    }
+    .answer-input:disabled {
+      opacity: 0.7;
+      cursor: not-allowed;
+    }
+    .answer-input.correct {
+      border-color: var(--correct);
+      background: rgba(16,185,129,0.08);
+    }
+    .answer-input.wrong {
+      border-color: var(--wrong);
+      background: rgba(239,68,68,0.08);
+    }
+
+    .correct-answer {
+      margin-top: 12px;
+      padding: 10px 14px;
+      background: rgba(16,185,129,0.1);
+      border-radius: 6px;
+      font-size: 0.85rem;
+      color: var(--correct);
+      font-family: 'Space Mono', monospace;
+      display: none;
+    }
+    .correct-answer.show { display: block; }
+
+    .q-status {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      font-family: 'Space Mono', monospace;
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      padding: 4px 10px;
+      border-radius: 4px;
+    }
+    .q-status.correct { background: rgba(16,185,129,0.15); color: var(--correct); }
+    .q-status.wrong   { background: rgba(239,68,68,0.15); color: var(--wrong); }
+
+    .bottom-bar {
+      display: flex;
+      justify-content: flex-end;
+      margin-top: 24px;
+    }
+
+    .results-panel {
+      background: var(--surface);
+      border: 2px solid var(--border);
+      border-radius: var(--radius);
+      padding: 32px;
+      margin-bottom: 28px;
+      text-align: center;
+      animation: slideIn 0.3s ease;
+      box-shadow: 0 4px 20px rgba(255,77,141,0.1);
+    }
+    .results-score {
+      font-family: 'Space Mono', monospace;
+      font-size: 3.5rem;
+      font-weight: 700;
+      color: var(--accent);
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+    .results-label {
+      font-size: 0.85rem;
+      color: var(--muted);
+      font-family: 'Space Mono', monospace;
+      margin-bottom: 24px;
+    }
+    .results-stats {
+      display: flex;
+      justify-content: center;
+      gap: 32px;
+      flex-wrap: wrap;
+      margin-bottom: 28px;
+    }
+    .stat {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 4px;
+    }
+    .stat-val { font-size: 1.5rem; font-weight: 700; }
+    .stat-key { font-size: 0.72rem; font-family: 'Space Mono', monospace; color: var(--muted); }
+    .stat.correct .stat-val { color: var(--correct); }
+    .stat.wrong .stat-val { color: var(--wrong); }
+
+    .results-actions {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .toggle-row {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 16px;
+      font-size: 0.8rem;
+      color: var(--muted);
+      font-family: 'Space Mono', monospace;
+    }
+
+    .toggle {
+      position: relative;
+      width: 44px;
+      height: 24px;
+      background: var(--border);
+      border-radius: 12px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .toggle.active { background: var(--accent); }
+    .toggle::after {
+      content: '';
+      position: absolute;
+      top: 3px;
+      left: 3px;
+      width: 18px;
+      height: 18px;
+      background: white;
+      border-radius: 50%;
+      transition: all 0.2s ease;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    .toggle.active::after { left: 23px; }
+
+    .toast {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      padding: 12px 20px;
+      background: var(--surface);
+      border: 2px solid var(--accent);
+      border-radius: 8px;
+      font-family: 'Space Mono', monospace;
+      font-size: 0.8rem;
+      color: var(--accent);
+      z-index: 999;
+      animation: fadeUp 0.3s ease;
+      max-width: 300px;
+      box-shadow: 0 4px 20px rgba(255,77,141,0.2);
+    }
+    .toast.error { border-color: var(--wrong); color: var(--wrong); }
+    @keyframes fadeUp {
+      from { opacity:0; transform: translateY(12px); }
+      to   { opacity:1; transform: translateY(0); }
+    }
+
+    .empty-state {
+      text-align: center;
+      padding: 80px 20px;
+      color: var(--muted);
+    }
+    .empty-state h2 { font-size: 1.2rem; margin-bottom: 8px; color: var(--text); }
+    .empty-state p  { font-size: 0.85rem; font-family: 'Space Mono', monospace; }
+
+    @media (max-width: 560px) {
+      .header { flex-direction: column; align-items: flex-start; }
+      .results-score { font-size: 2.5rem; }
+      .q-abbrev { font-size: 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+<div class="glow-orb"></div>
+<div id="app">
+
+  <div class="header">
+    <div class="logo">NETCOM<span>/abbrev</span></div>
+    <div class="header-controls">
+      <a href="index.html" class="home-link">Home</a>
+      <label class="file-label" for="fileInput">Load JSON</label>
+      <input type="file" id="fileInput" accept=".json" />
+      <button class="btn" id="btnShuffle" onclick="shuffleAndRestart()">Shuffle</button>
+      <button class="btn" id="btnRevert" style="display:none" onclick="revertToOriginal()">Revert</button>
+    </div>
+  </div>
+
+  <div id="quizArea"></div>
+</div>
+
+<script>
+let allItems = [];
+let originalItems = [];
+let userAnswers = {};
+let submitted = false;
+let autoDownload = true;
+
+function getUrlParam(name) {
+  const params = new URLSearchParams(window.location.search);
+  return params.get(name);
+}
+
+(function init() {
+  const customData = sessionStorage.getItem('customABQuiz');
+  const isCustom = getUrlParam('custom') === 'true';
+  const fileParam = getUrlParam('file');
+
+  if (isCustom && customData) {
+    sessionStorage.removeItem('customABQuiz');
+    try {
+      const data = JSON.parse(customData);
+      loadAbbreviations(data);
+    } catch(e) {
+      renderEmpty();
+    }
+  } else {
+    const targetFile = fileParam || 'abbreviations.json';
+    fetch(targetFile)
+      .then(r => r.json())
+      .then(data => loadAbbreviations(data))
+      .catch(() => renderEmpty());
+  }
+})();
+
+document.getElementById('fileInput').addEventListener('change', function(e) {
+  const file = e.target.files[0];
+  if (!file) return;
+  const reader = new FileReader();
+  reader.onload = function(ev) {
+    try {
+      const data = JSON.parse(ev.target.result);
+      loadAbbreviations(data);
+    } catch(err) {
+      showToast('Invalid JSON file', true);
+    }
+  };
+  reader.readAsText(file);
+  this.value = '';
+});
+
+function loadAbbreviations(data) {
+  let items = [];
+  const abbrevObj = data.abbreviations || data;
+
+  if (typeof abbrevObj !== 'object' || Array.isArray(abbrevObj)) {
+    showToast('Invalid format. Use {"ABBR": "Full Name"}', true);
+    return;
+  }
+
+  for (const [abbr, full] of Object.entries(abbrevObj)) {
+    items.push({ abbr, full });
+  }
+
+  if (items.length === 0) {
+    showToast('No abbreviations found', true);
+    return;
+  }
+
+  items = shuffleArray(items);
+  allItems = items;
+  if (!originalItems.length) originalItems = [...items];
+  userAnswers = {};
+  submitted = false;
+  document.getElementById('btnRevert').style.display = 'none';
+  renderQuiz();
+  showToast(`Loaded ${allItems.length} abbreviations`);
+}
+
+function shuffleArray(arr) {
+  const a = [...arr];
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+}
+
+function shuffleAndRestart() {
+  if (!allItems.length) return;
+  allItems = shuffleArray(allItems);
+  userAnswers = {};
+  submitted = false;
+  const panel = document.getElementById('resultsPanel');
+  if (panel) panel.remove();
+  renderQuiz();
+  showToast('Questions shuffled!');
+}
+
+function renderQuiz() {
+  const area = document.getElementById('quizArea');
+  if (!allItems.length) { renderEmpty(); return; }
+  submitted = false;
+
+  let html = `
+    <div class="progress-wrap">
+      <div class="progress-meta">
+        <span>0 / ${allItems.length} answered</span>
+        <span id="progressPct">0%</span>
+      </div>
+      <div class="progress-bar"><div class="progress-fill" id="progressFill" style="width:0%"></div></div>
+    </div>
+    <div id="questions">`;
+
+  allItems.forEach((item, i) => {
+    html += `
+      <div class="question-card" id="qcard-${i}">
+        <div class="q-number">Item ${i + 1} of ${allItems.length}</div>
+        <div class="q-abbrev">${escHtml(item.abbr)}</div>
+        <div class="q-prompt">What does this abbreviation stand for?</div>
+        <input type="text" class="answer-input" id="input-${i}"
+               placeholder="Type the full form..."
+               onkeyup="handleInput(${i}, event)"
+               autocomplete="off" />
+        <div class="correct-answer" id="correct-${i}">Correct: ${escHtml(item.full)}</div>
+      </div>`;
+  });
+
+  html += `</div>
+    <div class="bottom-bar">
+      <button class="btn primary" onclick="submitQuiz()">Submit Quiz</button>
+    </div>`;
+
+  area.innerHTML = html;
+}
+
+function handleInput(i, event) {
+  if (submitted) return;
+  const val = event.target.value.trim();
+  if (val) {
+    userAnswers[i] = val;
+  } else {
+    delete userAnswers[i];
+  }
+  updateProgress();
+}
+
+function updateProgress() {
+  const answered = Object.keys(userAnswers).length;
+  const total = allItems.length;
+  const pct = Math.round((answered / total) * 100);
+  const fill = document.getElementById('progressFill');
+  const pctEl = document.getElementById('progressPct');
+  if (fill) fill.style.width = pct + '%';
+  if (pctEl) pctEl.textContent = pct + '%';
+  const metaSpans = document.querySelectorAll('.progress-meta span');
+  if (metaSpans[0]) metaSpans[0].textContent = `${answered} / ${total} answered`;
+}
+
+function normalize(str) {
+  return str.toLowerCase()
+    .replace(/[^a-z0-9\s]/g, '')
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+
+function submitQuiz() {
+  if (!allItems.length) return;
+  const unanswered = allItems.length - Object.keys(userAnswers).length;
+  if (unanswered > 0) {
+    if (!confirm(`You have ${unanswered} unanswered item(s). Submit anyway?`)) return;
+  }
+  submitted = true;
+
+  let correct = 0, wrong = 0;
+  const wrongItems = [];
+
+  allItems.forEach((item, i) => {
+    const input = document.getElementById(`input-${i}`);
+    const correctDiv = document.getElementById(`correct-${i}`);
+    const card = document.getElementById(`qcard-${i}`);
+    const userAns = userAnswers[i] || '';
+
+    input.disabled = true;
+
+    const isCorrect = normalize(userAns) === normalize(item.full);
+
+    const oldStatus = card.querySelector('.q-status');
+    if (oldStatus) oldStatus.remove();
+
+    const badge = document.createElement('div');
+    badge.className = 'q-status';
+
+    if (isCorrect) {
+      input.classList.add('correct');
+      badge.classList.add('correct');
+      badge.textContent = 'CORRECT';
+      correct++;
+    } else {
+      input.classList.add('wrong');
+      badge.classList.add('wrong');
+      badge.textContent = 'WRONG';
+      correctDiv.classList.add('show');
+      wrong++;
+      wrongItems.push(item);
+    }
+    card.appendChild(badge);
+  });
+
+  const area = document.getElementById('quizArea');
+  const resultsHtml = buildResultsHtml(correct, wrong, allItems.length, wrongItems);
+  const tempDiv = document.createElement('div');
+  tempDiv.innerHTML = resultsHtml;
+  area.insertBefore(tempDiv.firstElementChild, area.firstChild);
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+
+  window._wrongItems = wrongItems;
+}
+
+function buildResultsHtml(correct, wrong, total, wrongItems) {
+  const pct = Math.round((correct / total) * 100);
+  return `
+    <div class="results-panel" id="resultsPanel">
+      <div class="results-score">${pct}%</div>
+      <div class="results-label">${correct} correct out of ${total} items</div>
+      <div class="results-stats">
+        <div class="stat correct"><div class="stat-val">${correct}</div><div class="stat-key">CORRECT</div></div>
+        <div class="stat wrong"><div class="stat-val">${wrong}</div><div class="stat-key">WRONG</div></div>
+        <div class="stat"><div class="stat-val">${total}</div><div class="stat-key">TOTAL</div></div>
+      </div>
+      <div class="results-actions">
+        <button class="btn primary" onclick="retakeQuiz()">Retake</button>
+        ${wrongItems.length > 0 ? `<button class="btn danger" onclick="retryWrong()">Retry Wrong (${wrongItems.length})</button>` : ''}
+        <button class="btn" onclick="window.scrollTo({top:document.getElementById('questions').offsetTop-20,behavior:'smooth'})">Review Answers</button>
+      </div>
+      <div class="toggle-row">
+        <span>Auto-download wrong on retry:</span>
+        <div class="toggle ${autoDownload ? 'active' : ''}" onclick="toggleAutoDownload(this)"></div>
+      </div>
+    </div>`;
+}
+
+function toggleAutoDownload(el) {
+  autoDownload = !autoDownload;
+  el.classList.toggle('active', autoDownload);
+  showToast(`Auto-download ${autoDownload ? 'ON' : 'OFF'}`);
+}
+
+function retakeQuiz() {
+  userAnswers = {};
+  submitted = false;
+  const panel = document.getElementById('resultsPanel');
+  if (panel) panel.remove();
+  allItems = shuffleArray(allItems);
+  renderQuiz();
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+  showToast('Questions reshuffled!');
+}
+
+function retryWrong() {
+  if (!window._wrongItems || !window._wrongItems.length) {
+    showToast('No wrong items to retry!', true);
+    return;
+  }
+
+  if (autoDownload) {
+    const wrongObj = {};
+    window._wrongItems.forEach(item => {
+      wrongObj[item.abbr] = item.full;
+    });
+    downloadJSON({ abbreviations: wrongObj }, 'wrong-abbreviations.json');
+  }
+
+  setTimeout(() => {
+    originalItems = allItems.length ? [...allItems] : originalItems;
+    allItems = shuffleArray(window._wrongItems);
+    userAnswers = {};
+    submitted = false;
+    document.getElementById('btnRevert').style.display = '';
+    renderQuiz();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    showToast(`Retrying ${allItems.length} wrong item(s)`);
+  }, 300);
+}
+
+function revertToOriginal() {
+  if (!originalItems.length) { showToast('No original to revert to', true); return; }
+  allItems = shuffleArray([...originalItems]);
+  userAnswers = {};
+  submitted = false;
+  document.getElementById('btnRevert').style.display = 'none';
+  renderQuiz();
+  showToast('Reverted to original set');
+}
+
+function downloadJSON(obj, filename) {
+  const blob = new Blob([JSON.stringify(obj, null, 2)], { type: 'application/json' });
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = filename;
+  a.click();
+  URL.revokeObjectURL(a.href);
+}
+
+function escHtml(str) {
+  return String(str)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;');
+}
+
+function renderEmpty() {
+  document.getElementById('quizArea').innerHTML = `
+    <div class="empty-state">
+      <h2>No abbreviations loaded</h2>
+      <p>Upload a JSON file using the button above,<br/>or place abbreviations.json in the same folder.</p>
+      <br/>
+      <p>Format: {"TCP": "Transmission Control Protocol", ...}</p>
+    </div>`;
+}
+
+let toastTimer;
+function showToast(msg, isError) {
+  const existing = document.querySelector('.toast');
+  if (existing) existing.remove();
+  clearTimeout(toastTimer);
+  const t = document.createElement('div');
+  t.className = 'toast' + (isError ? ' error' : '');
+  t.textContent = msg;
+  document.body.appendChild(t);
+  toastTimer = setTimeout(() => t.remove(), 3000);
+}
+</script>
+</body>
+</html>
