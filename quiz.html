@@ -528,6 +528,7 @@ let userAnswers = {};
 let submitted = false;
 let savedFileName = 'questions.json';
 let autoDownload = true;
+let toastTimer;
 
 function getTheme() { return localStorage.getItem('quizTheme') || 'dark'; }
 function setTheme(theme) {
@@ -821,7 +822,6 @@ function renderEmpty() {
     </div>`;
 }
 
-let toastTimer;
 function showToast(msg, isError) {
   document.querySelector('.toast')?.remove();
   clearTimeout(toastTimer);
