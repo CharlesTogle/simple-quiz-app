@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>NETCOM Quiz Hub</title>
+  <title>Manual Quiz App</title>
   <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet"/>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -147,7 +147,7 @@
     }
 
     .logo {
-      font-size: 2.5rem;
+      font-size: 2.2rem;
       font-weight: 800;
       color: var(--accent);
       letter-spacing: -0.02em;
@@ -377,8 +377,66 @@
       <span>Pink Mode</span>
       <button class="theme-toggle-btn" id="themeToggle" onclick="toggleTheme()"></button>
     </div>
-    <div class="logo">NETCOM<span>/hub</span></div>
-    <p class="tagline">Your networking quiz companion</p>
+    <div class="logo">Manual Quiz App</div>
+    <p class="tagline">Create custom quizzes with AI assistance</p>
+  </div>
+
+  <div class="section">
+    <div class="section-title">
+      <span class="icon">&#x1F4DA;</span>
+      How to Use This App
+    </div>
+    <p class="section-desc" style="margin-bottom: 16px;">Follow these steps to create your custom quiz:</p>
+
+    <div style="background: var(--bg); border: 1px solid var(--border); border-radius: 10px; padding: 20px; margin-bottom: 24px; font-family: 'Space Mono', monospace; font-size: 0.85rem; line-height: 1.6;">
+      <div style="color: var(--accent); font-weight: 700; margin-bottom: 12px;">Step 1: Prepare Your Material</div>
+      <div style="color: var(--muted); margin-bottom: 16px;">Download or gather your study material in PDF, MD (Markdown), or PPTX format.</div>
+
+      <div style="color: var(--accent); font-weight: 700; margin-bottom: 12px;">Step 2: Generate JSON with AI</div>
+      <div style="color: var(--muted); margin-bottom: 8px;">Use AI agents like Claude or ChatGPT to convert your material into a quiz JSON file.</div>
+
+      <div style="margin-left: 16px; margin-bottom: 12px;">
+        <div style="color: var(--accent3); font-weight: 600; margin-bottom: 8px;">For Multiple Choice:</div>
+        <pre style="background: var(--surface); padding: 12px; border-radius: 6px; overflow-x: auto; font-size: 0.75rem; border: 1px solid var(--border);">{
+  "questions": [
+    {
+      "question": "What is TCP?",
+      "answer": "A",
+      "choices": {
+        "A": "Transmission Control Protocol",
+        "B": "Transfer Communication Protocol",
+        "C": "Total Connection Protocol",
+        "D": "Tactical Computing Protocol"
+      }
+    }
+  ]
+}</pre>
+      </div>
+
+      <div style="margin-left: 16px; margin-bottom: 16px;">
+        <div style="color: var(--accent3); font-weight: 600; margin-bottom: 8px;">For Abbreviations:</div>
+        <pre style="background: var(--surface); padding: 12px; border-radius: 6px; overflow-x: auto; font-size: 0.75rem; border: 1px solid var(--border);">{
+  "abbreviations": {
+    "TCP": "Transmission Control Protocol",
+    "UDP": "User Datagram Protocol",
+    "HTTP": "HyperText Transfer Protocol"
+  }
+}</pre>
+      </div>
+
+      <div style="color: var(--accent); font-weight: 700; margin-bottom: 12px;">Step 3: Upload Your JSON</div>
+      <div style="color: var(--muted); margin-bottom: 16px;">Choose your quiz type below and click "Upload JSON" to load your custom questions.</div>
+
+      <div style="color: var(--accent); font-weight: 700; margin-bottom: 12px;">Troubleshooting</div>
+      <div style="color: var(--muted);">
+        If you see "No questions detected":
+        <ul style="margin-top: 8px; margin-left: 20px;">
+          <li>Try re-uploading the file</li>
+          <li>Verify your JSON matches the format above exactly</li>
+          <li>Regenerate the JSON file with your AI agent if option 1 didn't work</li>
+        </ul>
+      </div>
+    </div>
   </div>
 
   <div class="section">
@@ -407,8 +465,8 @@
 
     <label class="upload-zone" for="mcUpload">
       <input type="file" id="mcUpload" accept=".json" onchange="handleMCUpload(event)" />
-      <div class="label">Click to upload JSON</div>
-      <div class="hint">Format: {"questions": [...]}</div>
+      <div class="label">Upload JSON</div>
+      <div class="hint">Upload your custom multiple choice quiz</div>
     </label>
   </div>
 
@@ -438,13 +496,13 @@
 
     <label class="upload-zone" for="abUpload">
       <input type="file" id="abUpload" accept=".json" onchange="handleABUpload(event)" />
-      <div class="label">Click to upload JSON</div>
-      <div class="hint">Format: {"abbreviations": {"TCP": "...", ...}}</div>
+      <div class="label">Upload JSON</div>
+      <div class="hint">Upload your custom abbreviations quiz</div>
     </label>
   </div>
 
   <div class="footer">
-    <p>NETCOM Quiz Hub</p>
+    <p>Manual Quiz App - Create custom quizzes with AI</p>
   </div>
 </div>
 
@@ -505,7 +563,7 @@ function handleMCUpload(e) {
         showToast('Invalid format. Need {"questions": [...]}');
         return;
       }
-      sessionStorage.setItem('customMCQuiz', ev.target.result);
+      localStorage.setItem('customMCQuiz', ev.target.result);
       window.location.href = 'quiz.html?custom=true';
     } catch(err) {
       showToast('Invalid JSON file');
@@ -526,7 +584,7 @@ function handleABUpload(e) {
         showToast('Invalid format');
         return;
       }
-      sessionStorage.setItem('customABQuiz', ev.target.result);
+      localStorage.setItem('customABQuiz', ev.target.result);
       window.location.href = 'abbrev-quiz.html?custom=true';
     } catch(err) {
       showToast('Invalid JSON file');

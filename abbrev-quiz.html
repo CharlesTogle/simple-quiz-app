@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>NETCOM Abbreviation Quiz</title>
+  <title>Manual Quiz App - Abbreviations</title>
   <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet"/>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -466,7 +466,7 @@
 <div id="app">
 
   <div class="header">
-    <div class="logo">NETCOM<span>/abbrev</span></div>
+    <div class="logo">Manual Quiz App<span>/abbrev</span></div>
     <div class="header-controls">
       <button class="theme-toggle-btn" id="themeToggle" onclick="toggleTheme()" title="Toggle Pink Mode"></button>
       <a href="index.html" class="home-link">Home</a>
@@ -507,12 +507,12 @@ function getUrlParam(name) {
 }
 
 (function init() {
-  const customData = sessionStorage.getItem('customABQuiz');
+  const customData = localStorage.getItem('customABQuiz');
   const isCustom = getUrlParam('custom') === 'true';
   const fileParam = getUrlParam('file');
 
   if (isCustom && customData) {
-    sessionStorage.removeItem('customABQuiz');
+    localStorage.removeItem('customABQuiz');
     try {
       const data = JSON.parse(customData);
       loadAbbreviations(data);
