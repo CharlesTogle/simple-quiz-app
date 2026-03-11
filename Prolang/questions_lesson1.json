@@ -1,0 +1,204 @@
+{
+  "questions": [
+    {
+      "question": "Which is listed as a reason for studying concepts of programming languages?",
+      "answer": "A",
+      "choices": {
+        "A": "Increased ability to express ideas",
+        "B": "Guaranteed lower hardware costs",
+        "C": "Elimination of all bugs",
+        "D": "Removal of the need for documentation"
+      }
+    },
+    {
+      "question": "Which programming domain is associated with large numbers of floating point computations and use of arrays?",
+      "answer": "B",
+      "choices": {
+        "A": "Business applications",
+        "B": "Scientific applications",
+        "C": "Artificial intelligence",
+        "D": "Systems programming"
+      }
+    },
+    {
+      "question": "Which language is listed under business applications?",
+      "answer": "C",
+      "choices": {
+        "A": "LISP",
+        "B": "C",
+        "C": "COBOL",
+        "D": "Java"
+      }
+    },
+    {
+      "question": "Which language is listed under artificial intelligence?",
+      "answer": "A",
+      "choices": {
+        "A": "LISP",
+        "B": "Fortran",
+        "C": "COBOL",
+        "D": "C"
+      }
+    },
+    {
+      "question": "Which evaluation criterion refers to the ease with which programs can be read and understood?",
+      "answer": "D",
+      "choices": {
+        "A": "Writability",
+        "B": "Reliability",
+        "C": "Cost",
+        "D": "Readability"
+      }
+    },
+    {
+      "question": "Which evaluation criterion includes training programmers, writing programs, executing programs, and maintaining programs?",
+      "answer": "B",
+      "choices": {
+        "A": "Reliability",
+        "B": "Cost",
+        "C": "Readability",
+        "D": "Portability"
+      }
+    },
+    {
+      "question": "Under readability, which item is listed as part of overall simplicity?",
+      "answer": "C",
+      "choices": {
+        "A": "Unlimited operator overloading",
+        "B": "Maximum feature multiplicity",
+        "C": "Minimal operator overloading",
+        "D": "Mandatory dynamic typing"
+      }
+    },
+    {
+      "question": "Which readability factor states that a relatively small set of primitive constructs can be combined in a relatively small number of ways?",
+      "answer": "A",
+      "choices": {
+        "A": "Orthogonality",
+        "B": "Portability",
+        "C": "Reliability",
+        "D": "Generality"
+      }
+    },
+    {
+      "question": "Which writability factor is described as the ability to define and use complex structures or operations in ways that allow details to be ignored?",
+      "answer": "B",
+      "choices": {
+        "A": "Expressivity",
+        "B": "Support for abstraction",
+        "C": "Syntax considerations",
+        "D": "Orthogonality"
+      }
+    },
+    {
+      "question": "Which reliability factor involves testing for type errors?",
+      "answer": "C",
+      "choices": {
+        "A": "Aliasing",
+        "B": "Readability",
+        "C": "Type checking",
+        "D": "Writability"
+      }
+    },
+    {
+      "question": "Portability is defined as what?",
+      "answer": "D",
+      "choices": {
+        "A": "The ease of learning new languages",
+        "B": "The completeness of the official definition",
+        "C": "The ability to define complex structures",
+        "D": "The ease with which programs can be moved from one implementation to another"
+      }
+    },
+    {
+      "question": "Which is listed as an influence on language design?",
+      "answer": "A",
+      "choices": {
+        "A": "Computer architecture",
+        "B": "Color depth",
+        "C": "Screen resolution",
+        "D": "Battery capacity"
+      }
+    },
+    {
+      "question": "In the von Neumann architecture, where are data and programs stored?",
+      "answer": "B",
+      "choices": {
+        "A": "In the CPU only",
+        "B": "In memory",
+        "C": "In external input devices",
+        "D": "In the control unit"
+      }
+    },
+    {
+      "question": "In the fetch-execute cycle, what happens after fetching the instruction pointed by the counter?",
+      "answer": "C",
+      "choices": {
+        "A": "Execute the instruction",
+        "B": "Stop the cycle",
+        "C": "Increment the counter",
+        "D": "Set DOOMSDAY to FALSE"
+      }
+    },
+    {
+      "question": "Which language category is described as rule-based with rules specified in no particular order?",
+      "answer": "A",
+      "choices": {
+        "A": "Logic",
+        "B": "Functional",
+        "C": "Imperative",
+        "D": "Markup/programming hybrid"
+      }
+    },
+    {
+      "question": "Which language is listed as an example of a logic language?",
+      "answer": "D",
+      "choices": {
+        "A": "LISP",
+        "B": "Java",
+        "C": "C",
+        "D": "Prolog"
+      }
+    },
+    {
+      "question": "Which trade-off example states that APL provides many powerful operators but at the cost of poor readability?",
+      "answer": "B",
+      "choices": {
+        "A": "Reliability vs. cost of execution",
+        "B": "Readability vs. writability",
+        "C": "Writability vs. reliability",
+        "D": "Portability vs. generality"
+      }
+    },
+    {
+      "question": "In compilation, which phase converts characters in the source program into lexical units?",
+      "answer": "A",
+      "choices": {
+        "A": "Lexical analysis",
+        "B": "Syntax analysis",
+        "C": "Semantics analysis",
+        "D": "Code generation"
+      }
+    },
+    {
+      "question": "Which statement about pure interpretation is listed in Lesson 1?",
+      "answer": "C",
+      "choices": {
+        "A": "It always requires compilation to machine code",
+        "B": "It is faster than compiled programs",
+        "C": "It involves no translation",
+        "D": "It replaces the need for an interpreter"
+      }
+    },
+    {
+      "question": "What does a preprocessor do according to the lesson?",
+      "answer": "D",
+      "choices": {
+        "A": "Optimizes machine code at run time",
+        "B": "Executes source code directly",
+        "C": "Generates object files after linking",
+        "D": "Expands embedded preprocessor macros before compilation"
+      }
+    }
+  ]
+}

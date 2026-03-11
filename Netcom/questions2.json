@@ -1,0 +1,304 @@
+{
+  "questions": [
+    {
+      "question": "Which IEEE standard defines wireless networking?",
+      "answer": "C",
+      "choices": {
+        "A": "IEEE 802.3",
+        "B": "IEEE 802.5",
+        "C": "IEEE 802.11",
+        "D": "IEEE 802.8"
+      }
+    },
+    {
+      "question": "What coaxial cable type has an impedance of 75 Ω?",
+      "answer": "D",
+      "choices": {
+        "A": "RG58",
+        "B": "RG8",
+        "C": "RG62",
+        "D": "RG59"
+      }
+    },
+    {
+      "question": "Which cable category supports speeds of 25–40 Gbps?",
+      "answer": "C",
+      "choices": {
+        "A": "CAT 6a",
+        "B": "CAT 7",
+        "C": "CAT 8",
+        "D": "CAT 5e"
+      }
+    },
+    {
+      "question": "Which device operates at the Network layer of the OSI model?",
+      "answer": "C",
+      "choices": {
+        "A": "Hub",
+        "B": "Switch",
+        "C": "Router",
+        "D": "Repeater"
+      }
+    },
+    {
+      "question": "What is the maximum distance for 10BASE5 (Thicknet)?",
+      "answer": "C",
+      "choices": {
+        "A": "100 m",
+        "B": "185 m",
+        "C": "500 m",
+        "D": "2 km"
+      }
+    },
+    {
+      "question": "Which topology provides the highest redundancy?",
+      "answer": "D",
+      "choices": {
+        "A": "Bus",
+        "B": "Star",
+        "C": "Ring",
+        "D": "Mesh"
+      }
+    },
+    {
+      "question": "In the 5-4-3 rule, how many repeaters are allowed?",
+      "answer": "B",
+      "choices": {
+        "A": "3",
+        "B": "4",
+        "C": "5",
+        "D": "2"
+      }
+    },
+    {
+      "question": "Which protocol is used to automatically assign IP addresses?",
+      "answer": "C",
+      "choices": {
+        "A": "DNS",
+        "B": "FTP",
+        "C": "DHCP",
+        "D": "SMTP"
+      }
+    },
+    {
+      "question": "What does NETBEUI stand for?",
+      "answer": "B",
+      "choices": {
+        "A": "Network Basic Extended User Interface",
+        "B": "NetBIOS Extended User Interface",
+        "C": "Network Binary Extended Unit Interface",
+        "D": "NetBIOS Encrypted User Input"
+      }
+    },
+    {
+      "question": "Which Novel NetWare protocol ensures data exchange with no errors?",
+      "answer": "C",
+      "choices": {
+        "A": "NCP",
+        "B": "IPX",
+        "C": "SPX",
+        "D": "DDP"
+      }
+    },
+    {
+      "question": "Which OSI layer is responsible for encryption?",
+      "answer": "D",
+      "choices": {
+        "A": "Session",
+        "B": "Transport",
+        "C": "Network",
+        "D": "Presentation"
+      }
+    },
+    {
+      "question": "What does SLIP stand for?",
+      "answer": "B",
+      "choices": {
+        "A": "Simple Line Internet Protocol",
+        "B": "Serial Line Internet Protocol",
+        "C": "Secured Line IP Protocol",
+        "D": "Standard Line Interface Protocol"
+      }
+    },
+    {
+      "question": "Which AppleTalk protocol is used for PING?",
+      "answer": "C",
+      "choices": {
+        "A": "ATP",
+        "B": "NBP",
+        "C": "AEP",
+        "D": "RTMP"
+      }
+    },
+    {
+      "question": "Which IEEE standard covers Bus Topology using CSMA/CD?",
+      "answer": "C",
+      "choices": {
+        "A": "IEEE 802.1",
+        "B": "IEEE 802.2",
+        "C": "IEEE 802.3",
+        "D": "IEEE 802.4"
+      }
+    },
+    {
+      "question": "What type of cable is used to connect a PC to a Switch?",
+      "answer": "C",
+      "choices": {
+        "A": "Crossover cable",
+        "B": "Rollover cable",
+        "C": "Straight-through cable",
+        "D": "Coaxial cable"
+      }
+    },
+    {
+      "question": "Which encoding scheme uses ½ -5V transitioning to ½ +5V to represent a 0?",
+      "answer": "C",
+      "choices": {
+        "A": "NRZ",
+        "B": "RZ",
+        "C": "Manchester",
+        "D": "Bipolar AMI"
+      }
+    },
+    {
+      "question": "What does SNA stand for in IBM networking?",
+      "answer": "B",
+      "choices": {
+        "A": "Secure Network Access",
+        "B": "System Network Architecture",
+        "C": "Standard Networking Application",
+        "D": "Serial Network Access"
+      }
+    },
+    {
+      "question": "Which Banyan VINES protocol handles inter-process communication?",
+      "answer": "D",
+      "choices": {
+        "A": "VIP",
+        "B": "RPC",
+        "C": "VINES",
+        "D": "VIPC"
+      }
+    },
+    {
+      "question": "What is the maximum number of nodes per network for 10BASE2?",
+      "answer": "C",
+      "choices": {
+        "A": "300",
+        "B": "1,024",
+        "C": "90",
+        "D": "512"
+      }
+    },
+    {
+      "question": "Which protocol translates domain names into IP addresses?",
+      "answer": "C",
+      "choices": {
+        "A": "DHCP",
+        "B": "ARP",
+        "C": "DNS",
+        "D": "SNMP"
+      }
+    },
+    {
+      "question": "Which layer of the OSI model handles framing?",
+      "answer": "B",
+      "choices": {
+        "A": "Physical",
+        "B": "Data Link",
+        "C": "Network",
+        "D": "Transport"
+      }
+    },
+    {
+      "question": "Which DECnet component refers to an end node device?",
+      "answer": "C",
+      "choices": {
+        "A": "IS",
+        "B": "CLNP",
+        "C": "ES",
+        "D": "PLP"
+      }
+    },
+    {
+      "question": "Which IEEE standard is associated with Token Ring?",
+      "answer": "C",
+      "choices": {
+        "A": "IEEE 802.3",
+        "B": "IEEE 802.4",
+        "C": "IEEE 802.5",
+        "D": "IEEE 802.6"
+      }
+    },
+    {
+      "question": "What does MTU stand for?",
+      "answer": "C",
+      "choices": {
+        "A": "Maximum Transfer Unit",
+        "B": "Minimum Transmission Unit",
+        "C": "Maximum Transmission Unit",
+        "D": "Minimum Transfer Utility"
+      }
+    },
+    {
+      "question": "Which AppleTalk protocol manages full-duplex data streams?",
+      "answer": "B",
+      "choices": {
+        "A": "ATP",
+        "B": "ADSP",
+        "C": "ASP",
+        "D": "AFP"
+      }
+    },
+    {
+      "question": "Which protocol is a non-routable Microsoft networking protocol?",
+      "answer": "B",
+      "choices": {
+        "A": "NETBIOS",
+        "B": "NETBEUI",
+        "C": "IPX",
+        "D": "SPX"
+      }
+    },
+    {
+      "question": "What is the speed of Fiber Optic cable?",
+      "answer": "B",
+      "choices": {
+        "A": "10 Mbps – 100 Mbps",
+        "B": "100 Mbps – 2 Gbps",
+        "C": "10 Gbps – 25 Gbps",
+        "D": "1 Gbps – 10 Gbps"
+      }
+    },
+    {
+      "question": "Which TCP/IP layer corresponds roughly to the OSI Network layer?",
+      "answer": "C",
+      "choices": {
+        "A": "Application",
+        "B": "Transport",
+        "C": "Internet",
+        "D": "Network Access"
+      }
+    },
+    {
+      "question": "What is the main advantage of PPP over SLIP?",
+      "answer": "C",
+      "choices": {
+        "A": "Higher speed",
+        "B": "Longer distance",
+        "C": "Corrects SLIP's drawbacks with better performance",
+        "D": "Uses less bandwidth"
+      }
+    },
+    {
+      "question": "Which Novel NetWare protocol transfers data but does NOT monitor the transmission?",
+      "answer": "C",
+      "choices": {
+        "A": "SPX",
+        "B": "NCP",
+        "C": "IPX",
+        "D": "CLNS"
+      }
+    }
+  ]
+}

@@ -1,0 +1,204 @@
+{
+  "questions": [
+    {
+      "question": "Zuse’s Plankalkul was designed in 1945 but not published until which year?",
+      "answer": "B",
+      "choices": {
+        "A": "1960",
+        "B": "1972",
+        "C": "1984",
+        "D": "1991"
+      }
+    },
+    {
+      "question": "Which statement about Zuse’s Plankalkul is listed?",
+      "answer": "C",
+      "choices": {
+        "A": "It was widely implemented",
+        "B": "It replaced Fortran",
+        "C": "It was never implemented",
+        "D": "It was designed for timesharing"
+      }
+    },
+    {
+      "question": "Short Code was developed by Mauchly in 1949 for which computers?",
+      "answer": "D",
+      "choices": {
+        "A": "IBM 704",
+        "B": "IBM 701",
+        "C": "UNIVAC",
+        "D": "BINAC"
+      }
+    },
+    {
+      "question": "Speedcoding was developed by Backus in 1954 for which computer?",
+      "answer": "A",
+      "choices": {
+        "A": "IBM 701",
+        "B": "IBM 704",
+        "C": "BINAC",
+        "D": "UNIVAC"
+      }
+    },
+    {
+      "question": "Fortran I was released in which year?",
+      "answer": "B",
+      "choices": {
+        "A": "1954",
+        "B": "1957",
+        "C": "1958",
+        "D": "1966"
+      }
+    },
+    {
+      "question": "Which statement about Fortran I is listed?",
+      "answer": "C",
+      "choices": {
+        "A": "It had separate compilation",
+        "B": "Names could have up to twelve characters",
+        "C": "It had a three-way selection statement (arithmetic IF)",
+        "D": "It required dynamic storage"
+      }
+    },
+    {
+      "question": "Fortran II was distributed in which year?",
+      "answer": "A",
+      "choices": {
+        "A": "1958",
+        "B": "1960",
+        "C": "1966",
+        "D": "1978"
+      }
+    },
+    {
+      "question": "Fortran IV became an ANSI standard in which year?",
+      "answer": "D",
+      "choices": {
+        "A": "1957",
+        "B": "1958",
+        "C": "1962",
+        "D": "1966"
+      }
+    },
+    {
+      "question": "Which feature is listed as a change in Fortran 90?",
+      "answer": "B",
+      "choices": {
+        "A": "Character string handling",
+        "B": "Modules",
+        "C": "Arithmetic IF",
+        "D": "No separate compilation"
+      }
+    },
+    {
+      "question": "Lisp was designed at which institution and by whom?",
+      "answer": "C",
+      "choices": {
+        "A": "Bell Labs by Stroustrup",
+        "B": "Xerox PARC by Alan Kay",
+        "C": "MIT by McCarthy",
+        "D": "Dartmouth by Kemeny"
+      }
+    },
+    {
+      "question": "According to the lesson, Lisp has only which two data types?",
+      "answer": "A",
+      "choices": {
+        "A": "Atoms and lists",
+        "B": "Integers and floats",
+        "C": "Strings and arrays",
+        "D": "Records and pointers"
+      }
+    },
+    {
+      "question": "ALGOL 60 introduced which formal description of syntax?",
+      "answer": "B",
+      "choices": {
+        "A": "Regular Expressions",
+        "B": "BNF",
+        "C": "EBNF",
+        "D": "JSON"
+      }
+    },
+    {
+      "question": "COBOL was designed in 1959 by which organization?",
+      "answer": "D",
+      "choices": {
+        "A": "IEEE",
+        "B": "ISO",
+        "C": "ACM",
+        "D": "CODASYL"
+      }
+    },
+    {
+      "question": "BASIC was developed at which institution in the mid-1960s?",
+      "answer": "B",
+      "choices": {
+        "A": "MIT",
+        "B": "Dartmouth College",
+        "C": "Xerox PARC",
+        "D": "Bell Labs"
+      }
+    },
+    {
+      "question": "SIMULA 67 is noted for introducing what?",
+      "answer": "C",
+      "choices": {
+        "A": "Lambda calculus",
+        "B": "Pointer arithmetic",
+        "C": "Classes and objects",
+        "D": "Timesharing"
+      }
+    },
+    {
+      "question": "Prolog is described as being based on what?",
+      "answer": "A",
+      "choices": {
+        "A": "Formal logic",
+        "B": "Lambda calculus",
+        "C": "Array processing",
+        "D": "Machine code"
+      }
+    },
+    {
+      "question": "Ada was named after whom?",
+      "answer": "D",
+      "choices": {
+        "A": "Alan Kay",
+        "B": "Grace Hopper",
+        "C": "John Backus",
+        "D": "Augusta Ada Byron"
+      }
+    },
+    {
+      "question": "Smalltalk was developed at which research center?",
+      "answer": "B",
+      "choices": {
+        "A": "MIT",
+        "B": "Xerox PARC",
+        "C": "Bell Labs",
+        "D": "Dartmouth"
+      }
+    },
+    {
+      "question": "C++ was developed at Bell Labs by whom?",
+      "answer": "A",
+      "choices": {
+        "A": "Stroustrup",
+        "B": "McCarthy",
+        "C": "Kay",
+        "D": "Lerdorf"
+      }
+    },
+    {
+      "question": "Java was developed at Sun in which decade?",
+      "answer": "C",
+      "choices": {
+        "A": "1970s",
+        "B": "1980s",
+        "C": "early 1990s",
+        "D": "2000s"
+      }
+    }
+  ]
+}
