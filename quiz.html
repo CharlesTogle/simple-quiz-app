@@ -553,7 +553,8 @@ function getUrlParam(name) {
   const isCustom = getUrlParam('custom') === 'true';
   const fileParam = getUrlParam('file');
 
-  if (isCustom && customData) {
+  // Check localStorage first, regardless of URL parameter
+  if (customData) {
     try {
       const data = JSON.parse(customData);
       const success = loadQuestions(data, 'custom.json');
