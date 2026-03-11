@@ -1,0 +1,204 @@
+{
+  "questions": [
+    {
+      "question": "Syntax is defined in Lesson 3 as what?",
+      "answer": "B",
+      "choices": {
+        "A": "The meaning of program units",
+        "B": "The form or structure of expressions, statements, and program units",
+        "C": "The runtime behavior of programs",
+        "D": "The efficiency of compiled code"
+      }
+    },
+    {
+      "question": "Semantics is defined as what?",
+      "answer": "C",
+      "choices": {
+        "A": "The set of sentences in a language",
+        "B": "The structure of expressions",
+        "C": "The meaning of expressions, statements, and program units",
+        "D": "The set of terminals and nonterminals"
+      }
+    },
+    {
+      "question": "Which group is listed as users of a language definition?",
+      "answer": "A",
+      "choices": {
+        "A": "Language designers, implementers, and programmers",
+        "B": "Only compiler writers",
+        "C": "Only programmers",
+        "D": "Only language designers"
+      }
+    },
+    {
+      "question": "A lexeme is defined as what?",
+      "answer": "D",
+      "choices": {
+        "A": "A category of tokens",
+        "B": "A set of sentences",
+        "C": "A nonterminal symbol",
+        "D": "The lowest level syntactic unit of a language"
+      }
+    },
+    {
+      "question": "A token is defined as what?",
+      "answer": "B",
+      "choices": {
+        "A": "A complete program",
+        "B": "A category of lexemes",
+        "C": "A recognition device",
+        "D": "A sentence with only terminal symbols"
+      }
+    },
+    {
+      "question": "In formal definitions of languages, what is a recognizer?",
+      "answer": "C",
+      "choices": {
+        "A": "A device that generates sentences",
+        "B": "A set of grammar rules",
+        "C": "A device that reads input strings and decides if they belong to the language",
+        "D": "A list of tokens and lexemes"
+      }
+    },
+    {
+      "question": "Context-free grammars were developed by whom and when?",
+      "answer": "A",
+      "choices": {
+        "A": "Noam Chomsky in the mid-1950s",
+        "B": "John Backus in 1959",
+        "C": "Scott and Strachey in 1970",
+        "D": "Alan Kay in the 1970s"
+      }
+    },
+    {
+      "question": "Backus-Naur Form (BNF) was invented by whom to describe the syntax of Algol 58?",
+      "answer": "D",
+      "choices": {
+        "A": "Noam Chomsky",
+        "B": "Kowalski",
+        "C": "Strachey",
+        "D": "John Backus"
+      }
+    },
+    {
+      "question": "In BNF, a rule has a left-hand side (LHS) and a right-hand side (RHS). The LHS is what?",
+      "answer": "B",
+      "choices": {
+        "A": "A terminal symbol",
+        "B": "A nonterminal",
+        "C": "A complete sentence",
+        "D": "A token"
+      }
+    },
+    {
+      "question": "What is a start symbol in a grammar?",
+      "answer": "C",
+      "choices": {
+        "A": "Any terminal symbol",
+        "B": "The last nonterminal used",
+        "C": "A special element of the nonterminals of a grammar",
+        "D": "An optional part in brackets"
+      }
+    },
+    {
+      "question": "In a derivation, a sentence is a sentential form that has only what?",
+      "answer": "A",
+      "choices": {
+        "A": "Terminal symbols",
+        "B": "Nonterminal symbols",
+        "C": "Both terminals and nonterminals",
+        "D": "Only operators"
+      }
+    },
+    {
+      "question": "A leftmost derivation is one in which which nonterminal is expanded each time?",
+      "answer": "D",
+      "choices": {
+        "A": "The rightmost",
+        "B": "The smallest",
+        "C": "Any random",
+        "D": "The leftmost"
+      }
+    },
+    {
+      "question": "A grammar is ambiguous if it generates a sentential form that has how many distinct parse trees?",
+      "answer": "B",
+      "choices": {
+        "A": "Exactly one",
+        "B": "Two or more",
+        "C": "Zero",
+        "D": "Exactly three"
+      }
+    },
+    {
+      "question": "In EBNF, optional parts are placed in which symbols?",
+      "answer": "A",
+      "choices": {
+        "A": "Brackets []",
+        "B": "Braces {}",
+        "C": "Angle brackets <>",
+        "D": "Parentheses ()"
+      }
+    },
+    {
+      "question": "In EBNF, repetitions (0 or more) are placed in which symbols?",
+      "answer": "C",
+      "choices": {
+        "A": "Brackets []",
+        "B": "Parentheses ()",
+        "C": "Braces {}",
+        "D": "Angle brackets <>"
+      }
+    },
+    {
+      "question": "Static semantics has nothing to do with what?",
+      "answer": "D",
+      "choices": {
+        "A": "Syntax",
+        "B": "Tokens",
+        "C": "Grammar rules",
+        "D": "Meaning"
+      }
+    },
+    {
+      "question": "Which is an example of a non-context-free constraint listed in Lesson 3?",
+      "answer": "B",
+      "choices": {
+        "A": "Types of operands in expressions",
+        "B": "Variables must be declared before they are used",
+        "C": "Optional parts in brackets",
+        "D": "Repetitions in braces"
+      }
+    },
+    {
+      "question": "Operational semantics describes meaning by doing what?",
+      "answer": "A",
+      "choices": {
+        "A": "Executing statements on a machine and observing state changes",
+        "B": "Mapping to mathematical objects",
+        "C": "Using inference rules only",
+        "D": "Comparing against the generator structure"
+      }
+    },
+    {
+      "question": "Denotational semantics is based on what?",
+      "answer": "C",
+      "choices": {
+        "A": "Predicate calculus",
+        "B": "BNF",
+        "C": "Recursive function theory",
+        "D": "Machine code"
+      }
+    },
+    {
+      "question": "Axiomatic semantics is based on what?",
+      "answer": "B",
+      "choices": {
+        "A": "Recursive function theory",
+        "B": "Formal logic (predicate calculus)",
+        "C": "Context-free grammars",
+        "D": "Parse trees"
+      }
+    }
+  ]
+}
