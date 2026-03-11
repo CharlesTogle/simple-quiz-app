@@ -290,12 +290,15 @@
     }
 
     .upload-zone {
+      display: block;
       border: 2px dashed var(--border);
       border-radius: 12px;
-      padding: 24px;
+      padding: 32px 24px;
       text-align: center;
       transition: all 0.2s ease;
       cursor: pointer;
+      background: var(--bg);
+      position: relative;
     }
 
     .upload-zone:hover {
@@ -312,13 +315,16 @@
     .upload-zone .label {
       font-weight: 600;
       color: var(--accent);
-      margin-bottom: 4px;
+      margin-bottom: 6px;
+      font-size: 1.1rem;
+      display: block;
     }
 
     .upload-zone .hint {
-      font-size: 0.75rem;
+      font-size: 0.8rem;
       color: var(--muted);
       font-family: 'Space Mono', monospace;
+      display: block;
     }
 
     .footer {
@@ -452,6 +458,7 @@
 
     <label class="upload-zone" for="mcUpload">
       <input type="file" id="mcUpload" accept=".json" onchange="handleMCUpload(event)" />
+      <div style="font-size: 2rem; margin-bottom: 8px;">📁</div>
       <div class="label">Upload JSON</div>
       <div class="hint">Upload your custom multiple choice quiz</div>
     </label>
@@ -470,6 +477,7 @@
 
     <label class="upload-zone" for="abUpload">
       <input type="file" id="abUpload" accept=".json" onchange="handleABUpload(event)" />
+      <div style="font-size: 2rem; margin-bottom: 8px;">📁</div>
       <div class="label">Upload JSON</div>
       <div class="hint">Upload your custom abbreviations quiz</div>
     </label>
