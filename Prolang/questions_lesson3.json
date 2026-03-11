@@ -21,6 +21,16 @@
       }
     },
     {
+      "question": "What do syntax and semantics together provide?",
+      "answer": "A",
+      "choices": {
+        "A": "A language's definition",
+        "B": "A compiler",
+        "C": "An interpreter",
+        "D": "A debugger"
+      }
+    },
+    {
       "question": "Which group is listed as users of a language definition?",
       "answer": "A",
       "choices": {
@@ -31,6 +41,26 @@
       }
     },
     {
+      "question": "A sentence is defined as what?",
+      "answer": "D",
+      "choices": {
+        "A": "A category of tokens",
+        "B": "A single character",
+        "C": "A nonterminal symbol",
+        "D": "A string of characters over some alphabet"
+      }
+    },
+    {
+      "question": "A language is defined as what?",
+      "answer": "B",
+      "choices": {
+        "A": "A single sentence",
+        "B": "A set of sentences",
+        "C": "A compiler",
+        "D": "A parser"
+      }
+    },
+    {
       "question": "A lexeme is defined as what?",
       "answer": "D",
       "choices": {
@@ -38,6 +68,16 @@
         "B": "A set of sentences",
         "C": "A nonterminal symbol",
         "D": "The lowest level syntactic unit of a language"
+      }
+    },
+    {
+      "question": "Which are examples of lexemes given in the lesson?",
+      "answer": "C",
+      "choices": {
+        "A": "program, function, class",
+        "B": "int, char, float",
+        "C": "*, sum, begin",
+        "D": "if, while, for"
       }
     },
     {
@@ -61,6 +101,26 @@
       }
     },
     {
+      "question": "What is an example of a recognizer?",
+      "answer": "A",
+      "choices": {
+        "A": "Syntax analysis part of a compiler",
+        "B": "A text editor",
+        "C": "A debugger",
+        "D": "An assembler"
+      }
+    },
+    {
+      "question": "What is a generator in formal language definition?",
+      "answer": "D",
+      "choices": {
+        "A": "A compiler",
+        "B": "An interpreter",
+        "C": "A recognizer",
+        "D": "A device that generates sentences of a language"
+      }
+    },
+    {
       "question": "Context-free grammars were developed by whom and when?",
       "answer": "A",
       "choices": {
@@ -68,6 +128,26 @@
         "B": "John Backus in 1959",
         "C": "Scott and Strachey in 1970",
         "D": "Alan Kay in the 1970s"
+      }
+    },
+    {
+      "question": "What were context-free grammars originally meant to describe?",
+      "answer": "B",
+      "choices": {
+        "A": "Computer programs",
+        "B": "The syntax of natural languages",
+        "C": "Mathematical formulas",
+        "D": "Database schemas"
+      }
+    },
+    {
+      "question": "What class of languages do context-free grammars define?",
+      "answer": "C",
+      "choices": {
+        "A": "Regular languages",
+        "B": "Turing-complete languages",
+        "C": "Context-free languages",
+        "D": "Recursive languages"
       }
     },
     {
@@ -81,6 +161,46 @@
       }
     },
     {
+      "question": "When was BNF invented?",
+      "answer": "A",
+      "choices": {
+        "A": "1959",
+        "B": "1955",
+        "C": "1970",
+        "D": "1980"
+      }
+    },
+    {
+      "question": "What is the relationship between BNF and context-free grammars?",
+      "answer": "C",
+      "choices": {
+        "A": "BNF is more powerful",
+        "B": "CFGs are more powerful",
+        "C": "BNF is equivalent to context-free grammars",
+        "D": "They are unrelated"
+      }
+    },
+    {
+      "question": "In BNF, what are abstractions also called?",
+      "answer": "B",
+      "choices": {
+        "A": "Terminals",
+        "B": "Nonterminal symbols",
+        "C": "Tokens",
+        "D": "Lexemes"
+      }
+    },
+    {
+      "question": "In BNF, terminals are what?",
+      "answer": "D",
+      "choices": {
+        "A": "Grammar rules",
+        "B": "Variables",
+        "C": "Abstractions",
+        "D": "Lexemes or tokens"
+      }
+    },
+    {
       "question": "In BNF, a rule has a left-hand side (LHS) and a right-hand side (RHS). The LHS is what?",
       "answer": "B",
       "choices": {
@@ -91,6 +211,36 @@
       }
     },
     {
+      "question": "The RHS of a BNF rule is what?",
+      "answer": "C",
+      "choices": {
+        "A": "Only terminals",
+        "B": "Only nonterminals",
+        "C": "A string of terminals and/or nonterminals",
+        "D": "A single symbol"
+      }
+    },
+    {
+      "question": "How are nonterminals often enclosed in BNF?",
+      "answer": "A",
+      "choices": {
+        "A": "Angle brackets",
+        "B": "Square brackets",
+        "C": "Curly braces",
+        "D": "Parentheses"
+      }
+    },
+    {
+      "question": "What is a grammar?",
+      "answer": "D",
+      "choices": {
+        "A": "A single rule",
+        "B": "A compiler",
+        "C": "A parser",
+        "D": "A finite non-empty set of rules"
+      }
+    },
+    {
       "question": "What is a start symbol in a grammar?",
       "answer": "C",
       "choices": {
@@ -98,6 +248,36 @@
         "B": "The last nonterminal used",
         "C": "A special element of the nonterminals of a grammar",
         "D": "An optional part in brackets"
+      }
+    },
+    {
+      "question": "How are syntactic lists described in BNF?",
+      "answer": "B",
+      "choices": {
+        "A": "Using iteration",
+        "B": "Using recursion",
+        "C": "Using loops",
+        "D": "Using arrays"
+      }
+    },
+    {
+      "question": "What is a derivation?",
+      "answer": "A",
+      "choices": {
+        "A": "A repeated application of rules starting with start symbol and ending with a sentence",
+        "B": "A single rule application",
+        "C": "A compilation process",
+        "D": "A type checking process"
+      }
+    },
+    {
+      "question": "What is a sentential form?",
+      "answer": "D",
+      "choices": {
+        "A": "Only terminal symbols",
+        "B": "Only nonterminal symbols",
+        "C": "A grammar rule",
+        "D": "Every string of symbols in a derivation"
       }
     },
     {
@@ -121,13 +301,33 @@
       }
     },
     {
-      "question": "A grammar is ambiguous if it generates a sentential form that has how many distinct parse trees?",
+      "question": "Can a derivation be neither leftmost nor rightmost?",
       "answer": "B",
       "choices": {
-        "A": "Exactly one",
-        "B": "Two or more",
-        "C": "Zero",
-        "D": "Exactly three"
+        "A": "No, it must be one or the other",
+        "B": "Yes, according to the lesson",
+        "C": "Only in EBNF",
+        "D": "Only in context-sensitive grammars"
+      }
+    },
+    {
+      "question": "What is a parse tree?",
+      "answer": "C",
+      "choices": {
+        "A": "A linear representation of code",
+        "B": "A compilation output",
+        "C": "A hierarchical representation of a derivation",
+        "D": "A type checking result"
+      }
+    },
+    {
+      "question": "A grammar is ambiguous if and only if what?",
+      "answer": "B",
+      "choices": {
+        "A": "It has exactly one parse tree",
+        "B": "It generates a sentential form that has two or more distinct parse trees",
+        "C": "It has no parse trees",
+        "D": "It uses recursion"
       }
     },
     {
@@ -141,6 +341,16 @@
       }
     },
     {
+      "question": "In EBNF, how are alternative parts of RHSs notated?",
+      "answer": "D",
+      "choices": {
+        "A": "With commas",
+        "B": "With semicolons",
+        "C": "With arrows",
+        "D": "Placed inside parentheses and separated via vertical bars"
+      }
+    },
+    {
       "question": "In EBNF, repetitions (0 or more) are placed in which symbols?",
       "answer": "C",
       "choices": {
@@ -148,6 +358,26 @@
         "B": "Parentheses ()",
         "C": "Braces {}",
         "D": "Angle brackets <>"
+      }
+    },
+    {
+      "question": "What does EBNF make more compact compared to BNF?",
+      "answer": "B",
+      "choices": {
+        "A": "Parse trees",
+        "B": "Grammar rules (fewer rules needed)",
+        "C": "Source code",
+        "D": "Compiler output"
+      }
+    },
+    {
+      "question": "In recent variations of EBNF, what is used instead of =>?",
+      "answer": "A",
+      "choices": {
+        "A": "A colon",
+        "B": "An equals sign",
+        "C": "An arrow",
+        "D": "A semicolon"
       }
     },
     {
@@ -161,6 +391,26 @@
       }
     },
     {
+      "question": "Can context-free grammars describe all of the syntax of programming languages?",
+      "answer": "C",
+      "choices": {
+        "A": "Yes, completely",
+        "B": "Yes, with extensions",
+        "C": "No, according to the lesson",
+        "D": "Only for functional languages"
+      }
+    },
+    {
+      "question": "Which is an example of a context-free but cumbersome construct?",
+      "answer": "B",
+      "choices": {
+        "A": "Variable declarations",
+        "B": "Types of operands in expressions",
+        "C": "Loop syntax",
+        "D": "Function calls"
+      }
+    },
+    {
       "question": "Which is an example of a non-context-free constraint listed in Lesson 3?",
       "answer": "B",
       "choices": {
@@ -168,6 +418,26 @@
         "B": "Variables must be declared before they are used",
         "C": "Optional parts in brackets",
         "D": "Repetitions in braces"
+      }
+    },
+    {
+      "question": "Why do programmers need a methodology and notation for semantics?",
+      "answer": "A",
+      "choices": {
+        "A": "To know what statements mean",
+        "B": "To compile faster",
+        "C": "To reduce file size",
+        "D": "To improve graphics"
+      }
+    },
+    {
+      "question": "What would be possible with a good semantics notation according to the lesson?",
+      "answer": "D",
+      "choices": {
+        "A": "Faster compilation only",
+        "B": "Better syntax highlighting",
+        "C": "Smaller executables",
+        "D": "Correctness proofs and compiler generators"
       }
     },
     {
@@ -181,6 +451,76 @@
       }
     },
     {
+      "question": "In operational semantics, what defines the meaning of a statement?",
+      "answer": "C",
+      "choices": {
+        "A": "The source code",
+        "B": "The parse tree",
+        "C": "The change in the state of the machine (memory, registers, etc.)",
+        "D": "The compiler output"
+      }
+    },
+    {
+      "question": "What is needed to use operational semantics for a high-level language?",
+      "answer": "B",
+      "choices": {
+        "A": "A real processor",
+        "B": "A virtual machine",
+        "C": "A text editor",
+        "D": "A debugger"
+      }
+    },
+    {
+      "question": "Why is a hardware pure interpreter too expensive for operational semantics?",
+      "answer": "D",
+      "choices": {
+        "A": "It uses too much power",
+        "B": "It's too slow",
+        "C": "It's too large",
+        "D": "The lesson states it's too expensive but doesn't specify details"
+      }
+    },
+    {
+      "question": "What problem exists with software pure interpreters for operational semantics?",
+      "answer": "A",
+      "choices": {
+        "A": "Detailed characteristics of particular computer make actions difficult to understand",
+        "B": "They are too fast",
+        "C": "They don't work",
+        "D": "They require too much memory"
+      }
+    },
+    {
+      "question": "A better alternative for operational semantics involves what two components?",
+      "answer": "C",
+      "choices": {
+        "A": "A compiler and linker",
+        "B": "A parser and lexer",
+        "C": "A translator and a simulator for an idealized computer",
+        "D": "An editor and debugger"
+      }
+    },
+    {
+      "question": "When is operational semantics good according to the lesson?",
+      "answer": "B",
+      "choices": {
+        "A": "Always",
+        "B": "If used informally (language manuals, etc.)",
+        "C": "Never",
+        "D": "Only for functional languages"
+      }
+    },
+    {
+      "question": "VDL was used for describing semantics of which language?",
+      "answer": "D",
+      "choices": {
+        "A": "Java",
+        "B": "C",
+        "C": "Fortran",
+        "D": "PL/I"
+      }
+    },
+    {
       "question": "Denotational semantics is based on what?",
       "answer": "C",
       "choices": {
@@ -191,6 +531,86 @@
       }
     },
     {
+      "question": "How is denotational semantics characterized?",
+      "answer": "A",
+      "choices": {
+        "A": "The most abstract semantics description method",
+        "B": "The most concrete method",
+        "C": "The simplest method",
+        "D": "The fastest method"
+      }
+    },
+    {
+      "question": "Who originally developed denotational semantics?",
+      "answer": "B",
+      "choices": {
+        "A": "Chomsky and Backus",
+        "B": "Scott and Strachey (1970)",
+        "C": "Kay and Goldberg",
+        "D": "McCarthy and Lisp team"
+      }
+    },
+    {
+      "question": "In denotational semantics, what must be defined for each language entity?",
+      "answer": "D",
+      "choices": {
+        "A": "A compiler",
+        "B": "A parser",
+        "C": "A virtual machine",
+        "D": "A mathematical object"
+      }
+    },
+    {
+      "question": "How are the meanings of language constructs defined in denotational semantics?",
+      "answer": "C",
+      "choices": {
+        "A": "By execution traces",
+        "B": "By parse trees",
+        "C": "By only the values of the program's variables",
+        "D": "By assembly code"
+      }
+    },
+    {
+      "question": "In denotational semantics, loops are converted from what to what?",
+      "answer": "A",
+      "choices": {
+        "A": "Iteration to recursion",
+        "B": "Recursion to iteration",
+        "C": "Functions to procedures",
+        "D": "Variables to constants"
+      }
+    },
+    {
+      "question": "Why is recursion preferred over iteration in denotational semantics?",
+      "answer": "B",
+      "choices": {
+        "A": "It's faster",
+        "B": "It's easier to describe with mathematical rigor",
+        "C": "It uses less memory",
+        "D": "It's simpler to understand"
+      }
+    },
+    {
+      "question": "Can denotational semantics be used to prove correctness of programs?",
+      "answer": "D",
+      "choices": {
+        "A": "No",
+        "B": "Only for functional programs",
+        "C": "Only for imperative programs",
+        "D": "Yes, according to the lesson"
+      }
+    },
+    {
+      "question": "What is a drawback of denotational semantics?",
+      "answer": "C",
+      "choices": {
+        "A": "It's too simple",
+        "B": "It's not rigorous enough",
+        "C": "Because of its complexity, it's of little use to language users",
+        "D": "It doesn't work for modern languages"
+      }
+    },
+    {
       "question": "Axiomatic semantics is based on what?",
       "answer": "B",
       "choices": {
@@ -198,6 +618,126 @@
         "B": "Formal logic (predicate calculus)",
         "C": "Context-free grammars",
         "D": "Parse trees"
+      }
+    },
+    {
+      "question": "What was the original purpose of axiomatic semantics?",
+      "answer": "A",
+      "choices": {
+        "A": "Formal program verification",
+        "B": "Compiler optimization",
+        "C": "Code generation",
+        "D": "Syntax analysis"
+      }
+    },
+    {
+      "question": "In axiomatic semantics, what are the logic expressions called?",
+      "answer": "D",
+      "choices": {
+        "A": "Predicates",
+        "B": "Theorems",
+        "C": "Axioms",
+        "D": "Assertions"
+      }
+    },
+    {
+      "question": "What is a precondition?",
+      "answer": "C",
+      "choices": {
+        "A": "A statement after execution",
+        "B": "A loop invariant",
+        "C": "An assertion before a statement",
+        "D": "A function return value"
+      }
+    },
+    {
+      "question": "What is a postcondition?",
+      "answer": "B",
+      "choices": {
+        "A": "An assertion before a statement",
+        "B": "An assertion following a statement",
+        "C": "A compiler error",
+        "D": "A runtime exception"
+      }
+    },
+    {
+      "question": "What is a weakest precondition?",
+      "answer": "A",
+      "choices": {
+        "A": "The least restrictive precondition that will guarantee the postcondition",
+        "B": "The strongest condition possible",
+        "C": "An optional precondition",
+        "D": "A runtime check"
+      }
+    },
+    {
+      "question": "In the program proof process, what is the postcondition for the entire program?",
+      "answer": "D",
+      "choices": {
+        "A": "The first statement",
+        "B": "The loop invariant",
+        "C": "An arbitrary condition",
+        "D": "The desired result"
+      }
+    },
+    {
+      "question": "How do you verify a program is correct using axiomatic semantics?",
+      "answer": "C",
+      "choices": {
+        "A": "Run test cases",
+        "B": "Check syntax",
+        "C": "Work back through program; if precondition on first statement matches specification, program is correct",
+        "D": "Execute and observe output"
+      }
+    },
+    {
+      "question": "How are state changes defined in operational semantics?",
+      "answer": "B",
+      "choices": {
+        "A": "By mathematical functions",
+        "B": "By coded algorithms",
+        "C": "By logical assertions",
+        "D": "By type rules"
+      }
+    },
+    {
+      "question": "How are state changes defined in denotational semantics?",
+      "answer": "A",
+      "choices": {
+        "A": "By rigorous mathematical functions",
+        "B": "By coded algorithms",
+        "C": "By execution traces",
+        "D": "By test cases"
+      }
+    },
+    {
+      "question": "What are the three primary methods of semantics description mentioned in the summary?",
+      "answer": "D",
+      "choices": {
+        "A": "Compilation, interpretation, execution",
+        "B": "Syntax, pragmatics, lexical",
+        "C": "Static, dynamic, hybrid",
+        "D": "Operational, axiomatic, denotational"
+      }
+    },
+    {
+      "question": "BNF and context-free grammars are described as what?",
+      "answer": "C",
+      "choices": {
+        "A": "Incompatible systems",
+        "B": "Semantic description methods",
+        "C": "Equivalent meta-languages",
+        "D": "Programming paradigms"
+      }
+    },
+    {
+      "question": "What can an attribute grammar describe?",
+      "answer": "B",
+      "choices": {
+        "A": "Only syntax",
+        "B": "Both syntax and semantics of a language",
+        "C": "Only semantics",
+        "D": "Only type systems"
       }
     }
   ]

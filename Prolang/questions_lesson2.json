@@ -1,7 +1,7 @@
 {
   "questions": [
     {
-      "question": "Zuse’s Plankalkul was designed in 1945 but not published until which year?",
+      "question": "Zuse's Plankalkül was designed in 1945 but not published until which year?",
       "answer": "B",
       "choices": {
         "A": "1960",
@@ -11,13 +11,33 @@
       }
     },
     {
-      "question": "Which statement about Zuse’s Plankalkul is listed?",
+      "question": "Which statement about Zuse's Plankalkül is listed?",
       "answer": "C",
       "choices": {
         "A": "It was widely implemented",
         "B": "It replaced Fortran",
         "C": "It was never implemented",
         "D": "It was designed for timesharing"
+      }
+    },
+    {
+      "question": "Which advanced data structures did Plankalkül include?",
+      "answer": "A",
+      "choices": {
+        "A": "Floating point, arrays, records",
+        "B": "Only integers and characters",
+        "C": "Pointers and linked lists",
+        "D": "Hash tables and trees"
+      }
+    },
+    {
+      "question": "What was wrong with using machine code according to the lesson?",
+      "answer": "D",
+      "choices": {
+        "A": "It was too slow",
+        "B": "It required too much memory",
+        "C": "It was too expensive",
+        "D": "Poor readability, poor modifiability, tedious expression coding"
       }
     },
     {
@@ -31,6 +51,16 @@
       }
     },
     {
+      "question": "In Short Code, how were expressions coded?",
+      "answer": "B",
+      "choices": {
+        "A": "Right to left",
+        "B": "Left to right",
+        "C": "Inside out",
+        "D": "Top to bottom"
+      }
+    },
+    {
       "question": "Speedcoding was developed by Backus in 1954 for which computer?",
       "answer": "A",
       "choices": {
@@ -41,7 +71,37 @@
       }
     },
     {
-      "question": "Fortran I was released in which year?",
+      "question": "What was a problem with Speedcoding?",
+      "answer": "C",
+      "choices": {
+        "A": "It was too complex",
+        "B": "It had no branching",
+        "C": "It was slow and left only 700 words for user program",
+        "D": "It couldn't handle arithmetic"
+      }
+    },
+    {
+      "question": "Who led the team that developed the UNIVAC Compiling System?",
+      "answer": "B",
+      "choices": {
+        "A": "John Backus",
+        "B": "Grace Hopper",
+        "C": "Alan Kay",
+        "D": "Noam Chomsky"
+      }
+    },
+    {
+      "question": "What problem did David J. Wheeler solve with blocks of relocatable addresses?",
+      "answer": "D",
+      "choices": {
+        "A": "Memory leaks",
+        "B": "Slow execution",
+        "C": "Type checking",
+        "D": "Absolute addressing"
+      }
+    },
+    {
+      "question": "When was Fortran I released?",
       "answer": "B",
       "choices": {
         "A": "1954",
@@ -51,13 +111,93 @@
       }
     },
     {
-      "question": "Which statement about Fortran I is listed?",
+      "question": "Fortran I was designed for which computer?",
       "answer": "C",
       "choices": {
-        "A": "It had separate compilation",
-        "B": "Names could have up to twelve characters",
-        "C": "It had a three-way selection statement (arithmetic IF)",
-        "D": "It required dynamic storage"
+        "A": "IBM 701",
+        "B": "UNIVAC",
+        "C": "IBM 704",
+        "D": "BINAC"
+      }
+    },
+    {
+      "question": "What new hardware features did the IBM 704 have that influenced Fortran I?",
+      "answer": "A",
+      "choices": {
+        "A": "Index registers and floating point hardware",
+        "B": "Color display and sound",
+        "C": "Virtual memory and cache",
+        "D": "Network capabilities"
+      }
+    },
+    {
+      "question": "In Fortran I's environment, what was the most important concern?",
+      "answer": "D",
+      "choices": {
+        "A": "User friendliness",
+        "B": "Portability",
+        "C": "Readability",
+        "D": "Machine efficiency"
+      }
+    },
+    {
+      "question": "Why did Fortran I not need dynamic storage?",
+      "answer": "B",
+      "choices": {
+        "A": "Computers had unlimited memory",
+        "B": "Applications were scientific and didn't require it",
+        "C": "It was too expensive to implement",
+        "D": "The hardware didn't support it"
+      }
+    },
+    {
+      "question": "How many characters could names have in Fortran I?",
+      "answer": "C",
+      "choices": {
+        "A": "Up to three",
+        "B": "Up to four",
+        "C": "Up to six",
+        "D": "Unlimited"
+      }
+    },
+    {
+      "question": "What type of loop did Fortran I have?",
+      "answer": "A",
+      "choices": {
+        "A": "Post-test counting loop (DO)",
+        "B": "Pre-test while loop",
+        "C": "For-each loop",
+        "D": "Infinite loop only"
+      }
+    },
+    {
+      "question": "What type of selection statement did Fortran I have?",
+      "answer": "D",
+      "choices": {
+        "A": "IF-THEN-ELSE",
+        "B": "CASE statement",
+        "C": "Switch statement",
+        "D": "Three-way selection (arithmetic IF)"
+      }
+    },
+    {
+      "question": "How long did it take to develop the Fortran I compiler?",
+      "answer": "B",
+      "choices": {
+        "A": "6 months",
+        "B": "18 worker-years",
+        "C": "5 years",
+        "D": "10 years"
+      }
+    },
+    {
+      "question": "What was a problem with compiling programs larger than 400 lines in Fortran I?",
+      "answer": "C",
+      "choices": {
+        "A": "It took too long",
+        "B": "It used too much memory",
+        "C": "They rarely compiled correctly due to poor reliability of the 704",
+        "D": "The compiler would crash"
       }
     },
     {
@@ -71,6 +211,16 @@
       }
     },
     {
+      "question": "What major feature did Fortran II add?",
+      "answer": "B",
+      "choices": {
+        "A": "Object-oriented programming",
+        "B": "Independent compilation",
+        "C": "Garbage collection",
+        "D": "Exception handling"
+      }
+    },
+    {
       "question": "Fortran IV became an ANSI standard in which year?",
       "answer": "D",
       "choices": {
@@ -81,13 +231,73 @@
       }
     },
     {
-      "question": "Which feature is listed as a change in Fortran 90?",
+      "question": "Which feature was added in Fortran IV?",
+      "answer": "A",
+      "choices": {
+        "A": "Explicit type declarations",
+        "B": "Object-oriented features",
+        "C": "Dynamic memory",
+        "D": "Unicode support"
+      }
+    },
+    {
+      "question": "When did Fortran 77 become the new standard?",
+      "answer": "C",
+      "choices": {
+        "A": "1966",
+        "B": "1977",
+        "C": "1978",
+        "D": "1990"
+      }
+    },
+    {
+      "question": "Which statement was added in Fortran 77?",
+      "answer": "D",
+      "choices": {
+        "A": "DO loop",
+        "B": "Arithmetic IF",
+        "C": "GOTO",
+        "D": "IF-THEN-ELSE"
+      }
+    },
+    {
+      "question": "Which feature is NOT listed as a change in Fortran 90?",
+      "answer": "C",
+      "choices": {
+        "A": "Modules",
+        "B": "Recursion",
+        "C": "Object-oriented inheritance",
+        "D": "Dynamic arrays"
+      }
+    },
+    {
+      "question": "What did Fortran 2003 add support for?",
+      "answer": "A",
+      "choices": {
+        "A": "OOP, procedure pointers, interoperability with C",
+        "B": "Web services",
+        "C": "Mobile development",
+        "D": "Graphics rendering"
+      }
+    },
+    {
+      "question": "Why were early Fortran versions highly optimizing?",
       "answer": "B",
       "choices": {
-        "A": "Character string handling",
-        "B": "Modules",
-        "C": "Arithmetic IF",
-        "D": "No separate compilation"
+        "A": "They had AI-powered compilers",
+        "B": "Types and storage of all variables were fixed before run time",
+        "C": "They used interpreted code",
+        "D": "They had simple syntax"
+      }
+    },
+    {
+      "question": "Lisp stands for what?",
+      "answer": "D",
+      "choices": {
+        "A": "Language for Intelligent System Processing",
+        "B": "Linear Symbolic Programming",
+        "C": "Logical Interpretation of Symbolic Patterns",
+        "D": "LISt Processing language"
       }
     },
     {
@@ -101,6 +311,16 @@
       }
     },
     {
+      "question": "What did AI research need according to the lesson on Lisp?",
+      "answer": "A",
+      "choices": {
+        "A": "Process data in lists and symbolic computation",
+        "B": "Fast floating point operations",
+        "C": "Large arrays",
+        "D": "Binary operations"
+      }
+    },
+    {
       "question": "According to the lesson, Lisp has only which two data types?",
       "answer": "A",
       "choices": {
@@ -108,6 +328,46 @@
         "B": "Integers and floats",
         "C": "Strings and arrays",
         "D": "Records and pointers"
+      }
+    },
+    {
+      "question": "Lisp syntax is based on what?",
+      "answer": "C",
+      "choices": {
+        "A": "BNF",
+        "B": "Regular expressions",
+        "C": "Lambda calculus",
+        "D": "Predicate logic"
+      }
+    },
+    {
+      "question": "What did Lisp pioneer?",
+      "answer": "B",
+      "choices": {
+        "A": "Object-oriented programming",
+        "B": "Functional programming",
+        "C": "Logic programming",
+        "D": "Structured programming"
+      }
+    },
+    {
+      "question": "How is control handled in Lisp?",
+      "answer": "D",
+      "choices": {
+        "A": "Via GOTO statements",
+        "B": "Via loops only",
+        "C": "Via switch statements",
+        "D": "Via recursion and conditional expressions"
+      }
+    },
+    {
+      "question": "Which are listed as contemporary dialects of Lisp?",
+      "answer": "A",
+      "choices": {
+        "A": "Common Lisp and Scheme",
+        "B": "Python and Ruby",
+        "C": "C and C++",
+        "D": "Java and C#"
       }
     },
     {
@@ -121,6 +381,16 @@
       }
     },
     {
+      "question": "Which contribution is NOT listed for ALGOL 60?",
+      "answer": "D",
+      "choices": {
+        "A": "Block structure",
+        "B": "Static scoping",
+        "C": "Recursion",
+        "D": "Object-oriented programming"
+      }
+    },
+    {
       "question": "COBOL was designed in 1959 by which organization?",
       "answer": "D",
       "choices": {
@@ -128,6 +398,26 @@
         "B": "ISO",
         "C": "ACM",
         "D": "CODASYL"
+      }
+    },
+    {
+      "question": "Which is listed as a contribution of COBOL?",
+      "answer": "C",
+      "choices": {
+        "A": "Lambda calculus",
+        "B": "Recursion",
+        "C": "Data descriptions and hierarchical data structures",
+        "D": "Static typing"
+      }
+    },
+    {
+      "question": "What type of statements does COBOL use?",
+      "answer": "B",
+      "choices": {
+        "A": "Mathematical notation",
+        "B": "English-like statements",
+        "C": "Symbolic expressions",
+        "D": "Machine code"
       }
     },
     {
@@ -141,6 +431,66 @@
       }
     },
     {
+      "question": "BASIC was designed for what purpose?",
+      "answer": "A",
+      "choices": {
+        "A": "Ease of use and learning",
+        "B": "Scientific computing",
+        "C": "Business applications",
+        "D": "Systems programming"
+      }
+    },
+    {
+      "question": "PL/I was designed by which company?",
+      "answer": "C",
+      "choices": {
+        "A": "Microsoft",
+        "B": "Sun",
+        "C": "IBM",
+        "D": "Xerox"
+      }
+    },
+    {
+      "question": "What was PL/I designed to combine?",
+      "answer": "D",
+      "choices": {
+        "A": "Functional and logic programming",
+        "B": "Assembly and high-level programming",
+        "C": "Web and desktop programming",
+        "D": "Scientific and business programming features"
+      }
+    },
+    {
+      "question": "APL was designed for what type of notation?",
+      "answer": "B",
+      "choices": {
+        "A": "English-like statements",
+        "B": "Concise mathematical notation",
+        "C": "Business reports",
+        "D": "String processing"
+      }
+    },
+    {
+      "question": "SNOBOL was designed for what purpose?",
+      "answer": "A",
+      "choices": {
+        "A": "String processing",
+        "B": "Array processing",
+        "C": "Mathematical computation",
+        "D": "Business logic"
+      }
+    },
+    {
+      "question": "SIMULA 67 was designed for what purpose?",
+      "answer": "C",
+      "choices": {
+        "A": "String processing",
+        "B": "Mathematical computation",
+        "C": "Simulation",
+        "D": "Business applications"
+      }
+    },
+    {
       "question": "SIMULA 67 is noted for introducing what?",
       "answer": "C",
       "choices": {
@@ -148,6 +498,26 @@
         "B": "Pointer arithmetic",
         "C": "Classes and objects",
         "D": "Timesharing"
+      }
+    },
+    {
+      "question": "What was the focus of ALGOL 68's design?",
+      "answer": "D",
+      "choices": {
+        "A": "Simplicity",
+        "B": "Business applications",
+        "C": "Ease of use",
+        "D": "Orthogonality and regularity"
+      }
+    },
+    {
+      "question": "Prolog was developed by Comerauer and Roussel at which university?",
+      "answer": "A",
+      "choices": {
+        "A": "University of Aix-Marseille",
+        "B": "MIT",
+        "C": "Cambridge",
+        "D": "Stanford"
       }
     },
     {
@@ -161,6 +531,36 @@
       }
     },
     {
+      "question": "How can Prolog be summarized according to the lesson?",
+      "answer": "B",
+      "choices": {
+        "A": "A functional programming system",
+        "B": "An intelligent database system that uses an inferencing process",
+        "C": "A procedural language for business",
+        "D": "A markup language"
+      }
+    },
+    {
+      "question": "What is noted about Prolog's efficiency?",
+      "answer": "C",
+      "choices": {
+        "A": "Very efficient",
+        "B": "Moderately efficient",
+        "C": "Comparatively inefficient",
+        "D": "Efficiency varies by application"
+      }
+    },
+    {
+      "question": "How long did the Ada design effort take according to the lesson?",
+      "answer": "D",
+      "choices": {
+        "A": "Two years",
+        "B": "Four years",
+        "C": "Six years",
+        "D": "About eight years"
+      }
+    },
+    {
       "question": "Ada was named after whom?",
       "answer": "D",
       "choices": {
@@ -168,6 +568,56 @@
         "B": "Grace Hopper",
         "C": "John Backus",
         "D": "Augusta Ada Byron"
+      }
+    },
+    {
+      "question": "What sequence of requirements led to Ada's design from 1975-1978?",
+      "answer": "B",
+      "choices": {
+        "A": "Alpha, Beta, Gamma, Delta",
+        "B": "Strawman, Woodman, Tinman, Ironman, Steelman",
+        "C": "Mark I, Mark II, Mark III",
+        "D": "Version 1, 2, 3, 4, 5"
+      }
+    },
+    {
+      "question": "Which is NOT listed as a contribution of Ada?",
+      "answer": "C",
+      "choices": {
+        "A": "Packages for data abstraction",
+        "B": "Exception handling",
+        "C": "Object inheritance from the start",
+        "D": "Generic program units"
+      }
+    },
+    {
+      "question": "When did the first really usable Ada compiler come out after the language design was completed?",
+      "answer": "A",
+      "choices": {
+        "A": "Nearly five years",
+        "B": "One year",
+        "C": "Six months",
+        "D": "Ten years"
+      }
+    },
+    {
+      "question": "Ada 95 added support for what through type derivation?",
+      "answer": "D",
+      "choices": {
+        "A": "Functional programming",
+        "B": "Logic programming",
+        "C": "Scripting",
+        "D": "OOP"
+      }
+    },
+    {
+      "question": "Why did Ada's popularity suffer according to the lesson?",
+      "answer": "B",
+      "choices": {
+        "A": "It was too simple",
+        "B": "DoD no longer required its use and C++ became popular",
+        "C": "Hardware couldn't support it",
+        "D": "It lacked features"
       }
     },
     {
@@ -181,6 +631,26 @@
       }
     },
     {
+      "question": "Who initially developed Smalltalk?",
+      "answer": "C",
+      "choices": {
+        "A": "John Backus",
+        "B": "Grace Hopper",
+        "C": "Alan Kay",
+        "D": "Bjarne Stroustrup"
+      }
+    },
+    {
+      "question": "What three OOP features did Smalltalk fully implement?",
+      "answer": "A",
+      "choices": {
+        "A": "Data abstraction, inheritance, dynamic binding",
+        "B": "Compilation, interpretation, execution",
+        "C": "Variables, functions, classes",
+        "D": "Syntax, semantics, pragmatics"
+      }
+    },
+    {
       "question": "C++ was developed at Bell Labs by whom?",
       "answer": "A",
       "choices": {
@@ -191,6 +661,56 @@
       }
     },
     {
+      "question": "C++ evolved from which two languages?",
+      "answer": "D",
+      "choices": {
+        "A": "Java and ALGOL",
+        "B": "LISP and Prolog",
+        "C": "Fortran and COBOL",
+        "D": "C and SIMULA 67"
+      }
+    },
+    {
+      "question": "When was the C++ ANSI standard approved?",
+      "answer": "B",
+      "choices": {
+        "A": "1980",
+        "B": "November 1997",
+        "C": "2003",
+        "D": "2014"
+      }
+    },
+    {
+      "question": "Swift was released in which year?",
+      "answer": "C",
+      "choices": {
+        "A": "2003",
+        "B": "2008",
+        "C": "2014",
+        "D": "2020"
+      }
+    },
+    {
+      "question": "Swift is a replacement for which language?",
+      "answer": "A",
+      "choices": {
+        "A": "Objective-C",
+        "B": "Java",
+        "C": "Python",
+        "D": "Ruby"
+      }
+    },
+    {
+      "question": "Who designed Delphi?",
+      "answer": "B",
+      "choices": {
+        "A": "Bjarne Stroustrup",
+        "B": "Anders Hejlsberg",
+        "C": "James Gosling",
+        "D": "Guido van Rossum"
+      }
+    },
+    {
       "question": "Java was developed at Sun in which decade?",
       "answer": "C",
       "choices": {
@@ -198,6 +718,216 @@
         "B": "1980s",
         "C": "early 1990s",
         "D": "2000s"
+      }
+    },
+    {
+      "question": "Why were C and C++ not satisfactory for embedded electronic devices?",
+      "answer": "D",
+      "choices": {
+        "A": "They were too slow",
+        "B": "They were too simple",
+        "C": "They lacked features",
+        "D": "The lesson states this but doesn't give specific reasons in detail"
+      }
+    },
+    {
+      "question": "Which C++ features were removed in Java?",
+      "answer": "A",
+      "choices": {
+        "A": "struct, union, enum, pointer arithmetic",
+        "B": "classes and objects",
+        "C": "functions and methods",
+        "D": "loops and conditionals"
+      }
+    },
+    {
+      "question": "Java has references but not what?",
+      "answer": "C",
+      "choices": {
+        "A": "Objects",
+        "B": "Classes",
+        "C": "Pointers",
+        "D": "Methods"
+      }
+    },
+    {
+      "question": "What is the most recent version of Java mentioned in the lesson?",
+      "answer": "B",
+      "choices": {
+        "A": "5",
+        "B": "8 (released in 2014)",
+        "C": "11",
+        "D": "17"
+      }
+    },
+    {
+      "question": "Perl was designed by whom?",
+      "answer": "D",
+      "choices": {
+        "A": "Rasmus Lerdorf",
+        "B": "Guido van Rossum",
+        "C": "Yukihiro Matsumoto",
+        "D": "Larry Wall"
+      }
+    },
+    {
+      "question": "When was Perl first released?",
+      "answer": "A",
+      "choices": {
+        "A": "1987",
+        "B": "1990",
+        "C": "1995",
+        "D": "2000"
+      }
+    },
+    {
+      "question": "Perl gained widespread use for what?",
+      "answer": "C",
+      "choices": {
+        "A": "Desktop applications",
+        "B": "Mobile apps",
+        "C": "CGI programming on the Web",
+        "D": "Video game development"
+      }
+    },
+    {
+      "question": "JavaScript is related to Java only through what?",
+      "answer": "B",
+      "choices": {
+        "A": "Being developed at the same company",
+        "B": "Similar syntax",
+        "C": "Using the same virtual machine",
+        "D": "Having the same standard library"
+      }
+    },
+    {
+      "question": "PHP stands for what?",
+      "answer": "A",
+      "choices": {
+        "A": "PHP: Hypertext Preprocessor",
+        "B": "Personal Home Page",
+        "C": "Portable Hypertext Protocol",
+        "D": "Pre-HTML Processor"
+      }
+    },
+    {
+      "question": "Who designed PHP?",
+      "answer": "D",
+      "choices": {
+        "A": "Larry Wall",
+        "B": "Brendan Eich",
+        "C": "Guido van Rossum",
+        "D": "Rasmus Lerdorf"
+      }
+    },
+    {
+      "question": "Python is described as what type of language?",
+      "answer": "C",
+      "choices": {
+        "A": "A compiled systems language",
+        "B": "A markup language",
+        "C": "An OO interpreted scripting language",
+        "D": "A purely functional language"
+      }
+    },
+    {
+      "question": "What data structures does Python support according to the lesson?",
+      "answer": "B",
+      "choices": {
+        "A": "Only arrays",
+        "B": "Lists, tuples, and hashes",
+        "C": "Only dictionaries",
+        "D": "Only linked lists"
+      }
+    },
+    {
+      "question": "Ruby was designed in which country?",
+      "answer": "A",
+      "choices": {
+        "A": "Japan",
+        "B": "United States",
+        "C": "Netherlands",
+        "D": "Finland"
+      }
+    },
+    {
+      "question": "Who designed Ruby?",
+      "answer": "D",
+      "choices": {
+        "A": "Larry Wall",
+        "B": "Rasmus Lerdorf",
+        "C": "Guido van Rossum",
+        "D": "Yukihiro Matsumoto (Matz)"
+      }
+    },
+    {
+      "question": "Ruby began as a replacement for which languages?",
+      "answer": "C",
+      "choices": {
+        "A": "C and C++",
+        "B": "Java and C#",
+        "C": "Perl and Python",
+        "D": "JavaScript and PHP"
+      }
+    },
+    {
+      "question": "In Ruby, all data are what?",
+      "answer": "B",
+      "choices": {
+        "A": "Primitives",
+        "B": "Objects",
+        "C": "Functions",
+        "D": "Strings"
+      }
+    },
+    {
+      "question": "C# is part of which development platform?",
+      "answer": "A",
+      "choices": {
+        "A": ".NET (2000)",
+        "B": "Java EE",
+        "C": "Node.js",
+        "D": "Django"
+      }
+    },
+    {
+      "question": "C# is based on which languages?",
+      "answer": "D",
+      "choices": {
+        "A": "Only Java",
+        "B": "Only C++",
+        "C": "Python and Ruby",
+        "D": "C++, Java, and Delphi"
+      }
+    },
+    {
+      "question": "What does XML stand for?",
+      "answer": "C",
+      "choices": {
+        "A": "eXtra Markup Language",
+        "B": "eXtended Machine Language",
+        "C": "eXtensible Markup Language",
+        "D": "eXecutable Modeling Language"
+      }
+    },
+    {
+      "question": "What does XSLT do?",
+      "answer": "B",
+      "choices": {
+        "A": "Compiles XML to machine code",
+        "B": "Transforms XML documents for display",
+        "C": "Validates XML syntax",
+        "D": "Encrypts XML data"
+      }
+    },
+    {
+      "question": "What does JSP stand for?",
+      "answer": "A",
+      "choices": {
+        "A": "Java Server Pages",
+        "B": "JavaScript Programming",
+        "C": "JSON Serialization Protocol",
+        "D": "Java Simple Pages"
       }
     }
   ]

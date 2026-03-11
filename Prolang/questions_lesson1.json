@@ -11,6 +11,16 @@
       }
     },
     {
+      "question": "Which reason for studying programming languages relates to making better choices when selecting a language for a project?",
+      "answer": "B",
+      "choices": {
+        "A": "Overall advancement of computing",
+        "B": "Improved background for choosing appropriate languages",
+        "C": "Better understanding of significance of implementation",
+        "D": "Increased ability to express ideas"
+      }
+    },
+    {
       "question": "Which programming domain is associated with large numbers of floating point computations and use of arrays?",
       "answer": "B",
       "choices": {
@@ -31,13 +41,23 @@
       }
     },
     {
-      "question": "Which language is listed under artificial intelligence?",
+      "question": "Which language is listed under artificial intelligence and manipulates symbols rather than numbers?",
       "answer": "A",
       "choices": {
         "A": "LISP",
         "B": "Fortran",
         "C": "COBOL",
         "D": "C"
+      }
+    },
+    {
+      "question": "Why is efficiency particularly important in systems programming?",
+      "answer": "D",
+      "choices": {
+        "A": "Because it uses floating point operations",
+        "B": "Because it produces reports",
+        "C": "Because it manipulates symbols",
+        "D": "Because of continuous use"
       }
     },
     {
@@ -48,6 +68,16 @@
         "B": "Reliability",
         "C": "Cost",
         "D": "Readability"
+      }
+    },
+    {
+      "question": "Which evaluation criterion is defined as conformance to specifications?",
+      "answer": "B",
+      "choices": {
+        "A": "Readability",
+        "B": "Reliability",
+        "C": "Writability",
+        "D": "Portability"
       }
     },
     {
@@ -81,6 +111,26 @@
       }
     },
     {
+      "question": "According to the lesson on orthogonality, every possible combination should be what?",
+      "answer": "C",
+      "choices": {
+        "A": "Optimized for speed",
+        "B": "Forbidden by the compiler",
+        "C": "Legal",
+        "D": "Documented separately"
+      }
+    },
+    {
+      "question": "Which syntax consideration for readability involves flexible composition?",
+      "answer": "A",
+      "choices": {
+        "A": "Identifier forms",
+        "B": "Operator overloading",
+        "C": "Feature multiplicity",
+        "D": "Type checking"
+      }
+    },
+    {
       "question": "Which writability factor is described as the ability to define and use complex structures or operations in ways that allow details to be ignored?",
       "answer": "B",
       "choices": {
@@ -88,6 +138,16 @@
         "B": "Support for abstraction",
         "C": "Syntax considerations",
         "D": "Orthogonality"
+      }
+    },
+    {
+      "question": "Expressivity in writability refers to what?",
+      "answer": "D",
+      "choices": {
+        "A": "The number of reserved keywords",
+        "B": "The complexity of syntax",
+        "C": "The speed of compilation",
+        "D": "A set of relatively convenient ways of specifying operations"
       }
     },
     {
@@ -101,6 +161,36 @@
       }
     },
     {
+      "question": "What is aliasing in the context of reliability?",
+      "answer": "B",
+      "choices": {
+        "A": "Using multiple names for the same function",
+        "B": "Presence of two or more distinct referencing methods for the same memory location",
+        "C": "Overloading operators with different types",
+        "D": "Creating shortcuts for long variable names"
+      }
+    },
+    {
+      "question": "Exception handling in reliability involves what?",
+      "answer": "C",
+      "choices": {
+        "A": "Preventing all errors at compile time",
+        "B": "Ignoring run-time errors",
+        "C": "Intercepting run-time errors and taking corrective measures",
+        "D": "Logging errors to a file"
+      }
+    },
+    {
+      "question": "How does reliability relate to readability and writability according to the lesson?",
+      "answer": "A",
+      "choices": {
+        "A": "A language that doesn't support natural ways of expressing algorithms will have reduced reliability",
+        "B": "They are completely independent factors",
+        "C": "Reliability always decreases readability",
+        "D": "Writability must be sacrificed for reliability"
+      }
+    },
+    {
       "question": "Portability is defined as what?",
       "answer": "D",
       "choices": {
@@ -108,6 +198,26 @@
         "B": "The completeness of the official definition",
         "C": "The ability to define complex structures",
         "D": "The ease with which programs can be moved from one implementation to another"
+      }
+    },
+    {
+      "question": "Generality as an evaluation criterion refers to what?",
+      "answer": "B",
+      "choices": {
+        "A": "The number of users of the language",
+        "B": "The applicability to a wide range of applications",
+        "C": "The simplicity of the syntax",
+        "D": "The speed of execution"
+      }
+    },
+    {
+      "question": "Well-definedness refers to what aspect of a programming language?",
+      "answer": "C",
+      "choices": {
+        "A": "The number of compilers available",
+        "B": "The age of the language",
+        "C": "The completeness and precision of the language's official definition",
+        "D": "The popularity of the language"
       }
     },
     {
@@ -121,6 +231,26 @@
       }
     },
     {
+      "question": "Program design methodologies as an influence on language design led to what?",
+      "answer": "B",
+      "choices": {
+        "A": "Faster processors",
+        "B": "New programming paradigms and new programming languages",
+        "C": "Smaller memory requirements",
+        "D": "Better keyboards"
+      }
+    },
+    {
+      "question": "Which well-known computer architecture influenced the development of imperative languages?",
+      "answer": "C",
+      "choices": {
+        "A": "Harvard architecture",
+        "B": "RISC architecture",
+        "C": "Von Neumann architecture",
+        "D": "ARM architecture"
+      }
+    },
+    {
       "question": "In the von Neumann architecture, where are data and programs stored?",
       "answer": "B",
       "choices": {
@@ -128,6 +258,26 @@
         "B": "In memory",
         "C": "In external input devices",
         "D": "In the control unit"
+      }
+    },
+    {
+      "question": "Which characteristic of von Neumann architecture is modeled by variables in imperative languages?",
+      "answer": "D",
+      "choices": {
+        "A": "Instructions",
+        "B": "The control unit",
+        "C": "Input/output devices",
+        "D": "Memory cells"
+      }
+    },
+    {
+      "question": "Assignment statements in imperative languages model what aspect of von Neumann architecture?",
+      "answer": "A",
+      "choices": {
+        "A": "Piping of data from memory to CPU",
+        "B": "The control unit",
+        "C": "Memory storage",
+        "D": "Input devices"
       }
     },
     {
@@ -141,6 +291,96 @@
       }
     },
     {
+      "question": "What is the von Neumann bottleneck?",
+      "answer": "B",
+      "choices": {
+        "A": "The size of memory",
+        "B": "The connection speed between memory and processor that limits computer speed",
+        "C": "The number of registers in the CPU",
+        "D": "The clock speed of the processor"
+      }
+    },
+    {
+      "question": "During the 1950s and early 1960s programming methodology period, what was the primary concern?",
+      "answer": "C",
+      "choices": {
+        "A": "Object-oriented design",
+        "B": "User interfaces",
+        "C": "Machine efficiency",
+        "D": "Data abstraction"
+      }
+    },
+    {
+      "question": "What became important in the late 1960s programming methodology era?",
+      "answer": "A",
+      "choices": {
+        "A": "People efficiency, readability, and better control structures",
+        "B": "Faster processors",
+        "C": "Graphical interfaces",
+        "D": "Mobile applications"
+      }
+    },
+    {
+      "question": "Structured programming and top-down design emerged in which era?",
+      "answer": "D",
+      "choices": {
+        "A": "1950s",
+        "B": "Early 1980s",
+        "C": "1990s",
+        "D": "Late 1960s"
+      }
+    },
+    {
+      "question": "The shift from process-oriented to data-oriented programming occurred in which era?",
+      "answer": "B",
+      "choices": {
+        "A": "1950s",
+        "B": "Late 1970s",
+        "C": "1990s",
+        "D": "2000s"
+      }
+    },
+    {
+      "question": "Object-oriented programming emerged in which decade?",
+      "answer": "C",
+      "choices": {
+        "A": "1960s",
+        "B": "1970s",
+        "C": "Middle 1980s",
+        "D": "1990s"
+      }
+    },
+    {
+      "question": "What three key features characterize object-oriented programming?",
+      "answer": "A",
+      "choices": {
+        "A": "Data abstraction, inheritance, and polymorphism",
+        "B": "Variables, functions, and arrays",
+        "C": "Compilation, interpretation, and execution",
+        "D": "Syntax, semantics, and pragmatics"
+      }
+    },
+    {
+      "question": "Which language category has variables, assignment statements, and iteration as central features?",
+      "answer": "B",
+      "choices": {
+        "A": "Functional",
+        "B": "Imperative",
+        "C": "Logic",
+        "D": "Markup"
+      }
+    },
+    {
+      "question": "In functional languages, the main means of computation is by doing what?",
+      "answer": "C",
+      "choices": {
+        "A": "Modifying variables",
+        "B": "Using loops",
+        "C": "Applying functions to given parameters",
+        "D": "Executing rules"
+      }
+    },
+    {
       "question": "Which language category is described as rule-based with rules specified in no particular order?",
       "answer": "A",
       "choices": {
@@ -148,6 +388,16 @@
         "B": "Functional",
         "C": "Imperative",
         "D": "Markup/programming hybrid"
+      }
+    },
+    {
+      "question": "Which languages are listed as examples of functional programming languages?",
+      "answer": "D",
+      "choices": {
+        "A": "C, Java, Python",
+        "B": "Prolog, COBOL",
+        "C": "JSTL, XSLT",
+        "D": "LISP, Scheme, ML, F#"
       }
     },
     {
@@ -161,12 +411,32 @@
       }
     },
     {
+      "question": "The reliability vs. cost of execution trade-off is exemplified by which language feature?",
+      "answer": "A",
+      "choices": {
+        "A": "Java's array bounds checking",
+        "B": "C++'s templates",
+        "C": "Python's duck typing",
+        "D": "JavaScript's prototype inheritance"
+      }
+    },
+    {
       "question": "Which trade-off example states that APL provides many powerful operators but at the cost of poor readability?",
       "answer": "B",
       "choices": {
         "A": "Reliability vs. cost of execution",
         "B": "Readability vs. writability",
         "C": "Writability vs. reliability",
+        "D": "Portability vs. generality"
+      }
+    },
+    {
+      "question": "C++ pointers are cited as an example of which trade-off?",
+      "answer": "C",
+      "choices": {
+        "A": "Readability vs. writability",
+        "B": "Cost vs. reliability",
+        "C": "Writability (flexibility) vs. reliability",
         "D": "Portability vs. generality"
       }
     },
@@ -181,6 +451,56 @@
       }
     },
     {
+      "question": "Which compilation phase transforms lexical units into parse trees?",
+      "answer": "B",
+      "choices": {
+        "A": "Lexical analysis",
+        "B": "Syntax analysis",
+        "C": "Code generation",
+        "D": "Linking"
+      }
+    },
+    {
+      "question": "What is the primary characteristic of compilation in terms of speed?",
+      "answer": "D",
+      "choices": {
+        "A": "Fast translation, slow execution",
+        "B": "Slow translation, slow execution",
+        "C": "Fast translation, fast execution",
+        "D": "Slow translation, fast execution"
+      }
+    },
+    {
+      "question": "Where are compiled programs typically used?",
+      "answer": "C",
+      "choices": {
+        "A": "Only for web browsers",
+        "B": "Small prototypes only",
+        "C": "Large commercial applications",
+        "D": "Educational purposes only"
+      }
+    },
+    {
+      "question": "What is a load module?",
+      "answer": "A",
+      "choices": {
+        "A": "The user and system code together (executable image)",
+        "B": "A temporary file during compilation",
+        "C": "The source code before compilation",
+        "D": "An interpreted script"
+      }
+    },
+    {
+      "question": "What is linking and loading?",
+      "answer": "B",
+      "choices": {
+        "A": "Translating source code to machine code",
+        "B": "The process of collecting system program units and linking them to a user program",
+        "C": "Executing a program",
+        "D": "Debugging a program"
+      }
+    },
+    {
       "question": "Which statement about pure interpretation is listed in Lesson 1?",
       "answer": "C",
       "choices": {
@@ -191,6 +511,96 @@
       }
     },
     {
+      "question": "How much slower are interpreted programs compared to compiled programs according to the lesson?",
+      "answer": "D",
+      "choices": {
+        "A": "2 to 5 times slower",
+        "B": "5 to 10 times slower",
+        "C": "Equally fast",
+        "D": "10 to 100 times slower"
+      }
+    },
+    {
+      "question": "What advantage does pure interpretation offer?",
+      "answer": "A",
+      "choices": {
+        "A": "Easier implementation of programs with run-time errors easily displayed",
+        "B": "Faster execution speed",
+        "C": "Smaller file sizes",
+        "D": "Better security"
+      }
+    },
+    {
+      "question": "Which scripting languages brought a comeback to pure interpretation?",
+      "answer": "C",
+      "choices": {
+        "A": "C and C++",
+        "B": "Java and C#",
+        "C": "JavaScript and PHP",
+        "D": "Fortran and COBOL"
+      }
+    },
+    {
+      "question": "Hybrid implementation systems are a compromise between what?",
+      "answer": "B",
+      "choices": {
+        "A": "Syntax and semantics",
+        "B": "Compilers and pure interpreters",
+        "C": "Hardware and software",
+        "D": "Memory and CPU"
+      }
+    },
+    {
+      "question": "What intermediate form does Java use in its hybrid implementation?",
+      "answer": "D",
+      "choices": {
+        "A": "Machine code",
+        "B": "Assembly language",
+        "C": "P-code",
+        "D": "Byte code"
+      }
+    },
+    {
+      "question": "What does JVM stand for?",
+      "answer": "A",
+      "choices": {
+        "A": "Java Virtual Machine",
+        "B": "Java Variable Manager",
+        "C": "Just Very Minimal",
+        "D": "JavaScript Version Module"
+      }
+    },
+    {
+      "question": "What are JIT systems?",
+      "answer": "C",
+      "choices": {
+        "A": "Pure interpreters",
+        "B": "Pure compilers",
+        "C": "Systems that initially translate to intermediate language then compile to machine code when called",
+        "D": "Hardware accelerators"
+      }
+    },
+    {
+      "question": "How are JIT systems characterized in the lesson?",
+      "answer": "B",
+      "choices": {
+        "A": "Immediate interpreters",
+        "B": "Delayed compilers",
+        "C": "Fast interpreters",
+        "D": "Static compilers"
+      }
+    },
+    {
+      "question": "Which languages are implemented with JIT systems?",
+      "answer": "D",
+      "choices": {
+        "A": "Only C and C++",
+        "B": "Only JavaScript",
+        "C": "Only Python",
+        "D": "Java and .NET languages"
+      }
+    },
+    {
       "question": "What does a preprocessor do according to the lesson?",
       "answer": "D",
       "choices": {
@@ -198,6 +608,66 @@
         "B": "Executes source code directly",
         "C": "Generates object files after linking",
         "D": "Expands embedded preprocessor macros before compilation"
+      }
+    },
+    {
+      "question": "Which is a well-known example of a preprocessor?",
+      "answer": "A",
+      "choices": {
+        "A": "C preprocessor",
+        "B": "Java compiler",
+        "C": "Python interpreter",
+        "D": "JavaScript engine"
+      }
+    },
+    {
+      "question": "What does the C preprocessor expand?",
+      "answer": "B",
+      "choices": {
+        "A": "All functions",
+        "B": "#include, #define, and similar macros",
+        "C": "Variable declarations",
+        "D": "Loop statements"
+      }
+    },
+    {
+      "question": "What is a programming environment?",
+      "answer": "C",
+      "choices": {
+        "A": "A computer's operating system",
+        "B": "A programming language",
+        "C": "A collection of tools used in software development",
+        "D": "A hardware platform"
+      }
+    },
+    {
+      "question": "Which programming environment is described as an older operating system and tool collection?",
+      "answer": "D",
+      "choices": {
+        "A": "Microsoft Visual Studio.NET",
+        "B": "NetBeans",
+        "C": "Eclipse",
+        "D": "UNIX"
+      }
+    },
+    {
+      "question": "What is Microsoft Visual Studio.NET described as in the lesson?",
+      "answer": "A",
+      "choices": {
+        "A": "A large, complex visual environment",
+        "B": "A simple text editor",
+        "C": "An operating system",
+        "D": "A database system"
+      }
+    },
+    {
+      "question": "NetBeans is related to Visual Studio.NET except it's for applications in which language?",
+      "answer": "B",
+      "choices": {
+        "A": "C#",
+        "B": "Java",
+        "C": "Python",
+        "D": "Ruby"
       }
     }
   ]
