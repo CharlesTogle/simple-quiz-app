@@ -554,12 +554,17 @@ function getUrlParam(name) {
   const fileParam = getUrlParam('file');
 
   if (isCustom && customData) {
-    localStorage.removeItem('customMCQuiz');
     try {
       const data = JSON.parse(customData);
-      loadQuestions(data, 'custom.json');
+      const success = loadQuestions(data, 'custom.json');
+      // Only remove after successful load
+      if (success) {
+        localStorage.removeItem('customMCQuiz');
+      }
     } catch(e) {
+      console.error('Failed to load custom quiz:', e);
       renderEmpty();
+      // Don't remove localStorage on error - user can retry
     }
   } else {
     const targetFile = fileParam || 'questions.json';
@@ -611,7 +616,7 @@ function shuffleAndRestart() {
 function loadQuestions(data, filename) {
   if (!data.questions || !Array.isArray(data.questions) || data.questions.length === 0) {
     showToast('No questions found in JSON', true);
-    return;
+    return false;
   }
   allQuestions = shuffleArray(data.questions);
   if (!originalQuestions.length) originalQuestions = [...data.questions];
@@ -621,6 +626,7 @@ function loadQuestions(data, filename) {
   document.getElementById('btnRevert').style.display = 'none';
   renderQuiz();
   showToast(`Loaded ${allQuestions.length} questions (shuffled)`);
+  return true;
 }
 
 function renderQuiz() {

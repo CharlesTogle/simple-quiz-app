@@ -512,12 +512,17 @@ function getUrlParam(name) {
   const fileParam = getUrlParam('file');
 
   if (isCustom && customData) {
-    localStorage.removeItem('customABQuiz');
     try {
       const data = JSON.parse(customData);
-      loadAbbreviations(data);
+      const success = loadAbbreviations(data);
+      // Only remove after successful load
+      if (success) {
+        localStorage.removeItem('customABQuiz');
+      }
     } catch(e) {
+      console.error('Failed to load custom quiz:', e);
       renderEmpty();
+      // Don't remove localStorage on error - user can retry
     }
   } else {
     const targetFile = fileParam || 'abbreviations.json';
@@ -550,7 +555,7 @@ function loadAbbreviations(data) {
 
   if (typeof abbrevObj !== 'object' || Array.isArray(abbrevObj)) {
     showToast('Invalid format. Use {"ABBR": "Full Name"}', true);
-    return;
+    return false;
   }
 
   for (const [abbr, full] of Object.entries(abbrevObj)) {
@@ -559,7 +564,7 @@ function loadAbbreviations(data) {
 
   if (items.length === 0) {
     showToast('No abbreviations found', true);
-    return;
+    return false;
   }
 
   items = shuffleArray(items);
@@ -570,6 +575,7 @@ function loadAbbreviations(data) {
   document.getElementById('btnRevert').style.display = 'none';
   renderQuiz();
   showToast(`Loaded ${allItems.length} abbreviations`);
+  return true;
 }
 
 function shuffleArray(arr) {
