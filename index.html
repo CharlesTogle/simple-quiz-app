@@ -446,22 +446,9 @@
     </div>
     <p class="section-desc">Test your knowledge with multiple choice questions</p>
 
-    <div class="options-grid" id="mcOptions">
-      <div class="option-card selected" data-file="questions.json" onclick="selectMC(this)">
-        <div class="name">Comprehensive</div>
-        <div class="desc">75 questions from full reviewer</div>
-      </div>
-      <div class="option-card" data-file="questions2.json" onclick="selectMC(this)">
-        <div class="name">Quiz Section</div>
-        <div class="desc">30 questions from quiz</div>
-      </div>
+    <div style="background: var(--bg); border: 1px solid var(--border); border-radius: 10px; padding: 16px; margin-bottom: 20px; font-family: 'Space Mono', monospace; font-size: 0.85rem; color: var(--muted); text-align: center;">
+      Example quizzes available at: <a href="https://github.com/CharlesTogle/simple-quiz-app" target="_blank" style="color: var(--accent); text-decoration: none; font-weight: 600;">github.com/CharlesTogle/simple-quiz-app</a>
     </div>
-
-    <div class="btn-row">
-      <button class="btn" onclick="openMCQuiz()">Start Quiz</button>
-    </div>
-
-    <div class="divider">or upload your own</div>
 
     <label class="upload-zone" for="mcUpload">
       <input type="file" id="mcUpload" accept=".json" onchange="handleMCUpload(event)" />
@@ -477,22 +464,9 @@
     </div>
     <p class="section-desc">Type the full form of networking abbreviations</p>
 
-    <div class="options-grid" id="abOptions">
-      <div class="option-card selected" data-file="abbreviations.json" onclick="selectAB(this)">
-        <div class="name">Manila Paper</div>
-        <div class="desc">101 abbreviations</div>
-      </div>
-      <div class="option-card" data-file="abbreviations2.json" onclick="selectAB(this)">
-        <div class="name">Quiz Section</div>
-        <div class="desc">40 abbreviations from quiz</div>
-      </div>
+    <div style="background: var(--bg); border: 1px solid var(--border); border-radius: 10px; padding: 16px; margin-bottom: 20px; font-family: 'Space Mono', monospace; font-size: 0.85rem; color: var(--muted); text-align: center;">
+      Example quizzes available at: <a href="https://github.com/CharlesTogle/simple-quiz-app" target="_blank" style="color: var(--accent); text-decoration: none; font-weight: 600;">github.com/CharlesTogle/simple-quiz-app</a>
     </div>
-
-    <div class="btn-row">
-      <button class="btn" onclick="openABQuiz()">Start Quiz</button>
-    </div>
-
-    <div class="divider">or upload your own</div>
 
     <label class="upload-zone" for="abUpload">
       <input type="file" id="abUpload" accept=".json" onchange="handleABUpload(event)" />
@@ -507,9 +481,6 @@
 </div>
 
 <script>
-let selectedMC = 'questions.json';
-let selectedAB = 'abbreviations.json';
-
 function getTheme() {
   return localStorage.getItem('quizTheme') || 'dark';
 }
@@ -531,26 +502,6 @@ function toggleTheme() {
 }
 
 setTheme(getTheme());
-
-function selectMC(el) {
-  document.querySelectorAll('#mcOptions .option-card').forEach(c => c.classList.remove('selected'));
-  el.classList.add('selected');
-  selectedMC = el.dataset.file;
-}
-
-function selectAB(el) {
-  document.querySelectorAll('#abOptions .option-card').forEach(c => c.classList.remove('selected'));
-  el.classList.add('selected');
-  selectedAB = el.dataset.file;
-}
-
-function openMCQuiz() {
-  window.location.href = `quiz.html?file=${encodeURIComponent(selectedMC)}`;
-}
-
-function openABQuiz() {
-  window.location.href = `abbrev-quiz.html?file=${encodeURIComponent(selectedAB)}`;
-}
 
 function handleMCUpload(e) {
   const file = e.target.files[0];
