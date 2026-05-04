@@ -1,0 +1,714 @@
+{
+  "questions": [
+    {
+      "question": "Which topic is explicitly listed as protecting confidentiality, integrity, and authentication?",
+      "answer": "B",
+      "choices": {
+        "A": "Routing",
+        "B": "Cryptography",
+        "C": "Fragmentation",
+        "D": "Multiplexing"
+      }
+    },
+    {
+      "question": "Which item is included in the outline of the presentation?",
+      "answer": "C",
+      "choices": {
+        "A": "Database normalization",
+        "B": "Operating system scheduling",
+        "C": "Hands-on experiments",
+        "D": "Compiler optimization"
+      }
+    },
+    {
+      "question": "IP is described as what kind of delivery service in end-to-end delivery?",
+      "answer": "A",
+      "choices": {
+        "A": "Connectionless",
+        "B": "Connection-oriented",
+        "C": "Circuit-switched",
+        "D": "Authenticated"
+      }
+    },
+    {
+      "question": "Which transport protocol provides connectionless data delivery on top of IP?",
+      "answer": "D",
+      "choices": {
+        "A": "TCP",
+        "B": "SSL",
+        "C": "RIP",
+        "D": "UDP"
+      }
+    },
+    {
+      "question": "Which transport protocol provides connection-oriented data delivery on top of IP?",
+      "answer": "A",
+      "choices": {
+        "A": "TCP",
+        "B": "ICMP",
+        "C": "ARP",
+        "D": "RIP"
+      }
+    },
+    {
+      "question": "Why does TCP need extra logic over IP?",
+      "answer": "C",
+      "choices": {
+        "A": "Because IP is encrypted",
+        "B": "Because UDP manages state",
+        "C": "Because IP is connectionless and TCP must create connection-oriented behavior",
+        "D": "Because routers require ports"
+      }
+    },
+    {
+      "question": "Packets in the Internet serve the same purpose as what on a LAN?",
+      "answer": "B",
+      "choices": {
+        "A": "Sockets",
+        "B": "Frames",
+        "C": "Ports",
+        "D": "Processes"
+      }
+    },
+    {
+      "question": "Why are IP packets considered virtual according to the slides?",
+      "answer": "D",
+      "choices": {
+        "A": "They are encrypted by default",
+        "B": "They exist only in RAM",
+        "C": "They can only cross Ethernet",
+        "D": "They can cross multiple networks using different technologies"
+      }
+    },
+    {
+      "question": "The virtual packet is implemented by doing what for each physical network?",
+      "answer": "C",
+      "choices": {
+        "A": "Compressing it into a socket",
+        "B": "Encrypting it into a tunnel",
+        "C": "Encapsulating it in hardware frames",
+        "D": "Binding it to a MAC filter"
+      }
+    },
+    {
+      "question": "What is the usual size of the IP header area before options?",
+      "answer": "A",
+      "choices": {
+        "A": "20 octets",
+        "B": "8 octets",
+        "C": "32 octets",
+        "D": "64 octets"
+      }
+    },
+    {
+      "question": "What is the maximum total size of an IP datagram according to the slide?",
+      "answer": "D",
+      "choices": {
+        "A": "1,500 octets",
+        "B": "32,768 octets",
+        "C": "60 bytes",
+        "D": "65,535 octets"
+      }
+    },
+    {
+      "question": "Which historical IPv4 class uses leading bits `10`?",
+      "answer": "B",
+      "choices": {
+        "A": "Class A",
+        "B": "Class B",
+        "C": "Class C",
+        "D": "Class D"
+      }
+    },
+    {
+      "question": "Which historical IPv4 class uses leading bits `110`?",
+      "answer": "C",
+      "choices": {
+        "A": "Class A",
+        "B": "Class B",
+        "C": "Class C",
+        "D": "Class E"
+      }
+    },
+    {
+      "question": "How many addresses per network does Class C have in the classful table?",
+      "answer": "A",
+      "choices": {
+        "A": "256",
+        "B": "65,536",
+        "C": "16,777,216",
+        "D": "2,097,152"
+      }
+    },
+    {
+      "question": "Which field in the IP header tells routers where the datagram should ultimately go?",
+      "answer": "B",
+      "choices": {
+        "A": "Fragment offset",
+        "B": "Destination address",
+        "C": "TTL",
+        "D": "Checksum"
+      }
+    },
+    {
+      "question": "Routers compute forwarding decisions primarily using what?",
+      "answer": "D",
+      "choices": {
+        "A": "Port numbers",
+        "B": "Session cookies",
+        "C": "Sequence numbers",
+        "D": "Routing tables"
+      }
+    },
+    {
+      "question": "To identify the destination network, what operation is applied between the mask and destination address?",
+      "answer": "C",
+      "choices": {
+        "A": "Exclusive OR",
+        "B": "Addition",
+        "C": "Boolean AND",
+        "D": "Subtraction"
+      }
+    },
+    {
+      "question": "In IP forwarding, the destination address in the datagram always refers to what?",
+      "answer": "A",
+      "choices": {
+        "A": "The ultimate destination",
+        "B": "The next-hop router",
+        "C": "The previous router",
+        "D": "The MAC address"
+      }
+    },
+    {
+      "question": "Which of the following does IP explicitly not guarantee?",
+      "answer": "D",
+      "choices": {
+        "A": "Prevention of duplicate datagrams",
+        "B": "In-order delivery",
+        "C": "No datagram loss",
+        "D": "All of the choices"
+      }
+    },
+    {
+      "question": "What is the minimum IP header size?",
+      "answer": "B",
+      "choices": {
+        "A": "8 bytes",
+        "B": "20 bytes",
+        "C": "24 bytes",
+        "D": "40 bytes"
+      }
+    },
+    {
+      "question": "What is the maximum IP header size shown when options are present?",
+      "answer": "C",
+      "choices": {
+        "A": "40 bytes",
+        "B": "48 bytes",
+        "C": "60 bytes",
+        "D": "65,536 bytes"
+      }
+    },
+    {
+      "question": "Which IP header field limits packet lifetime in the network?",
+      "answer": "A",
+      "choices": {
+        "A": "Time-to-live (TTL)",
+        "B": "Protocol",
+        "C": "Header checksum",
+        "D": "ECN"
+      }
+    },
+    {
+      "question": "In datagram transmission, which layer binds the next-hop address to a hardware address?",
+      "answer": "D",
+      "choices": {
+        "A": "Application layer",
+        "B": "Transport layer",
+        "C": "Internet layer",
+        "D": "Network interface layer"
+      }
+    },
+    {
+      "question": "During multiple hops, what happens at each router?",
+      "answer": "B",
+      "choices": {
+        "A": "The datagram is permanently decrypted",
+        "B": "The datagram is unencapsulated, processed, and re-encapsulated",
+        "C": "The destination IP is replaced with the next hop",
+        "D": "The transport header is removed forever"
+      }
+    },
+    {
+      "question": "Why does IP fragmentation occur?",
+      "answer": "A",
+      "choices": {
+        "A": "Because network links have different MTUs",
+        "B": "Because TCP requires smaller checksums",
+        "C": "Because RIP forbids long packets",
+        "D": "Because ports can only carry 8 bits"
+      }
+    },
+    {
+      "question": "Where are fragmented IP datagrams reassembled according to the slides?",
+      "answer": "D",
+      "choices": {
+        "A": "At every router",
+        "B": "At the source router",
+        "C": "At the link layer",
+        "D": "Only at the final destination"
+      }
+    },
+    {
+      "question": "A TCP socket is identified by how many values?",
+      "answer": "C",
+      "choices": {
+        "A": "2",
+        "B": "3",
+        "C": "4",
+        "D": "5"
+      }
+    },
+    {
+      "question": "In the apartment-building analogy, what does an IP address represent?",
+      "answer": "B",
+      "choices": {
+        "A": "A person in the unit",
+        "B": "The street address of the building",
+        "C": "A path to a port",
+        "D": "A unit door"
+      }
+    },
+    {
+      "question": "In the analogy, what does a socket represent?",
+      "answer": "A",
+      "choices": {
+        "A": "A path to a port",
+        "B": "A person in the unit",
+        "C": "A building address",
+        "D": "A routing table"
+      }
+    },
+    {
+      "question": "Which TCP flag starts connection establishment in the three-way handshake?",
+      "answer": "C",
+      "choices": {
+        "A": "FIN",
+        "B": "RST",
+        "C": "SYN",
+        "D": "PSH"
+      }
+    },
+    {
+      "question": "What does the server send back after receiving the client's SYN in the TCP three-way handshake?",
+      "answer": "B",
+      "choices": {
+        "A": "FIN",
+        "B": "SYNACK",
+        "C": "RST",
+        "D": "Only data"
+      }
+    },
+    {
+      "question": "Which TCP flag is used to close a connection?",
+      "answer": "D",
+      "choices": {
+        "A": "ACK",
+        "B": "URG",
+        "C": "PSH",
+        "D": "FIN"
+      }
+    },
+    {
+      "question": "What state follows `FIN_WAIT_1` on the client side in the closing diagram?",
+      "answer": "A",
+      "choices": {
+        "A": "FIN_WAIT_2",
+        "B": "LISTEN",
+        "C": "LAST_ACK",
+        "D": "SYN_SENT"
+      }
+    },
+    {
+      "question": "What kind of attack uses IP packets with a forged or buggy source address to conceal the sender's identity?",
+      "answer": "C",
+      "choices": {
+        "A": "Packet sniffing",
+        "B": "Ping flood",
+        "C": "IP spoofing",
+        "D": "Timestamp authentication"
+      }
+    },
+    {
+      "question": "IP spoofing is most frequently used in what type of attack?",
+      "answer": "B",
+      "choices": {
+        "A": "Data compression",
+        "B": "Denial-of-service",
+        "C": "Caching",
+        "D": "Congestion avoidance"
+      }
+    },
+    {
+      "question": "Why are spoofed packets useful in DoS attacks?",
+      "answer": "D",
+      "choices": {
+        "A": "They improve reliability",
+        "B": "They guarantee encryption",
+        "C": "They let attackers receive replies safely",
+        "D": "They hide the true source and make filtering harder"
+      }
+    },
+    {
+      "question": "What kind of trust relationship can make IP spoofing more effective?",
+      "answer": "A",
+      "choices": {
+        "A": "Machines trusting internal traffic from each other",
+        "B": "Routers requiring TLS",
+        "C": "Strict DNSSEC deployment",
+        "D": "Private browsing mode"
+      }
+    },
+    {
+      "question": "Which of the following is listed as a prevention measure for IP spoofing?",
+      "answer": "D",
+      "choices": {
+        "A": "Deny private IPs on downstream interfaces",
+        "B": "Filter inbound and outbound traffic",
+        "C": "Use IPsec or key-based authentication",
+        "D": "All of the choices"
+      }
+    },
+    {
+      "question": "In a RIP attack, what false claim might an attacker make?",
+      "answer": "C",
+      "choices": {
+        "A": "That ICMP is encrypted",
+        "B": "That UDP is stateful",
+        "C": "That the attacker host has the fastest path out of the network",
+        "D": "That TCP has no sequence numbers"
+      }
+    },
+    {
+      "question": "Which mitigation is listed for RIP attacks?",
+      "answer": "A",
+      "choices": {
+        "A": "A newer RIP version with password authentication",
+        "B": "Disable all routing tables",
+        "C": "Replace IP with Ethernet",
+        "D": "Remove all firewalls"
+      }
+    },
+    {
+      "question": "What does ICMP stand for?",
+      "answer": "B",
+      "choices": {
+        "A": "Internet Communication Management Process",
+        "B": "Internet Control Message Protocol",
+        "C": "Internal Control Monitoring Protocol",
+        "D": "Integrated Connection Messaging Procedure"
+      }
+    },
+    {
+      "question": "ICMP is used by network devices mainly to send what?",
+      "answer": "C",
+      "choices": {
+        "A": "Encrypted payloads",
+        "B": "Database writes",
+        "C": "Error messages and control information",
+        "D": "Session cookies"
+      }
+    },
+    {
+      "question": "What type of ICMP-based attack is described where forged echo packets are sent to broadcast addresses so all systems reply to the victim?",
+      "answer": "B",
+      "choices": {
+        "A": "ARP poisoning",
+        "B": "ICMP amplification / Smurf-style denial of service",
+        "C": "TCP fast open",
+        "D": "RIP password attack"
+      }
+    },
+    {
+      "question": "Which ICMP traffic is explicitly allowed outbound according to the mitigation slide?",
+      "answer": "A",
+      "choices": {
+        "A": "Ping Echo-Request",
+        "B": "All broadcast replies",
+        "C": "All ICMP types",
+        "D": "No ICMP traffic at all"
+      }
+    },
+    {
+      "question": "What does a Ping Flood overwhelm with many ICMP Echo Requests?",
+      "answer": "D",
+      "choices": {
+        "A": "The certificate authority",
+        "B": "The router table cache",
+        "C": "The DNS resolver only",
+        "D": "The victim's resources and ability to process valid traffic"
+      }
+    },
+    {
+      "question": "Which mitigation is listed for Ping Flood attacks?",
+      "answer": "C",
+      "choices": {
+        "A": "Increase sequence numbers",
+        "B": "Disable TCP",
+        "C": "Rate-limit ICMP packets or block ICMP at the perimeter",
+        "D": "Replace UDP with RIP"
+      }
+    },
+    {
+      "question": "What kind of data exposure is packet sniffing associated with in the slides?",
+      "answer": "B",
+      "choices": {
+        "A": "Only image metadata",
+        "B": "Sensitive information sent in clear/plain text",
+        "C": "Encrypted TLS secrets by design",
+        "D": "Power consumption data"
+      }
+    },
+    {
+      "question": "According to the slides, what is the most effective method for countering packet sniffers?",
+      "answer": "A",
+      "choices": {
+        "A": "Cryptography",
+        "B": "Removing ports",
+        "C": "Using more hubs",
+        "D": "Disabling routing"
+      }
+    },
+    {
+      "question": "Which attack category in the transport layer is described as making a service unusable by overloading the server or network?",
+      "answer": "D",
+      "choices": {
+        "A": "Fragmentation",
+        "B": "Multiplexing",
+        "C": "Subnetting",
+        "D": "Denial of Service"
+      }
+    },
+    {
+      "question": "Which transport-layer flood is listed as consuming host resources?",
+      "answer": "B",
+      "choices": {
+        "A": "UDP floods",
+        "B": "TCP SYN floods",
+        "C": "ICMP redirects",
+        "D": "RIP advertisements"
+      }
+    },
+    {
+      "question": "Which transport-layer flood is listed as consuming bandwidth?",
+      "answer": "C",
+      "choices": {
+        "A": "TCP FIN floods",
+        "B": "ARP floods",
+        "C": "UDP floods",
+        "D": "Cookie floods"
+      }
+    },
+    {
+      "question": "In the DDoS slide, handlers are usually what kind of systems?",
+      "answer": "A",
+      "choices": {
+        "A": "Very high-volume servers",
+        "B": "Offline tape backups",
+        "C": "Certificate authorities",
+        "D": "Database replicas only"
+      }
+    },
+    {
+      "question": "In the DDoS slide, agents are usually what kind of users or machines?",
+      "answer": "D",
+      "choices": {
+        "A": "Uninfected lab servers",
+        "B": "Only routers",
+        "C": "Mainframes",
+        "D": "Already-infected home users with DSL/Cable"
+      }
+    },
+    {
+      "question": "What legitimate phenomenon is contrasted with DDoS in the slides?",
+      "answer": "C",
+      "choices": {
+        "A": "Route poisoning",
+        "B": "IPsec handshake",
+        "C": "Flash Crowd",
+        "D": "Port knocking"
+      }
+    },
+    {
+      "question": "What problem is caused by lots of half-open TCP connections on a server?",
+      "answer": "B",
+      "choices": {
+        "A": "Packet sniffing",
+        "B": "TCP SYN Flooding",
+        "C": "Classful addressing",
+        "D": "Session resumption"
+      }
+    },
+    {
+      "question": "In TCP SYN flooding, which handshake step is intentionally left incomplete by the attacker?",
+      "answer": "A",
+      "choices": {
+        "A": "The client's final ACK completing the three-way handshake",
+        "B": "The server's SYNACK",
+        "C": "The router's MAC learning",
+        "D": "The SSL certificate exchange"
+      }
+    },
+    {
+      "question": "What happens when the maximum number of incoming half-open connections is reached?",
+      "answer": "D",
+      "choices": {
+        "A": "The OS encrypts all sessions",
+        "B": "Routers reboot",
+        "C": "The port number changes",
+        "D": "Subsequent requests are silently dropped by the operating system"
+      }
+    },
+    {
+      "question": "Why is identifying the attacker in a SYN flood difficult?",
+      "answer": "B",
+      "choices": {
+        "A": "Because SYN packets are always encrypted",
+        "B": "Because the source addresses in SYN packets are often falsified",
+        "C": "Because TCP has no ports",
+        "D": "Because netstat hides connections"
+      }
+    },
+    {
+      "question": "Which command-line tool is specifically mentioned for detecting SYN flood symptoms?",
+      "answer": "A",
+      "choices": {
+        "A": "netstat",
+        "B": "traceroute",
+        "C": "route",
+        "D": "dig"
+      }
+    },
+    {
+      "question": "What is the recommended value of `SynAttackProtect` according to the slide?",
+      "answer": "C",
+      "choices": {
+        "A": "0",
+        "B": "1",
+        "C": "2",
+        "D": "500"
+      }
+    },
+    {
+      "question": "What does `SynAttackProtect = 2` additionally do compared with `1`?",
+      "answer": "B",
+      "choices": {
+        "A": "Disables TCP completely",
+        "B": "Delays connection indication until the three-way handshake is completed",
+        "C": "Forces all traffic through SSL",
+        "D": "Makes RIP authenticated"
+      }
+    },
+    {
+      "question": "What does `TcpMaxHalfOpen` define?",
+      "answer": "A",
+      "choices": {
+        "A": "The maximum number of SYN_RECEIVED states handled concurrently before protection starts",
+        "B": "The number of routers in a path",
+        "C": "The SSL session lifetime",
+        "D": "The UDP checksum length"
+      }
+    },
+    {
+      "question": "Which attack occurs after a source and destination computer have already established a communications link?",
+      "answer": "D",
+      "choices": {
+        "A": "Classful addressing",
+        "B": "Ping flood",
+        "C": "RIP route poisoning",
+        "D": "Session hijacking"
+      }
+    },
+    {
+      "question": "Which protection is listed as the best guarantee against man-in-the-middle sniffing of an existing client session cookie?",
+      "answer": "A",
+      "choices": {
+        "A": "Use SSL/HTTPS encryption for the entire website",
+        "B": "Disable cookies entirely",
+        "C": "Use only UDP",
+        "D": "Block ICMP replies"
+      }
+    },
+    {
+      "question": "HTTPS is described as a combination of HTTP and what?",
+      "answer": "B",
+      "choices": {
+        "A": "RIP",
+        "B": "the cryptographic security of SSL",
+        "C": "UDP multiplexing",
+        "D": "ICMP control traffic"
+      }
+    },
+    {
+      "question": "What trusted third party issues SSL certificates according to the slide?",
+      "answer": "C",
+      "choices": {
+        "A": "Handler",
+        "B": "Firewall",
+        "C": "Certificate Authority (CA)",
+        "D": "Netstat"
+      }
+    },
+    {
+      "question": "At the transport layer, which two protocols are named as adding headers to the message?",
+      "answer": "D",
+      "choices": {
+        "A": "ARP and RIP",
+        "B": "ICMP and SSL",
+        "C": "IP and Ethernet",
+        "D": "UDP and TCP"
+      }
+    },
+    {
+      "question": "What makes TCP connection spoofing harder than simple IP spoofing?",
+      "answer": "B",
+      "choices": {
+        "A": "TCP packets cannot be forged",
+        "B": "TCP requires acceptable 32-bit sequence numbers",
+        "C": "TCP has no acknowledgment field",
+        "D": "Routers reject TCP by default"
+      }
+    },
+    {
+      "question": "If an attacker can only send spoofed TCP packets but cannot receive replies for the spoofed host, what must the attacker guess during a new connection attempt?",
+      "answer": "C",
+      "choices": {
+        "A": "The MTU only",
+        "B": "The ICMP type",
+        "C": "The server's random acknowledgment-related number used in the handshake",
+        "D": "The firewall vendor"
+      }
+    },
+    {
+      "question": "Why is UDP easier to spoof than TCP according to the slides?",
+      "answer": "A",
+      "choices": {
+        "A": "UDP has no sequence numbers",
+        "B": "UDP is always encrypted",
+        "C": "UDP requires certificates",
+        "D": "UDP uses routing tables directly"
+      }
+    },
+    {
+      "question": "The transport layer is described as the last place to do what before segments affect connection management?",
+      "answer": "D",
+      "choices": {
+        "A": "Increase MTU",
+        "B": "Set the MAC address",
+        "C": "Allocate an IP class",
+        "D": "Authenticate segments"
+      }
+    }
+  ]
+}
