@@ -3,18 +3,24 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Manual Quiz App - Multiple Choice</title>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet"/>
+  <meta name="description" content="Take custom quizzes from AI-generated JSON. Supports multiple-choice, abbreviation, and identification question types." />
+  <meta property="og:title" content="Manual Quiz App" />
+  <meta property="og:description" content="Create custom quizzes from AI-generated JSON data." />
+  <meta property="og:type" content="website" />
+  <title>Manual Quiz App</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>?</text></svg>" />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Syne:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
       --bg: #0a0c10;
+      --text-on-accent: #0a0c10;
       --surface: #111318;
       --border: #1e2230;
       --accent: #4fffb0;
       --accent2: #ff4f6e;
-      --accent3: #4fb8ff;
+      --accent-dim: rgba(79,255,176,0.3);
       --text: #e8eaf0;
       --muted: #5a6070;
       --correct: #4fffb0;
@@ -22,23 +28,26 @@
       --radius: 12px;
       --glow: rgba(79,255,176,0.06);
       --grid: rgba(79,255,176,0.03);
-      --shadow: rgba(0,0,0,0.2);
+      --shadow: rgba(0, 20, 10, 0.5);
+      --z-toast: 100;
     }
 
     :root.theme-pink {
       --bg: #fff5f7;
+      --text-on-accent: #ffffff;
       --surface: #ffffff;
       --border: #ffd6e0;
       --accent: #ff4d8d;
       --accent2: #ff85a8;
-      --accent3: #d63384;
+      --accent-dim: rgba(255,77,141,0.3);
       --text: #4a2c4a;
       --muted: #b08b9a;
       --correct: #10b981;
       --wrong: #ef4444;
       --glow: rgba(255,77,141,0.08);
       --grid: rgba(255,77,141,0.03);
-      --shadow: rgba(255,77,141,0.1);
+      --shadow: rgba(180, 60, 80, 0.12);
+      --z-toast: 100;
     }
 
     html { font-size: 16px; }
@@ -51,7 +60,31 @@
       padding: 0;
       overflow-x: hidden;
       transition: background 0.3s, color 0.3s;
+      scroll-behavior: smooth;
     }
+
+    :focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 2px;
+      border-radius: 4px;
+    }
+
+    .skip-link {
+      position: absolute;
+      top: -100%;
+      left: 16px;
+      background: var(--accent);
+      color: var(--text-on-accent);
+      padding: 8px 16px;
+      border-radius: 6px;
+      font-family: 'Space Mono', monospace;
+      font-size: 0.8rem;
+      font-weight: 700;
+      z-index: var(--z-toast);
+      text-decoration: none;
+      transition: top 0.2s ease;
+    }
+    .skip-link:focus { top: 16px; }
 
     body::before {
       content: '';
@@ -150,19 +183,20 @@
       white-space: nowrap;
     }
     .btn:hover { border-color: var(--accent); color: var(--accent); }
+    .btn:active { transform: scale(0.97); }
     .btn.primary {
       background: var(--accent);
-      color: #0a0c10;
+      color: var(--text-on-accent);
       border-color: var(--accent);
       font-weight: 700;
     }
     .theme-pink .btn.primary { color: white; }
     .btn.primary:hover { filter: brightness(1.1); }
+    .btn.primary:active { transform: scale(0.97); filter: brightness(1); }
     .btn.danger { border-color: var(--wrong); color: var(--wrong); }
     .btn.danger:hover { background: rgba(255,79,110,0.1); }
     .theme-pink .btn.danger:hover { background: rgba(239,68,68,0.1); }
     .btn:disabled { opacity: 0.4; cursor: not-allowed; }
-
     .theme-pink .btn { border-width: 2px; }
 
     .file-label {
@@ -171,9 +205,9 @@
       gap: 6px;
       padding: 9px 16px;
       border-radius: 8px;
-      border: 1px dashed var(--accent3);
-      background: rgba(79,184,255,0.05);
-      color: var(--accent3);
+      border: 1px dashed var(--accent);
+      background: rgba(79,255,176,0.05);
+      color: var(--accent);
       font-family: 'Space Mono', monospace;
       font-size: 0.78rem;
       cursor: pointer;
@@ -185,7 +219,7 @@
       color: var(--accent);
       border-width: 2px;
     }
-    .file-label:hover { background: rgba(79,184,255,0.12); }
+    .file-label:hover { background: rgba(79,255,176,0.12); }
     .theme-pink .file-label:hover { background: rgba(255,77,141,0.12); }
     #fileInput { display: none; }
 
@@ -221,7 +255,7 @@
     .theme-pink .progress-bar { height: 4px; }
     .progress-fill {
       height: 100%;
-      background: linear-gradient(90deg, var(--accent), var(--accent3));
+      background: linear-gradient(90deg, var(--accent), var(--accent-dim));
       border-radius: 2px;
       transition: width 0.4s ease;
     }
@@ -247,7 +281,7 @@
       position: absolute;
       top: 0; left: 0; right: 0;
       height: 2px;
-      background: linear-gradient(90deg, var(--accent), var(--accent3));
+      background: linear-gradient(90deg, var(--accent), var(--accent-dim));
     }
     .theme-pink .question-card::before { height: 3px; }
 
@@ -260,12 +294,43 @@
       margin-bottom: 12px;
     }
 
+    .q-type-badge {
+      display: inline-block;
+      font-family: 'Space Mono', monospace;
+      font-size: 0.62rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      border-radius: 4px;
+      margin-bottom: 12px;
+      background: rgba(79,255,176,0.12);
+      color: var(--accent);
+    }
+    .theme-pink .q-type-badge { background: rgba(255,77,141,0.1); color: var(--accent); }
+
     .q-text {
       font-size: 1.05rem;
       font-weight: 600;
       line-height: 1.55;
       color: var(--text);
       margin-bottom: 24px;
+      text-wrap: pretty;
+    }
+
+    .q-abbrev {
+      font-size: 2rem;
+      font-weight: 800;
+      line-height: 1.2;
+      color: var(--accent);
+      margin-bottom: 8px;
+      font-family: 'Space Mono', monospace;
+    }
+
+    .q-prompt {
+      font-size: 0.9rem;
+      color: var(--muted);
+      margin-bottom: 20px;
     }
 
     .choices {
@@ -290,6 +355,7 @@
     }
     .theme-pink .choice { border-width: 2px; }
     .choice:hover:not(:disabled) { border-color: var(--accent); background: rgba(79,255,176,0.04); }
+    .choice:active:not(:disabled) { transform: scale(0.99); }
     .theme-pink .choice:hover:not(:disabled) { background: rgba(255,77,141,0.04); }
 
     .choice-key {
@@ -317,17 +383,17 @@
     }
 
     .choice.selected {
-      border-color: var(--accent3);
-      background: rgba(79,184,255,0.07);
+      border-color: var(--accent);
+      background: rgba(79,255,176,0.07);
     }
     .theme-pink .choice.selected {
       border-color: var(--accent);
       background: rgba(255,77,141,0.08);
     }
     .choice.selected .choice-key {
-      border-color: var(--accent3);
-      background: var(--accent3);
-      color: #0a0c10;
+      border-color: var(--accent);
+      background: var(--accent);
+      color: var(--text-on-accent);
     }
     .theme-pink .choice.selected .choice-key {
       border-color: var(--accent);
@@ -343,7 +409,7 @@
     .choice.correct .choice-key {
       border-color: var(--correct);
       background: var(--correct);
-      color: #0a0c10;
+      color: var(--text-on-accent);
     }
     .theme-pink .choice.correct .choice-key { color: white; }
     .choice.wrong {
@@ -354,9 +420,51 @@
     .choice.wrong .choice-key {
       border-color: var(--wrong);
       background: var(--wrong);
-      color: #0a0c10;
+      color: var(--text-on-accent);
     }
     .theme-pink .choice.wrong .choice-key { color: white; }
+
+    .answer-input {
+      width: 100%;
+      padding: 14px 16px;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Syne', sans-serif;
+      font-size: 1rem;
+      transition: all 0.15s ease;
+    }
+    .theme-pink .answer-input { border-width: 2px; }
+    .answer-input:focus {
+      outline: none;
+      border-color: var(--accent);
+      background: var(--surface);
+    }
+    .answer-input:disabled { opacity: 0.7; cursor: not-allowed; }
+    .answer-input.correct {
+      border-color: var(--correct);
+      background: rgba(79,255,176,0.08);
+    }
+    .theme-pink .answer-input.correct { background: rgba(16,185,129,0.08); }
+    .answer-input.wrong {
+      border-color: var(--wrong);
+      background: rgba(255,79,110,0.08);
+    }
+    .theme-pink .answer-input.wrong { background: rgba(239,68,68,0.08); }
+
+    .correct-answer {
+      margin-top: 12px;
+      padding: 10px 14px;
+      background: rgba(79,255,176,0.1);
+      border-radius: 6px;
+      font-size: 0.85rem;
+      color: var(--correct);
+      font-family: 'Space Mono', monospace;
+      display: none;
+    }
+    .theme-pink .correct-answer { background: rgba(16,185,129,0.1); }
+    .correct-answer.show { display: block; }
 
     .q-status {
       position: absolute;
@@ -476,7 +584,7 @@
       font-family: 'Space Mono', monospace;
       font-size: 0.8rem;
       color: var(--accent);
-      z-index: 999;
+      z-index: var(--z-toast);
       animation: fadeUp 0.3s ease;
       max-width: 300px;
       box-shadow: 0 4px 20px var(--shadow);
@@ -490,35 +598,88 @@
 
     .empty-state {
       text-align: center;
-      padding: 80px 20px;
+      padding: 60px 20px;
       color: var(--muted);
     }
     .empty-state h2 { font-size: 1.2rem; margin-bottom: 8px; color: var(--text); }
-    .empty-state p  { font-size: 0.85rem; font-family: 'Space Mono', monospace; }
+    .empty-state p  { font-size: 0.85rem; font-family: 'Space Mono', monospace; margin-bottom: 8px; }
+
+    .paste-zone {
+      max-width: 700px;
+      margin: 24px auto 0;
+    }
+    .paste-textarea {
+      width: 100%;
+      min-height: 160px;
+      padding: 14px 16px;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Space Mono', monospace;
+      font-size: 0.8rem;
+      resize: vertical;
+      transition: border-color 0.15s ease;
+    }
+    .theme-pink .paste-textarea { border-width: 2px; }
+    .paste-textarea:focus {
+      outline: none;
+      border-color: var(--accent);
+    }
+    .paste-actions {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      margin-top: 12px;
+    }
+    .btn-paste {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 9px 16px;
+      border-radius: 8px;
+      border: 1px solid var(--accent);
+      background: rgba(79,255,176,0.08);
+      color: var(--accent);
+      font-family: 'Space Mono', monospace;
+      font-size: 0.78rem;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+    .theme-pink .btn-paste {
+      border-color: var(--accent);
+      background: rgba(255,77,141,0.08);
+      color: var(--accent);
+    }
+    .btn-paste:hover { background: rgba(79,255,176,0.16); }
 
     @media (max-width: 560px) {
       .header { flex-direction: column; align-items: flex-start; }
       .results-score { font-size: 2.5rem; }
+      .q-abbrev { font-size: 1.5rem; }
     }
   </style>
 </head>
 <body>
+<a href="#main-content" class="skip-link">Skip to content</a>
 <div class="glow-orb"></div>
 <div id="app">
 
-  <div class="header">
-    <div class="logo">Manual Quiz App<span>/mc</span></div>
-    <div class="header-controls">
-      <button class="theme-toggle-btn" id="themeToggle" onclick="toggleTheme()" title="Toggle Pink Mode"></button>
+  <header class="header">
+    <div class="logo">Manual Quiz App<span>/quiz</span></div>
+    <nav class="header-controls">
+      <button class="theme-toggle-btn" id="themeToggle" onclick="toggleTheme()" title="Toggle Pink Mode" aria-label="Toggle theme"></button>
       <a href="index.html" class="home-link">Home</a>
       <label class="file-label" for="fileInput">Load JSON</label>
       <input type="file" id="fileInput" accept=".json" />
       <button class="btn" id="btnShuffle" onclick="shuffleAndRestart()">Shuffle</button>
       <button class="btn" id="btnRevert" style="display:none" onclick="revertToOriginal()">Revert</button>
-    </div>
-  </div>
+    </nav>
+  </header>
 
-  <div id="quizArea"></div>
+  <main id="main-content">
+    <div id="quizArea"></div>
+  </main>
 </div>
 
 <script>
@@ -526,7 +687,6 @@ let allQuestions = [];
 let originalQuestions = [];
 let userAnswers = {};
 let submitted = false;
-let savedFileName = 'questions.json';
 let autoDownload = true;
 let toastTimer;
 
@@ -545,34 +705,99 @@ function toggleTheme() { setTheme(getTheme() === 'pink' ? 'dark' : 'pink'); }
 setTheme(getTheme());
 
 function getUrlParam(name) {
-  const params = new URLSearchParams(window.location.search);
-  return params.get(name);
+  return new URLSearchParams(window.location.search).get(name);
+}
+
+function normalize(str) {
+  return String(str).toLowerCase().replace(/[^a-z0-9\s]/g, '').replace(/\s+/g, ' ').trim();
+}
+
+function parseQuestions(data) {
+  let questions = [];
+
+  if (Array.isArray(data)) {
+    questions = data.map((q, i) => ({
+      id: q.id ?? i + 1,
+      type: q.type || 'multiple-choice',
+      question: q.question || '',
+      answer: q.answer || '',
+      choices: q.choices || null,
+    }));
+  } else if (data.questions && Array.isArray(data.questions)) {
+    questions = data.questions.map((q, i) => ({
+      id: i + 1,
+      type: 'multiple-choice',
+      question: q.question || '',
+      answer: q.answer || '',
+      choices: q.choices || {},
+    }));
+  } else if (data.abbreviations && typeof data.abbreviations === 'object') {
+    questions = Object.entries(data.abbreviations).map(([abbr, full], i) => ({
+      id: i + 1,
+      type: 'abbreviation',
+      question: abbr,
+      answer: String(full),
+    }));
+  } else if (typeof data === 'object' && !Array.isArray(data)) {
+    const entries = Object.entries(data);
+    if (entries.length > 0 && entries.every(([, v]) => typeof v === 'string')) {
+      questions = entries.map(([abbr, full], i) => ({
+        id: i + 1,
+        type: 'abbreviation',
+        question: abbr,
+        answer: String(full),
+      }));
+    }
+  }
+
+  return questions;
 }
 
 (function init() {
-  const customData = localStorage.getItem('customMCQuiz');
   const isCustom = getUrlParam('custom') === 'true';
+
+  let customData = null;
+  if (isCustom) {
+    customData = localStorage.getItem('customQuiz')
+      || localStorage.getItem('customMCQuiz')
+      || localStorage.getItem('customABQuiz');
+  }
+
   const fileParam = getUrlParam('file');
 
-  // Check localStorage first, regardless of URL parameter
   if (customData) {
     try {
       const data = JSON.parse(customData);
-      const success = loadQuestions(data, 'custom.json');
-      // Only remove after successful load
-      if (success) {
+      const questions = parseQuestions(data);
+      if (loadQuestionsArray(questions)) {
+        localStorage.removeItem('customQuiz');
         localStorage.removeItem('customMCQuiz');
+        localStorage.removeItem('customABQuiz');
+        return;
       }
     } catch(e) {
       console.error('Failed to load custom quiz:', e);
-      renderEmpty();
-      // Don't remove localStorage on error - user can retry
     }
-  } else {
-    const targetFile = fileParam || 'questions.json';
-    fetch(targetFile)
+    localStorage.removeItem('customQuiz');
+    localStorage.removeItem('customMCQuiz');
+    localStorage.removeItem('customABQuiz');
+  }
+
+  if (fileParam) {
+    fetch(fileParam)
       .then(r => r.json())
-      .then(data => loadQuestions(data, targetFile))
+      .then(data => {
+        const questions = parseQuestions(data);
+        if (!loadQuestionsArray(questions)) renderEmpty();
+      })
+      .catch(() => renderEmpty());
+  } else {
+    fetch('questions.json')
+      .then(r => r.json())
+      .then(data => {
+        const questions = parseQuestions(data);
+        if (!loadQuestionsArray(questions)) renderEmpty();
+      })
       .catch(() => renderEmpty());
   }
 })();
@@ -580,12 +805,12 @@ function getUrlParam(name) {
 document.getElementById('fileInput').addEventListener('change', function(e) {
   const file = e.target.files[0];
   if (!file) return;
-  savedFileName = file.name;
   const reader = new FileReader();
   reader.onload = function(ev) {
     try {
       const data = JSON.parse(ev.target.result);
-      loadQuestions(data, file.name);
+      const questions = parseQuestions(data);
+      loadQuestionsArray(questions);
     } catch(err) {
       showToast('Invalid JSON file', true);
     }
@@ -593,6 +818,40 @@ document.getElementById('fileInput').addEventListener('change', function(e) {
   reader.readAsText(file);
   this.value = '';
 });
+
+function loadPastedJSON() {
+  const textarea = document.getElementById('pasteInput');
+  if (!textarea || !textarea.value.trim()) {
+    showToast('Paste JSON first', true);
+    return;
+  }
+  try {
+    const data = JSON.parse(textarea.value);
+    const questions = parseQuestions(data);
+    if (loadQuestionsArray(questions)) {
+      textarea.value = '';
+    }
+  } catch(err) {
+    showToast('Invalid JSON', true);
+  }
+}
+
+function loadQuestionsArray(questions) {
+  if (!questions.length) {
+    showToast('No questions found in JSON', true);
+    renderEmpty();
+    return false;
+  }
+  allQuestions = shuffleArray(questions);
+  if (!originalQuestions.length) originalQuestions = [...questions];
+  userAnswers = {};
+  submitted = false;
+  document.getElementById('btnRevert').style.display = 'none';
+  renderQuiz();
+  const types = [...new Set(questions.map(q => q.type))].join(', ');
+  showToast(`Loaded ${allQuestions.length} questions (${types})`);
+  return true;
+}
 
 function shuffleArray(arr) {
   const a = [...arr];
@@ -608,27 +867,10 @@ function shuffleAndRestart() {
   allQuestions = shuffleArray(allQuestions);
   userAnswers = {};
   submitted = false;
-  const panel = document.getElementById('resultsPanel');
-  if (panel) panel.remove();
+  document.getElementById('resultsPanel')?.remove();
   renderQuiz();
   window.scrollTo({ top: 0, behavior: 'smooth' });
-  showToast('Questions shuffled!');
-}
-
-function loadQuestions(data, filename) {
-  if (!data.questions || !Array.isArray(data.questions) || data.questions.length === 0) {
-    showToast('No questions found in JSON', true);
-    return false;
-  }
-  allQuestions = shuffleArray(data.questions);
-  if (!originalQuestions.length) originalQuestions = [...data.questions];
-  userAnswers = {};
-  submitted = false;
-  savedFileName = filename || 'questions.json';
-  document.getElementById('btnRevert').style.display = 'none';
-  renderQuiz();
-  showToast(`Loaded ${allQuestions.length} questions (shuffled)`);
-  return true;
+  showToast('Questions shuffled');
 }
 
 function renderQuiz() {
@@ -647,19 +889,43 @@ function renderQuiz() {
     <div id="questions">`;
 
   allQuestions.forEach((q, i) => {
-    html += `
-      <div class="question-card" id="qcard-${i}">
-        <div class="q-number">Question ${i + 1} of ${allQuestions.length}</div>
+    html += `<div class="question-card" id="qcard-${i}">
+        <div class="q-number">Q${i + 1} / ${allQuestions.length}</div>`;
+
+    if (q.type === 'multiple-choice') {
+      html += `<div class="q-type-badge">Multiple choice</div>
         <div class="q-text">${escHtml(q.question)}</div>
         <div class="choices">`;
-    Object.entries(q.choices).forEach(([key, val]) => {
-      html += `
-          <button class="choice" id="choice-${i}-${key}" onclick="selectAnswer(${i},'${key}')">
-            <span class="choice-key">${key}</span>
+      if (q.choices) {
+        Object.entries(q.choices).forEach(([key, val]) => {
+          html += `
+          <button class="choice" id="choice-${i}-${key}" onclick="selectAnswer(${i},'${escAttr(key)}')">
+            <span class="choice-key">${escHtml(key)}</span>
             <span class="choice-text">${escHtml(val)}</span>
           </button>`;
-    });
-    html += `</div></div>`;
+        });
+      }
+      html += `</div>`;
+    } else if (q.type === 'abbreviation') {
+      html += `<div class="q-type-badge">Abbreviation</div>
+        <div class="q-abbrev">${escHtml(q.question)}</div>
+        <div class="q-prompt">What does this stand for?</div>
+        <input type="text" class="answer-input" id="input-${i}"
+               placeholder="Type the full form..."
+               onkeyup="handleInput(${i}, event)"
+               autocomplete="off" />
+        <div class="correct-answer" id="correct-${i}">Correct: ${escHtml(q.answer)}</div>`;
+    } else if (q.type === 'identification') {
+      html += `<div class="q-type-badge">Identification</div>
+        <div class="q-text">${escHtml(q.question)}</div>
+        <input type="text" class="answer-input" id="input-${i}"
+               placeholder="Type your answer..."
+               onkeyup="handleInput(${i}, event)"
+               autocomplete="off" />
+        <div class="correct-answer" id="correct-${i}">Correct: ${escHtml(q.answer)}</div>`;
+    }
+
+    html += `</div>`;
   });
 
   html += `</div>
@@ -674,8 +940,16 @@ function selectAnswer(qi, key) {
   if (submitted) return;
   const prev = userAnswers[qi];
   userAnswers[qi] = key;
-  if (prev) document.getElementById(`choice-${qi}-${prev}`)?.classList.remove('selected');
-  document.getElementById(`choice-${qi}-${key}`)?.classList.add('selected');
+  if (prev) document.getElementById(`choice-${qi}-${escAttr(prev)}`)?.classList.remove('selected');
+  document.getElementById(`choice-${qi}-${escAttr(key)}`)?.classList.add('selected');
+  updateProgress();
+}
+
+function handleInput(i, event) {
+  if (submitted) return;
+  const val = event.target.value.trim();
+  if (val) userAnswers[i] = val;
+  else delete userAnswers[i];
   updateProgress();
 }
 
@@ -698,22 +972,42 @@ function submitQuiz() {
   const wrongQuestions = [];
 
   allQuestions.forEach((q, i) => {
-    const userAns = userAnswers[i];
-    const correctAns = q.answer;
+    const userAns = userAnswers[i] || '';
     const card = document.getElementById(`qcard-${i}`);
     card.querySelector('.q-status')?.remove();
 
-    Object.keys(q.choices).forEach(key => {
-      const btn = document.getElementById(`choice-${i}-${key}`);
-      btn.disabled = true;
-      btn.classList.remove('selected');
-      if (key === correctAns) btn.classList.add('correct');
-      if (key === userAns && userAns !== correctAns) btn.classList.add('wrong');
-    });
+    let isCorrect;
+
+    if (q.type === 'multiple-choice') {
+      const correctAns = q.answer || '';
+      isCorrect = userAns.toLowerCase() === correctAns.toLowerCase();
+
+      if (q.choices) {
+        Object.keys(q.choices).forEach(key => {
+          const btn = document.getElementById(`choice-${i}-${escAttr(key)}`);
+          if (!btn) return;
+          btn.disabled = true;
+          btn.classList.remove('selected');
+          if (key.toLowerCase() === (q.answer || '').toLowerCase()) btn.classList.add('correct');
+          if (key === userAns && !isCorrect) btn.classList.add('wrong');
+        });
+      }
+    } else {
+      isCorrect = normalize(userAns) === normalize(q.answer);
+      const input = document.getElementById(`input-${i}`);
+      const correctDiv = document.getElementById(`correct-${i}`);
+      if (input) input.disabled = true;
+      if (isCorrect) {
+        if (input) input.classList.add('correct');
+      } else {
+        if (input) input.classList.add('wrong');
+        if (correctDiv) correctDiv.classList.add('show');
+      }
+    }
 
     const badge = document.createElement('div');
     badge.className = 'q-status';
-    if (userAns === correctAns) {
+    if (isCorrect) {
       badge.classList.add('correct');
       badge.textContent = 'CORRECT';
       correct++;
@@ -734,7 +1028,6 @@ function submitQuiz() {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 
   window._wrongQuestions = wrongQuestions;
-  window._wrongJSON = { questions: wrongQuestions };
 }
 
 function buildResultsHtml(correct, wrong, total, wrongQs) {
@@ -744,9 +1037,9 @@ function buildResultsHtml(correct, wrong, total, wrongQs) {
       <div class="results-score">${pct}%</div>
       <div class="results-label">${correct} correct out of ${total} questions</div>
       <div class="results-stats">
-        <div class="stat correct"><div class="stat-val">${correct}</div><div class="stat-key">CORRECT</div></div>
-        <div class="stat wrong"><div class="stat-val">${wrong}</div><div class="stat-key">WRONG</div></div>
-        <div class="stat"><div class="stat-val">${total}</div><div class="stat-key">TOTAL</div></div>
+        <div class="stat correct"><div class="stat-val">${correct}</div><div class="stat-key">Correct</div></div>
+        <div class="stat wrong"><div class="stat-val">${wrong}</div><div class="stat-key">Wrong</div></div>
+        <div class="stat"><div class="stat-val">${total}</div><div class="stat-key">Total</div></div>
       </div>
       <div class="results-actions">
         <button class="btn primary" onclick="retakeQuiz()">Retake</button>
@@ -773,12 +1066,14 @@ function retakeQuiz() {
   allQuestions = shuffleArray(allQuestions);
   renderQuiz();
   window.scrollTo({ top: 0, behavior: 'smooth' });
-  showToast('Questions reshuffled!');
+  showToast('Questions reshuffled');
 }
 
 function retryWrong() {
-  if (!window._wrongJSON?.questions?.length) { showToast('No wrong questions to retry!', true); return; }
-  if (autoDownload) downloadJSON(window._wrongJSON, 'wrong-questions.json');
+  if (!window._wrongQuestions?.length) { showToast('No wrong questions to retry', true); return; }
+  if (autoDownload) {
+    downloadJSON(window._wrongQuestions, 'wrong-questions.json');
+  }
   setTimeout(() => {
     originalQuestions = allQuestions.length ? [...allQuestions] : originalQuestions;
     allQuestions = shuffleArray(window._wrongQuestions);
@@ -814,11 +1109,27 @@ function escHtml(str) {
   return String(str).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 }
 
+function escAttr(str) {
+  return String(str).replace(/'/g, "\\'").replace(/"/g, '&quot;');
+}
+
 function renderEmpty() {
   document.getElementById('quizArea').innerHTML = `
     <div class="empty-state">
       <h2>No questions loaded</h2>
-      <p>Upload a questions.json file using the button above,<br/>or place questions.json in the same folder.</p>
+      <p>Upload a JSON file or paste JSON below.</p>
+      <div class="paste-zone">
+        <textarea class="paste-textarea" id="pasteInput" placeholder='Paste JSON here, e.g.:
+[
+  {"id":1,"type":"multiple-choice","question":"What is 2+2?","choices":{"a":"3","b":"4","c":"5","d":"6"},"answer":"b"},
+  {"id":2,"type":"abbreviation","question":"HTTP","answer":"HyperText Transfer Protocol"},
+  {"id":3,"type":"identification","question":"Who invented the telephone?","answer":"Alexander Graham Bell"}
+]'></textarea>
+        <div class="paste-actions">
+          <button class="btn-paste" onclick="loadPastedJSON()">Load Pasted JSON</button>
+        </div>
+        <p style="margin-top:12px;font-size:0.75rem;">Or place <code>questions.json</code> in the same folder.</p>
+      </div>
     </div>`;
 }
 

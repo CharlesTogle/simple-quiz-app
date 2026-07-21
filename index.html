@@ -3,44 +3,53 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Create and take custom quizzes from AI-generated JSON. Supports multiple-choice, abbreviation, and identification question types." />
+  <meta property="og:title" content="Manual Quiz App" />
+  <meta property="og:description" content="Create custom quizzes from AI-generated JSON data." />
+  <meta property="og:type" content="website" />
   <title>Manual Quiz App</title>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet"/>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>?</text></svg>" />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Syne:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
       --bg: #0a0c10;
+      --text-on-accent: #0a0c10;
       --surface: #111318;
       --border: #1e2230;
       --accent: #4fffb0;
       --accent2: #ff4f6e;
-      --accent3: #4fb8ff;
+      --accent-dim: rgba(79,255,176,0.3);
       --text: #e8eaf0;
       --muted: #5a6070;
       --correct: #4fffb0;
       --wrong: #ff4f6e;
       --radius: 16px;
       --glow1: rgba(79,255,176,0.06);
-      --glow2: rgba(79,184,255,0.04);
+      --glow2: rgba(79,255,176,0.04);
       --grid: rgba(79,255,176,0.03);
-      --shadow: rgba(0,0,0,0.2);
+      --shadow: rgba(0, 20, 10, 0.5);
+      --z-toast: 100;
     }
 
     :root.theme-pink {
       --bg: #fff5f7;
+      --text-on-accent: #ffffff;
       --surface: #ffffff;
       --border: #ffd6e0;
       --accent: #ff4d8d;
       --accent2: #ff85a8;
-      --accent3: #d63384;
+      --accent-dim: rgba(255,77,141,0.3);
       --text: #4a2c4a;
       --muted: #b08b9a;
       --correct: #10b981;
       --wrong: #ef4444;
       --glow1: rgba(255,77,141,0.08);
-      --glow2: rgba(214,51,132,0.06);
+      --glow2: rgba(255,77,141,0.06);
       --grid: rgba(255,77,141,0.03);
-      --shadow: rgba(255,77,141,0.1);
+      --shadow: rgba(180, 60, 80, 0.12);
+      --z-toast: 100;
     }
 
     html { font-size: 16px; }
@@ -53,7 +62,31 @@
       padding: 0;
       overflow-x: hidden;
       transition: background 0.3s, color 0.3s;
+      scroll-behavior: smooth;
     }
+
+    :focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 2px;
+      border-radius: 4px;
+    }
+
+    .skip-link {
+      position: absolute;
+      top: -100%;
+      left: 16px;
+      background: var(--accent);
+      color: var(--text-on-accent);
+      padding: 8px 16px;
+      border-radius: 6px;
+      font-family: 'Space Mono', monospace;
+      font-size: 0.8rem;
+      font-weight: 700;
+      z-index: var(--z-toast);
+      text-decoration: none;
+      transition: top 0.2s ease;
+    }
+    .skip-link:focus { top: 16px; }
 
     body::before {
       content: '';
@@ -182,6 +215,7 @@
       display: flex;
       align-items: center;
       gap: 10px;
+      text-wrap: balance;
     }
 
     .section-title .icon { font-size: 1.5rem; }
@@ -190,53 +224,6 @@
       font-size: 0.85rem;
       color: var(--muted);
       margin-bottom: 24px;
-      font-family: 'Space Mono', monospace;
-    }
-
-    .options-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 16px;
-      margin-bottom: 20px;
-    }
-
-    .option-card {
-      background: var(--bg);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 20px;
-      cursor: pointer;
-      transition: all 0.2s ease;
-      text-align: center;
-    }
-
-    .theme-pink .option-card { border-width: 2px; }
-
-    .option-card:hover {
-      border-color: var(--accent);
-      transform: translateY(-2px);
-      box-shadow: 0 6px 20px var(--shadow);
-    }
-
-    .option-card.selected {
-      border-color: var(--accent);
-      background: rgba(79,255,176,0.05);
-    }
-
-    .theme-pink .option-card.selected {
-      background: linear-gradient(135deg, rgba(255,77,141,0.1) 0%, rgba(214,51,132,0.05) 100%);
-    }
-
-    .option-card .name {
-      font-weight: 700;
-      font-size: 1rem;
-      color: var(--text);
-      margin-bottom: 4px;
-    }
-
-    .option-card .desc {
-      font-size: 0.75rem;
-      color: var(--muted);
       font-family: 'Space Mono', monospace;
     }
 
@@ -249,7 +236,7 @@
       border-radius: 10px;
       border: 1px solid var(--accent);
       background: var(--accent);
-      color: #0a0c10;
+      color: var(--text-on-accent);
       font-family: 'Syne', sans-serif;
       font-size: 1rem;
       font-weight: 700;
@@ -265,28 +252,14 @@
       box-shadow: 0 6px 20px var(--shadow);
       filter: brightness(1.1);
     }
+    .btn:active {
+      transform: translateY(0) scale(0.98);
+    }
 
     .btn-row {
       display: flex;
       gap: 12px;
       flex-wrap: wrap;
-    }
-
-    .divider {
-      display: flex;
-      align-items: center;
-      gap: 16px;
-      margin: 24px 0;
-      color: var(--muted);
-      font-size: 0.8rem;
-      font-family: 'Space Mono', monospace;
-    }
-
-    .divider::before, .divider::after {
-      content: '';
-      flex: 1;
-      height: 1px;
-      background: var(--border);
     }
 
     .upload-zone {
@@ -299,6 +272,7 @@
       cursor: pointer;
       background: var(--bg);
       position: relative;
+      margin-bottom: 16px;
     }
 
     .upload-zone:hover {
@@ -327,6 +301,39 @@
       display: block;
     }
 
+    .divider {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin: 20px 0;
+      color: var(--muted);
+      font-size: 0.8rem;
+      font-family: 'Space Mono', monospace;
+    }
+
+    .divider::before, .divider::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+    }
+
+    .paste-textarea {
+      width: 100%;
+      min-height: 140px;
+      padding: 14px 16px;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Space Mono', monospace;
+      font-size: 0.78rem;
+      resize: vertical;
+      transition: border-color 0.15s ease;
+    }
+    .theme-pink .paste-textarea { border-width: 2px; }
+    .paste-textarea:focus { outline: none; border-color: var(--accent); }
+
     .footer {
       text-align: center;
       margin-top: 48px;
@@ -351,7 +358,7 @@
       font-family: 'Space Mono', monospace;
       font-size: 0.85rem;
       color: var(--accent);
-      z-index: 999;
+      z-index: var(--z-toast);
       animation: fadeUp 0.3s ease;
       box-shadow: 0 4px 20px var(--shadow);
     }
@@ -374,72 +381,76 @@
   </style>
 </head>
 <body>
+<a href="#main-content" class="skip-link">Skip to content</a>
 <div class="glow-orb"></div>
 <div class="glow-orb-2"></div>
 
 <div id="app">
-  <div class="header">
+  <header class="header">
     <div class="theme-toggle">
-      <span>Pink Mode</span>
-      <button class="theme-toggle-btn" id="themeToggle" onclick="toggleTheme()"></button>
+      <span>Pink mode</span>
+      <button class="theme-toggle-btn" id="themeToggle" onclick="toggleTheme()" aria-label="Toggle theme"></button>
     </div>
     <div class="logo">Manual Quiz App</div>
     <p class="tagline">Create custom quizzes with AI assistance</p>
-  </div>
+  </header>
+
+  <main id="main-content">
 
   <div class="section">
     <div class="section-title">
       <span class="icon">&#x1F4DA;</span>
-      How to Use This App
+      How to use this app
     </div>
     <p class="section-desc" style="margin-bottom: 16px;">Follow these steps to create your custom quiz:</p>
 
     <div style="background: var(--bg); border: 1px solid var(--border); border-radius: 10px; padding: 20px; margin-bottom: 24px; font-family: 'Space Mono', monospace; font-size: 0.85rem; line-height: 1.6;">
-      <div style="color: var(--accent); font-weight: 700; margin-bottom: 12px;">Step 1: Prepare Your Material</div>
+      <div style="color: var(--accent); font-weight: 700; margin-bottom: 12px;">Step 1: Prepare your material</div>
       <div style="color: var(--muted); margin-bottom: 16px;">Download or gather your study material in PDF, MD (Markdown), or PPTX format.</div>
 
       <div style="color: var(--accent); font-weight: 700; margin-bottom: 12px;">Step 2: Generate JSON with AI</div>
-      <div style="color: var(--muted); margin-bottom: 8px;">Use AI agents like Claude or ChatGPT to convert your material into a quiz JSON file.</div>
+      <div style="color: var(--muted); margin-bottom: 8px;">Use AI agents like Claude or ChatGPT to convert your material into a quiz JSON file using the unified format below.</div>
 
-      <div style="margin-left: 16px; margin-bottom: 12px;">
-        <div style="color: var(--accent3); font-weight: 600; margin-bottom: 8px;">For Multiple Choice:</div>
-        <pre style="background: var(--surface); padding: 12px; border-radius: 6px; overflow-x: auto; font-size: 0.75rem; border: 1px solid var(--border);">{
-  "questions": [
-    {
-      "question": "What is TCP?",
-      "answer": "A",
-      "choices": {
-        "A": "Transmission Control Protocol",
-        "B": "Transfer Communication Protocol",
-        "C": "Total Connection Protocol",
-        "D": "Tactical Computing Protocol"
-      }
-    }
-  ]
-}</pre>
-      </div>
-
-      <div style="margin-left: 16px; margin-bottom: 16px;">
-        <div style="color: var(--accent3); font-weight: 600; margin-bottom: 8px;">For Abbreviations:</div>
-        <pre style="background: var(--surface); padding: 12px; border-radius: 6px; overflow-x: auto; font-size: 0.75rem; border: 1px solid var(--border);">{
-  "abbreviations": {
-    "TCP": "Transmission Control Protocol",
-    "UDP": "User Datagram Protocol",
-    "HTTP": "HyperText Transfer Protocol"
+      <div style="color: var(--accent); font-weight: 600; margin-bottom: 8px;">Unified question format:</div>
+      <pre style="background: var(--surface); padding: 12px; border-radius: 6px; overflow-x: auto; font-size: 0.73rem; border: 1px solid var(--border);">[
+  {
+    "id": 1,
+    "type": "multiple-choice",
+    "question": "What is TCP?",
+    "choices": { "a": "Transmission Control Protocol", "b": "Transfer Communication Protocol", "c": "Total Connection Protocol", "d": "Tactical Computing Protocol" },
+    "answer": "a"
+  },
+  {
+    "id": 2,
+    "type": "abbreviation",
+    "question": "HTTP",
+    "answer": "HyperText Transfer Protocol"
+  },
+  {
+    "id": 3,
+    "type": "identification",
+    "question": "Who invented the telephone?",
+    "answer": "Alexander Graham Bell"
   }
-}</pre>
+]</pre>
+
+      <div style="margin-top: 12px; color: var(--accent); font-weight: 600; margin-bottom: 6px;">Supported types:</div>
+      <div style="color: var(--muted); margin-bottom: 8px;">
+        <div><code style="color: var(--accent);">multiple-choice</code> &mdash; choose from a list of options</div>
+        <div><code style="color: var(--accent);">abbreviation</code> &mdash; type the full form of an acronym</div>
+        <div><code style="color: var(--accent);">identification</code> &mdash; type the answer to a prompt</div>
       </div>
 
-      <div style="color: var(--accent); font-weight: 700; margin-bottom: 12px;">Step 3: Upload Your JSON</div>
-      <div style="color: var(--muted); margin-bottom: 16px;">Choose your quiz type below and click "Upload JSON" to load your custom questions.</div>
+      <div style="color: var(--accent); font-weight: 700; margin-bottom: 12px;">Step 3: Load your quiz</div>
+      <div style="color: var(--muted); margin-bottom: 16px;">Upload a JSON file below, or paste your JSON directly into the text area.</div>
 
       <div style="color: var(--accent); font-weight: 700; margin-bottom: 12px;">Troubleshooting</div>
       <div style="color: var(--muted);">
         If you see "No questions detected":
         <ul style="margin-top: 8px; margin-left: 20px;">
-          <li>Try re-uploading the file</li>
           <li>Verify your JSON matches the format above exactly</li>
-          <li>Regenerate the JSON file with your AI agent if option 1 didn't work</li>
+          <li>Try re-pasting or re-uploading the file</li>
+          <li>Regenerate the JSON file with your AI agent</li>
         </ul>
       </div>
     </div>
@@ -447,45 +458,42 @@
 
   <div class="section">
     <div class="section-title">
-      <span class="icon">&#x1F4DD;</span>
-      Multiple Choice Quiz
+      <span class="icon">&#x1F4E5;</span>
+      Upload quiz JSON
     </div>
-    <p class="section-desc">Test your knowledge with multiple choice questions</p>
+    <p class="section-desc">Choose a .json file to load your custom quiz</p>
 
-    <div style="background: var(--bg); border: 1px solid var(--border); border-radius: 10px; padding: 16px; margin-bottom: 20px; font-family: 'Space Mono', monospace; font-size: 0.85rem; color: var(--muted); text-align: center;">
-      Example quizzes available at: <a href="https://github.com/CharlesTogle/simple-quiz-app" target="_blank" style="color: var(--accent); text-decoration: none; font-weight: 600;">github.com/CharlesTogle/simple-quiz-app</a>
-    </div>
-
-    <label class="upload-zone" for="mcUpload">
-      <input type="file" id="mcUpload" accept=".json" onchange="handleMCUpload(event)" />
-      <div style="font-size: 2rem; margin-bottom: 8px;">📁</div>
+    <label class="upload-zone" for="quizUpload">
+      <input type="file" id="quizUpload" accept=".json" onchange="handleQuizUpload(event)" />
+      <div style="font-size: 2rem; margin-bottom: 8px;">&#x1F4C1;</div>
       <div class="label">Upload JSON</div>
-      <div class="hint">Upload your custom multiple choice quiz</div>
+      <div class="hint">Select your quiz JSON file</div>
     </label>
   </div>
 
   <div class="section">
     <div class="section-title">
-      <span class="icon">&#x1F524;</span>
-      Abbreviation Quiz
+      <span class="icon">&#x1F4CB;</span>
+      Paste quiz JSON
     </div>
-    <p class="section-desc">Type the full form of networking abbreviations</p>
+    <p class="section-desc">Paste your quiz JSON directly instead of uploading a file</p>
 
-    <div style="background: var(--bg); border: 1px solid var(--border); border-radius: 10px; padding: 16px; margin-bottom: 20px; font-family: 'Space Mono', monospace; font-size: 0.85rem; color: var(--muted); text-align: center;">
-      Example quizzes available at: <a href="https://github.com/CharlesTogle/simple-quiz-app" target="_blank" style="color: var(--accent); text-decoration: none; font-weight: 600;">github.com/CharlesTogle/simple-quiz-app</a>
+    <textarea class="paste-textarea" id="pasteInput" placeholder='Paste JSON here, e.g.:
+[
+  {"id":1,"type":"multiple-choice","question":"What is 2+2?","choices":{"a":"3","b":"4","c":"5","d":"6"},"answer":"b"},
+  {"id":2,"type":"abbreviation","question":"HTTP","answer":"HyperText Transfer Protocol"},
+  {"id":3,"type":"identification","question":"Who invented the telephone?","answer":"Alexander Graham Bell"}
+]'></textarea>
+    <div style="text-align: center; margin-top: 16px;">
+      <button class="btn" onclick="loadPastedQuiz()">Load Pasted JSON</button>
     </div>
-
-    <label class="upload-zone" for="abUpload">
-      <input type="file" id="abUpload" accept=".json" onchange="handleABUpload(event)" />
-      <div style="font-size: 2rem; margin-bottom: 8px;">📁</div>
-      <div class="label">Upload JSON</div>
-      <div class="hint">Upload your custom abbreviations quiz</div>
-    </label>
   </div>
 
-  <div class="footer">
+  </main>
+
+  <footer class="footer">
     <p>Manual Quiz App - Create custom quizzes with AI</p>
-  </div>
+  </footer>
 </div>
 
 <script>
@@ -511,18 +519,18 @@ function toggleTheme() {
 
 setTheme(getTheme());
 
-function handleMCUpload(e) {
+function handleQuizUpload(e) {
   const file = e.target.files[0];
   if (!file) return;
   const reader = new FileReader();
   reader.onload = function(ev) {
     try {
       const data = JSON.parse(ev.target.result);
-      if (!data.questions || !Array.isArray(data.questions)) {
-        showToast('Invalid format. Need {"questions": [...]}');
+      if (!isValidQuizData(data)) {
+        showToast('Invalid format. Use the unified JSON format shown above.');
         return;
       }
-      localStorage.setItem('customMCQuiz', ev.target.result);
+      localStorage.setItem('customQuiz', ev.target.result);
       window.location.href = 'quiz.html?custom=true';
     } catch(err) {
       showToast('Invalid JSON file');
@@ -531,25 +539,33 @@ function handleMCUpload(e) {
   reader.readAsText(file);
 }
 
-function handleABUpload(e) {
-  const file = e.target.files[0];
-  if (!file) return;
-  const reader = new FileReader();
-  reader.onload = function(ev) {
-    try {
-      const data = JSON.parse(ev.target.result);
-      const abbrevObj = data.abbreviations || data;
-      if (typeof abbrevObj !== 'object' || Array.isArray(abbrevObj)) {
-        showToast('Invalid format');
-        return;
-      }
-      localStorage.setItem('customABQuiz', ev.target.result);
-      window.location.href = 'abbrev-quiz.html?custom=true';
-    } catch(err) {
-      showToast('Invalid JSON file');
+function loadPastedQuiz() {
+  const raw = document.getElementById('pasteInput').value.trim();
+  if (!raw) {
+    showToast('Paste JSON first');
+    return;
+  }
+  try {
+    const data = JSON.parse(raw);
+    if (!isValidQuizData(data)) {
+      showToast('Invalid format. Use the unified JSON format shown above.');
+      return;
     }
-  };
-  reader.readAsText(file);
+    localStorage.setItem('customQuiz', raw);
+    window.location.href = 'quiz.html?custom=true';
+  } catch(err) {
+    showToast('Invalid JSON');
+  }
+}
+
+function isValidQuizData(data) {
+  if (Array.isArray(data) && data.length > 0 && data[0].question !== undefined) return true;
+  if (data.questions && Array.isArray(data.questions) && data.questions.length > 0) return true;
+  if (data.abbreviations && typeof data.abbreviations === 'object' && Object.keys(data.abbreviations).length > 0) return true;
+  if (typeof data === 'object' && !Array.isArray(data) && Object.keys(data).length > 0) {
+    return Object.values(data).every(v => typeof v === 'string');
+  }
+  return false;
 }
 
 let toastTimer;
