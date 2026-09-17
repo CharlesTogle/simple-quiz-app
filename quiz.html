@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="description" content="Take custom quizzes from AI-generated JSON. Supports multiple-choice, abbreviation, and identification question types." />
+  <meta name="description" content="Take custom quizzes from AI-generated JSON. Supports multiple-choice, true/false, abbreviation, and identification question types." />
   <meta property="og:title" content="Manual Quiz App" />
   <meta property="og:description" content="Create custom quizzes from AI-generated JSON data." />
   <meta property="og:type" content="website" />
@@ -720,7 +720,7 @@ function parseQuestions(data) {
       id: q.id ?? i + 1,
       type: q.type || 'multiple-choice',
       question: q.question || '',
-      answer: q.answer || '',
+      answer: q.answer ?? '',
       choices: q.choices || null,
     }));
   } else if (data.questions && Array.isArray(data.questions)) {
@@ -754,14 +754,9 @@ function parseQuestions(data) {
 }
 
 (function init() {
-  const isCustom = getUrlParam('custom') === 'true';
-
-  let customData = null;
-  if (isCustom) {
-    customData = localStorage.getItem('customQuiz')
-      || localStorage.getItem('customMCQuiz')
-      || localStorage.getItem('customABQuiz');
-  }
+  const customData = localStorage.getItem('customQuiz')
+    || localStorage.getItem('customMCQuiz')
+    || localStorage.getItem('customABQuiz');
 
   const fileParam = getUrlParam('file');
 
@@ -906,13 +901,26 @@ function renderQuiz() {
         });
       }
       html += `</div>`;
+    } else if (q.type === 'true-false') {
+      html += `<div class="q-type-badge">True or false</div>
+        <div class="q-text">${escHtml(q.question)}</div>
+        <div class="choices">
+          <button class="choice" id="choice-${i}-true" onclick="selectAnswer(${i}, 'true')">
+            <span class="choice-key">T</span>
+            <span class="choice-text">True</span>
+          </button>
+          <button class="choice" id="choice-${i}-false" onclick="selectAnswer(${i}, 'false')">
+            <span class="choice-key">F</span>
+            <span class="choice-text">False</span>
+          </button>
+        </div>`;
     } else if (q.type === 'abbreviation') {
       html += `<div class="q-type-badge">Abbreviation</div>
         <div class="q-abbrev">${escHtml(q.question)}</div>
         <div class="q-prompt">What does this stand for?</div>
         <input type="text" class="answer-input" id="input-${i}"
                placeholder="Type the full form..."
-               onkeyup="handleInput(${i}, event)"
+               oninput="handleInput(${i}, event)"
                autocomplete="off" />
         <div class="correct-answer" id="correct-${i}">Correct: ${escHtml(q.answer)}</div>`;
     } else if (q.type === 'identification') {
@@ -920,7 +928,7 @@ function renderQuiz() {
         <div class="q-text">${escHtml(q.question)}</div>
         <input type="text" class="answer-input" id="input-${i}"
                placeholder="Type your answer..."
-               onkeyup="handleInput(${i}, event)"
+                oninput="handleInput(${i}, event)"
                autocomplete="off" />
         <div class="correct-answer" id="correct-${i}">Correct: ${escHtml(q.answer)}</div>`;
     }
@@ -978,17 +986,18 @@ function submitQuiz() {
 
     let isCorrect;
 
-    if (q.type === 'multiple-choice') {
-      const correctAns = q.answer || '';
-      isCorrect = userAns.toLowerCase() === correctAns.toLowerCase();
+    if (q.type === 'multiple-choice' || q.type === 'true-false') {
+      const correctAns = q.answer ?? '';
+      isCorrect = String(userAns).toLowerCase() === String(correctAns).toLowerCase();
 
-      if (q.choices) {
-        Object.keys(q.choices).forEach(key => {
+      const choices = q.type === 'true-false' ? { true: 'True', false: 'False' } : q.choices;
+      if (choices) {
+        Object.keys(choices).forEach(key => {
           const btn = document.getElementById(`choice-${i}-${escAttr(key)}`);
           if (!btn) return;
           btn.disabled = true;
           btn.classList.remove('selected');
-          if (key.toLowerCase() === (q.answer || '').toLowerCase()) btn.classList.add('correct');
+          if (key.toLowerCase() === String(q.answer).toLowerCase()) btn.classList.add('correct');
           if (key === userAns && !isCorrect) btn.classList.add('wrong');
         });
       }
@@ -1123,7 +1132,8 @@ function renderEmpty() {
 [
   {"id":1,"type":"multiple-choice","question":"What is 2+2?","choices":{"a":"3","b":"4","c":"5","d":"6"},"answer":"b"},
   {"id":2,"type":"abbreviation","question":"HTTP","answer":"HyperText Transfer Protocol"},
-  {"id":3,"type":"identification","question":"Who invented the telephone?","answer":"Alexander Graham Bell"}
+   {"id":3,"type":"identification","question":"Who invented the telephone?","answer":"Alexander Graham Bell"},
+   {"id":4,"type":"true-false","question":"TCP is connection-oriented.","answer":true}
 ]'></textarea>
         <div class="paste-actions">
           <button class="btn-paste" onclick="loadPastedJSON()">Load Pasted JSON</button>

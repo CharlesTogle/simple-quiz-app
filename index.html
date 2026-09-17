@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="description" content="Create and take custom quizzes from AI-generated JSON. Supports multiple-choice, abbreviation, and identification question types." />
+  <meta name="description" content="Create and take custom quizzes from AI-generated JSON. Supports multiple-choice, true/false, abbreviation, and identification question types." />
   <meta property="og:title" content="Manual Quiz App" />
   <meta property="og:description" content="Create custom quizzes from AI-generated JSON data." />
   <meta property="og:type" content="website" />
@@ -431,12 +431,19 @@
     "type": "identification",
     "question": "Who invented the telephone?",
     "answer": "Alexander Graham Bell"
+  },
+  {
+    "id": 4,
+    "type": "true-false",
+    "question": "TCP is connection-oriented.",
+    "answer": true
   }
 ]</pre>
 
       <div style="margin-top: 12px; color: var(--accent); font-weight: 600; margin-bottom: 6px;">Supported types:</div>
       <div style="color: var(--muted); margin-bottom: 8px;">
         <div><code style="color: var(--accent);">multiple-choice</code> &mdash; choose from a list of options</div>
+        <div><code style="color: var(--accent);">true-false</code> &mdash; choose true or false; <code>answer</code> may be <code>true</code>/<code>false</code> or the equivalent text</div>
         <div><code style="color: var(--accent);">abbreviation</code> &mdash; type the full form of an acronym</div>
         <div><code style="color: var(--accent);">identification</code> &mdash; type the answer to a prompt</div>
       </div>
@@ -482,7 +489,8 @@
 [
   {"id":1,"type":"multiple-choice","question":"What is 2+2?","choices":{"a":"3","b":"4","c":"5","d":"6"},"answer":"b"},
   {"id":2,"type":"abbreviation","question":"HTTP","answer":"HyperText Transfer Protocol"},
-  {"id":3,"type":"identification","question":"Who invented the telephone?","answer":"Alexander Graham Bell"}
+   {"id":3,"type":"identification","question":"Who invented the telephone?","answer":"Alexander Graham Bell"},
+   {"id":4,"type":"true-false","question":"TCP is connection-oriented.","answer":true}
 ]'></textarea>
     <div style="text-align: center; margin-top: 16px;">
       <button class="btn" onclick="loadPastedQuiz()">Load Pasted JSON</button>
